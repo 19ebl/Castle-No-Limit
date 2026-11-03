@@ -28,3 +28,44 @@ checkout; use it directly without creating another worktree.
 
 GitHub's REST API can be used through `gh api` if the GraphQL-based `gh issue`
 and `gh pr` commands are denied. Never put credentials into repository files.
+
+## Research and reproduction
+
+The completed run saves experiment JSON under `results/experiments/` and the
+exact synthetic applicant distributions under `results/frozen_populations/`.
+These arrays, not regenerated approximations, are the inputs for independent
+replication. Their manifests record seeds, parameters, and SHA256 checksums.
+
+Regenerate tables from saved scores, without running another search:
+
+```sh
+python scripts/render_tables.py
+```
+
+The research phases run in this order:
+
+```sh
+python scripts/run_research.py g1
+python scripts/run_research.py g2
+python scripts/run_research.py preregister
+python scripts/run_research.py validate
+```
+
+The runner currently writes fixed artifact paths: preserve an existing run's
+artifacts before beginning a new run. It checks the frozen finalists, source
+hashes, model inputs, seeds, and decision rule before holdout validation. A
+population library cold build takes a few minutes; subsequent phases reuse
+verified input snapshots. No persistent application server is required.
+
+The supplemental Game 1 equilibrium stress can be reproduced with:
+
+```sh
+python benchmarks/g1_equilibrium_audit.py --iterations 100000 --tolerance 0.049
+python benchmarks/check_g1_snapshot.py
+```
+
+Expected scores and confidence intervals are conditional on the modeled applicant
+pools. Matchup sampling intervals do not quantify uncertainty about the real
+applicant mix. The named `equilibrium` scenario is coarse self-play; `CX-061`
+provides a separate stronger Game 1 stress with an exact exploitability bound.
+Neither is empirical evidence about applicants' actual choices.

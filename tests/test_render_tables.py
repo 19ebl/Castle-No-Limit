@@ -46,3 +46,14 @@ def test_saved_table_prior_intervals_and_exact_values(tmp_path):
     with csv_path.open(newline="") as stream:
         exported = list(csv.DictReader(stream))
     assert len(exported) == len(records)
+
+
+def test_supplemental_stress_stays_separate_from_primary():
+    text, rows = renderer.supplemental_equilibrium_table(dict(
+        candidates=[[20]*5], means=[7.51], certificate=dict(
+            empirical_self_play_score=7.5, exact_best_response_score=7.549,
+            exact_exploitability_above_symmetric_value=0.049)))
+    assert "not used for primary selection" in text
+    assert "0.049000" in text
+    assert rows[0]["table"] == "supplemental_g1_equilibrium"
+    assert rows[0]["ci95_low"] == rows[0]["mean"] == rows[0]["ci95_high"]

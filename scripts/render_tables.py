@@ -163,6 +163,29 @@ def render(g1, g2, final):
     return "\n\n".join(sections) + "\n", records
 
 
+def supplemental_equilibrium_table(audit):
+    """Render the optional, post-search stress separately from primary results."""
+    rows, records = [], []
+    for i, (candidate, mean) in enumerate(zip(audit["candidates"], audit["means"])):
+        rows.append([i, allocation(candidate), number(mean)])
+        records.append(dict(table="supplemental_g1_equilibrium", game=1,
+                            scenario="supplemental_exact_best_response_fictitious_play",
+                            candidate=allocation(candidate), candidate_index=i, mean=mean, se=0.0,
+                            ci95_low=mean, ci95_high=mean))
+    certificate = audit["certificate"]
+    text = "\n\n".join([
+        "## Supplemental Game 1 equilibrium-like stress: not used for primary selection",
+        f"CX-061 uses exact-best-response fictitious play outside the frozen prior and holdouts. "
+        f"The empirical pool has self-play score {number(certificate['empirical_self_play_score'])}; "
+        f"its unrestricted best response scores {number(certificate['exact_best_response_score'])}, "
+        f"for exploitability {number(certificate['exact_exploitability_above_symmetric_value'])}. "
+        "The certificate is conditional on this finite pool and does not establish an exact Nash equilibrium "
+        "or describe the real applicant population. Scores below concern the previously fixed CX-020 finalists; "
+        "they do not replace the preregistered primary decision.",
+        markdown_table(["CX-020 finalist index", "Allocation", "Exact castle-point expectation"], rows)])
+    return text+"\n", records
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input-dir", type=Path, default=Path("results/experiments"))
@@ -171,6 +194,11 @@ def main():
     args = parser.parse_args()
     runs = [json.loads((args.input_dir/f"CX-{phase}.json").read_text()) for phase in ("020", "030", "050")]
     markdown, records = render(*runs)
+    supplemental = args.input_dir/"CX-061.json"
+    if supplemental.exists():
+        text, extra = supplemental_equilibrium_table(json.loads(supplemental.read_text()))
+        markdown += "\n" + text
+        records.extend(extra)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(markdown)
     args.csv.parent.mkdir(parents=True, exist_ok=True)
