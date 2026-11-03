@@ -40,7 +40,7 @@ def render(g1, g2, final):
     if not prior:
         raise ValueError("No prior scenarios found in the saved Game 1 search")
     records = []
-    sections = ["# Saved-score tables", "Generated from CX-020, CX-030, and CX-050. "
+    sections = ["# Saved-score tables", f"Generated from CX-020, {g2.get('id','CX-030')}, and CX-050. "
                 "Regenerate with `python scripts/render_tables.py`; this reads saved scores and performs no simulation."]
     selected = {1: final["decision"]["g1_index"], 2: final["decision"]["g2_index"]}
     sections += ["## Recommended allocations", markdown_table(
@@ -192,7 +192,8 @@ def main():
     parser.add_argument("--output", type=Path, default=Path("results/TABLES.md"))
     parser.add_argument("--csv", type=Path, default=Path("results/tables.csv"))
     args = parser.parse_args()
-    runs = [json.loads((args.input_dir/f"CX-{phase}.json").read_text()) for phase in ("020", "030", "050")]
+    g2_phase = "031" if (args.input_dir/"CX-031.json").exists() else "030"
+    runs = [json.loads((args.input_dir/f"CX-{phase}.json").read_text()) for phase in ("020", g2_phase, "050")]
     markdown, records = render(*runs)
     supplemental = args.input_dir/"CX-061.json"
     if supplemental.exists():
