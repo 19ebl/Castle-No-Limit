@@ -106,3 +106,5 @@ def test_rejects_invalid():
         game1_units((-1, 21, 20, 30, 30), (20,) * 5)
     with pytest.raises(ValueError):
         game2_units([(20,) * 5] * 3)
+    with pytest.raises(ValueError):
+        game1_units((20.5, 19.5, 20, 20, 20), (20,) * 5)

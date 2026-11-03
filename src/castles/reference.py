@@ -19,7 +19,11 @@ R_PAYOUTS = (9, 4, 2, 0)  # in points; converted to units below
 
 
 def check_alloc(x) -> tuple[int, ...]:
-    x = tuple(int(v) for v in x)
+    raw = tuple(x)
+    for v in raw:
+        if int(v) != v:
+            raise ValueError(f"non-integer count {v!r} in {raw}")
+    x = tuple(int(v) for v in raw)
     if len(x) != 5:
         raise ValueError(f"need 5 castles, got {len(x)}")
     if any(v < 0 for v in x):
