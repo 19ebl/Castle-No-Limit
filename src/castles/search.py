@@ -74,6 +74,33 @@ def concentration_candidates():
     return unique_allocations(bases, *(neighbors(x,(1,2,3)) for x in bases))
 
 
+def targeted_candidates():
+    """Offset families requested by the independent population-model author."""
+    out=[]
+    # Castles 3+5 near 100, allowing tiny bids on the other three castles.
+    for tiny in itertools.product(range(4),repeat=3):
+        for x3 in range(38,56):
+            out.append([tiny[0],tiny[1],x3,tiny[2],100-sum(tiny)-x3])
+    # Castles 4+5 with 1..3 on castles 1..3.
+    for tiny in itertools.product(range(1,4),repeat=3):
+        for x4 in range(38,59):
+            out.append([*tiny,x4,100-sum(tiny)-x4])
+    # Dense offsets around the familiar 33/33/34 and 34..36 bids.
+    for x1,x2 in itertools.product(range(4),repeat=2):
+        for x3,x4 in itertools.product(range(26,39),repeat=2):
+            x5=100-x1-x2-x3-x4
+            if x5>=0:out.append([x1,x2,x3,x4,x5])
+    # Cheap castle 1+2+5, and 2+3+5 support with varied castle-3 stakes.
+    for a,b in itertools.product(range(3,13),repeat=2):
+        for c,d in itertools.product(range(3),repeat=2):
+            out.append([a,b,c,d,100-a-b-c-d])
+    for x2 in range(3,13):
+        for x3 in range(3,46):
+            for x1,x4 in itertools.product(range(3),repeat=2):
+                out.append([x1,x2,x3,x4,100-x1-x2-x3-x4])
+    return unique_allocations(out)
+
+
 def prior_opponents(n, names, populations, seed):
     """Stratify groups across scenarios, drawing all three from one scenario.
 
@@ -147,8 +174,9 @@ def g2_search(populations, named, prior, g1, output='results/experiments/CX-030.
             p=populations[name]
             ix=np.argsort(p.w)[-100:]
             sophisticated.append(p.g2[ix])
-    candidates=unique_allocations(all_allocations(5),concentration_candidates(),
-        np.array([x['allocation'] for x in g1['top100']]),*sophisticated)
+    candidates=unique_allocations(all_allocations(5),concentration_candidates(),targeted_candidates(),
+        np.array([x['allocation'] for x in g1['top100']]),
+        np.array([x['allocation'] for x in g1['scenario_best'].values()]),*sophisticated)
     reduced=[prior[int(i)] for i in np.linspace(0,len(prior)-1,8,dtype=int)]
     screen=evaluate_scenarios(candidates,reduced+named,populations,5000,seeds['screen'])
     screen_mean=scenario_matrix(screen,reduced).mean(axis=1)

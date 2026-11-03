@@ -1,0 +1,15 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "versions": {
+    "numpy": "2.3.5",
+    "numba": "0.68.1",
+    "llvmlite": "0.50.0",
+    "pytest": "9.2.0"
+  },
+  "threads": {
+    "NUMBA_NUM_THREADS": 2,
+    "OMP_NUM_THREADS": 2
+  },
+  "note": "Current-instance research runtime. Frozen population snapshots preserve model inputs across dependency versions."
+}
