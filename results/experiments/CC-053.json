@@ -1,0 +1,33 @@
+{
+ "id": "CC-053",
+ "agent": "claude-code",
+ "commit": "e66d9383796905e63e8f1ddb515ea2073ed3f329",
+ "question": "cross-game: each pick scored in the other game on the frozen 240 prior (population seed base 110300)",
+ "allocations": [
+  [
+   1,
+   11,
+   1,
+   36,
+   51
+  ],
+  [
+   1,
+   0,
+   48,
+   51,
+   0
+  ]
+ ],
+ "g2_prior_mean_payout": [
+  6.129480885416669,
+  7.470968427083332
+ ],
+ "g2_groups_per_scenario": 200000,
+ "draw_seed": 777004,
+ "g1_prior_mean_exact": [
+  9.709725370503277,
+  7.510095489261137
+ ],
+ "runtime_s": 36.4
+}
