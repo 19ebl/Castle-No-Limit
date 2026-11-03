@@ -3,7 +3,9 @@ import numpy as np
 from .rules import VALUES, PAYOUTS_UNITS
 try:
     from numba import njit
+    HAVE_NUMBA = True
 except ImportError:
+    HAVE_NUMBA = False
     def njit(*args, **kwargs):
         return lambda f: f
 
@@ -54,7 +56,7 @@ def all_allocations(step=1):
 
 
 @njit(cache=True)
-def g1_top(table, k=100):
+def _g1_top_compiled(table, k=100):
     # Keep top-k partial sums for every budget. Backtracking stores whole 5-vectors.
     scores = np.full((101,k), -1e100)
     paths = np.zeros((101,k,5), np.int16)
@@ -78,6 +80,36 @@ def g1_top(table, k=100):
                     out[budget,pos,j] = amount
         scores, paths = nxt, out
     return paths[100], scores[100]
+
+
+def _g1_top_numpy(table, k=100):
+    scores = np.full((101,k), -1e100)
+    paths = np.zeros((101,k,5), np.int16)
+    scores[0,0] = 0
+    for j in range(5):
+        nxt = np.full_like(scores, -1e100)
+        out = np.zeros_like(paths)
+        for budget in range(101):
+            amounts = np.arange(budget+1)
+            vals = (scores[budget-amounts] + table[j,amounts,None]).ravel()
+            selected = np.argpartition(-vals,k-1)[:k]
+            selected = selected[np.argsort(-vals[selected],kind='stable')]
+            amt, rank = selected//k, selected%k
+            nxt[budget] = vals[selected]
+            out[budget] = paths[budget-amt,rank]
+            out[budget,:,j] = amt
+        scores,paths = nxt,out
+    return paths[100],scores[100]
+
+
+def g1_top(table, k=100):
+    """Exact k-best solve, with an efficient NumPy fallback when Numba is absent."""
+    if k < 1:
+        raise ValueError('k must be positive')
+    table = np.asarray(table,dtype=float)
+    if table.shape != (5,101):
+        raise ValueError('table must have shape (5,101)')
+    return _g1_top_compiled(table,k) if HAVE_NUMBA else _g1_top_numpy(table,k)
 
 
 def g2_sample_opponents(pop, n, seed):

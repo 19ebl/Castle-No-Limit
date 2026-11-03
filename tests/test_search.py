@@ -35,3 +35,29 @@ def test_top100_dp_against_complete_grid_oracle():
     np.testing.assert_allclose(got_s,np.sort(scores)[::-1][:100],rtol=0,atol=1e-12)
     assert np.all(got_x%5==0)
     assert len(np.unique(got_x,axis=0))==100
+
+def _validation_fixture():
+    x=np.array([[20,20,20,20,20],[0,0,0,50,50]],np.int16)
+    p=SimpleNamespace(g1=x[:1],g2=x[:1],w=np.array([1.]),seed=1)
+    return dict(named=p,prior=p,holdout=p),dict(finalists=x.tolist()),dict(finalists=x.tolist(),candidates=x.tolist())
+
+def test_validation_pipeline_deterministic_known_winner(tmp_path):
+    from castles.search import validate_finalists
+    populations,g1,g2=_validation_fixture()
+    r=validate_finalists(populations,['named'],['prior'],['holdout'],g1,g2,
+                          output=tmp_path/'validation.json',n=16)
+    np.testing.assert_allclose(r['g2_prior_mean'],[3.75,9])
+    assert r['decision']['g2_index']==1
+    assert r['decision']['g1_index']==1
+    assert all(np.all(c['pass_3se']) for c in r['g1_crosschecks'].values())
+    assert len(r['named_regret_benchmark']['candidates'])==2
+
+def test_validation_deterministic_mismatch_fails_zero_se(tmp_path,monkeypatch):
+    import castles.search as search
+    original=search.g1_exact
+    monkeypatch.setattr(search,'g1_exact',lambda x,m:original(x,m)+.01)
+    populations,g1,g2=_validation_fixture()
+    r=search.validate_finalists(populations,['named'],['prior'],['holdout'],g1,g2,
+                                output=tmp_path/'validation.json',n=16)
+    assert not any(np.any(c['pass_3se']) for c in r['g1_crosschecks'].values())
+    assert all(np.all(np.isinf(c['z'])) for c in r['g1_crosschecks'].values())

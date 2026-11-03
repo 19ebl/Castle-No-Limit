@@ -5,6 +5,7 @@ standard errors do not measure uncertainty about that model.
 """
 from __future__ import annotations
 import itertools
+import hashlib
 import json
 from pathlib import Path
 import subprocess
@@ -32,7 +33,12 @@ def save_json(path, obj):
 
 def provenance(experiment_id, game, **extra):
     commit = subprocess.check_output(['git','rev-parse','HEAD'], text=True).strip()
+    root=Path(__file__).resolve().parents[2]
+    hashes={name:hashlib.sha256((root/name).read_bytes()).hexdigest()
+            for name in ('src/castles/engine.py','src/castles/search.py','src/castles/rules.py','src/castles/populations.py')
+            if (root/name).exists()}
     return dict(id=experiment_id, agent='codex', commit_sha=commit, game=game,
+                implementation_source_sha256=hashes,
                 implementation='Codex search; independent implementation checks recorded separately', **extra)
 
 
@@ -143,7 +149,7 @@ def g2_search(populations, named, prior, g1, output='results/experiments/CX-030.
             sophisticated.append(p.g2[ix])
     candidates=unique_allocations(all_allocations(5),concentration_candidates(),
         np.array([x['allocation'] for x in g1['top100']]),*sophisticated)
-    reduced=prior[np.linspace(0,len(prior)-1,8,dtype=int)].tolist() if isinstance(prior,np.ndarray) else [prior[i] for i in np.linspace(0,len(prior)-1,8,dtype=int)]
+    reduced=[prior[int(i)] for i in np.linspace(0,len(prior)-1,8,dtype=int)]
     screen=evaluate_scenarios(candidates,reduced+named,populations,5000,seeds['screen'])
     screen_mean=scenario_matrix(screen,reduced).mean(axis=1)
     keep=set(np.argsort(screen_mean)[-2000:].tolist())
@@ -153,45 +159,80 @@ def g2_search(populations, named, prior, g1, output='results/experiments/CX-030.
     race=g2_eval(raced,race_opps)
     order=np.argsort(race['mean'])[::-1]
     local_starts=raced[order[:50]]
-    local_opps=prior_opponents(50000,prior,populations,seeds['local'])
-    confirm_opps=prior_opponents(100000,prior,populations,seeds['confirmation'])
-    local_results=[]
+    current_starts=local_starts.copy()
     accepted=[]
-    # Shared draws for every neighbor; confirm each accepted chain on a fresh fixed bank.
-    for start_i,start in enumerate(local_starts):
-        current=start.copy()
-        for round_i in range(3):
+    round_stats=[]
+    stale_rounds=0
+    leader=local_starts[0].copy()
+    search_deadline=time.monotonic()+3600  # bounded independently of global owner budget
+    stop_reason='ten_round_cap'
+    # Every global round uses fresh local draws, fresh per-move confirmation,
+    # and a third bank for the leader comparison that controls stopping.
+    for round_i in range(10):
+        local_opps=prior_opponents(50000,prior,populations,seeds['local']+round_i)
+        old_leader=leader.copy()
+        accepted_this_round=0
+        for start_i,current in enumerate(current_starts):
             hood=unique_allocations([current],neighbors(current))
             res=g2_eval(hood,local_opps)
             best=hood[np.argmax(res['mean'])]
-            if np.array_equal(best,current):break
+            if np.array_equal(best,current):continue
             a=_payouts(best,local_opps)[0].astype(float)
             b=_payouts(current,local_opps)[0].astype(float)
             d=(a-b)/12
             se=d.std(ddof=1)/np.sqrt(len(d))
-            if d.mean()<=2*se:break
-            fresh_confirm=prior_opponents(100000,prior,populations,seeds['confirmation']+100+start_i*10+round_i)
+            if d.mean()<=2*se:continue
+            fresh_confirm=prior_opponents(100000,prior,populations,seeds['confirmation']+100+round_i*100+start_i)
             a=_payouts(best,fresh_confirm)[0].astype(float)
             b=_payouts(current,fresh_confirm)[0].astype(float)
             d2=(a-b)/12
             se2=d2.std(ddof=1)/np.sqrt(len(d2))
-            if d2.mean()<=2*se2:break
+            if d2.mean()<=2*se2:continue
             accepted.append(dict(start=start_i,round=round_i,old=current.copy(),new=best.copy(),
                                  paired_gain=d.mean(),paired_se=se,confirmation_gain=d2.mean(),confirmation_se=se2))
-            current=best.copy()
-        local_results.append(current)
-    contenders=unique_allocations(raced[order[:200]],local_results)
+            current_starts[start_i]=best
+            accepted_this_round+=1
+        leader_opps=prior_opponents(200000,prior,populations,seeds['confirmation']+2000+round_i)
+        leaders=unique_allocations([old_leader],current_starts)
+        leader_eval=g2_eval(leaders,leader_opps)
+        leader=leaders[np.argmax(leader_eval['mean'])].copy()
+        diff=(_payouts(leader,leader_opps)[0].astype(float)-_payouts(old_leader,leader_opps)[0])/12
+        gain=float(diff.mean());gain_se=float(diff.std(ddof=1)/np.sqrt(len(diff)))
+        statistically_tied=abs(gain)<=1.96*gain_se
+        small_tied=gain<.01 and statistically_tied
+        stale_rounds=stale_rounds+1 if small_tied else 0
+        round_stats.append(dict(round=round_i,leader=leader.copy(),prior_mean=float(np.max(leader_eval['mean'])),
+            paired_gain=gain,paired_se=gain_se,statistically_tied=statistically_tied,
+            accepted=accepted_this_round,consecutive_small_tied_rounds=stale_rounds))
+        if stale_rounds>=2:
+            stop_reason='two_consecutive_rounds_below_0.01_and_statistically_tied'
+            break
+        if time.monotonic()>=search_deadline:
+            stop_reason='one_hour_local_search_deadline'
+            break
+    # Preserve specialized named-scenario responses, even if their prior mean
+    # is low, to avoid understating regret against concentrated scenarios.
+    named_leaders=np.array([candidates[np.argmax(screen[name]['mean'])] for name in named])
+    contenders=unique_allocations(raced[order[:200]],current_starts,[leader],named_leaders)
+    confirm_opps=prior_opponents(100000,prior,populations,seeds['confirmation'])
     rerace=g2_eval(contenders,confirm_opps)
     keep=np.argsort(rerace['mean'])[::-1][:30]
-    top30=contenders[keep]
+    top30=unique_allocations(contenders[keep],named_leaders)
     full={}
     checkpoint=Path(output).with_suffix('.checkpoint.json')
+    checkpoint_config=jsonable(dict(candidates=top30,seeds=seeds,names=named+prior,
+        population_seeds={name:populations[name].seed for name in named+prior}))
+    if checkpoint.exists():
+        previous=json.loads(checkpoint.read_text())
+        if previous.get('configuration')==checkpoint_config:
+            full=previous['scenarios']
     for i,name in enumerate(named+prior):
+        if name in full:continue
         opps=g2_sample_opponents(populations[name],100000,seeds['full']+i)
         full[name]=g2_eval(top30,opps)
         full[name].update(seed=seeds['full']+i,groups=100000)
         if (i+1)%20==0:
-            save_json(checkpoint,dict(candidates=top30,scenarios=full))
+            save_json(checkpoint,dict(configuration=checkpoint_config,scenarios=full))
     prior_scores=scenario_matrix(full,prior)
     named_scores=scenario_matrix(full,named)
     primary=prior_scores.mean(axis=1)
@@ -208,12 +249,13 @@ def g2_search(populations, named, prior, g1, output='results/experiments/CX-030.
         sample_counts=dict(screen_per_candidate_per_reduced_scenario=5000,race_prior_groups=50000,
                           local_prior_groups=50000,local_confirmation_prior_groups=100000,top30_per_scenario=100000),
         counts=dict(initial_candidates=len(candidates),grid_candidates=len(all_allocations(5)),race_candidates=len(raced),
-                    local_starts=50,local_accepted=len(accepted),top30=len(top30)),
+                    local_starts=50,local_accepted=len(accepted),prior_top30_plus_named_benchmarks=len(top30)),
         reduced_prior=reduced,screen_named_best={n:candidates[np.argmax(screen[n]['mean'])] for n in named},
         candidates=top30,finalists=finalists,ranking=ranking,scenario_results=full,local_accepted=accepted,
+        local_rounds=round_stats,local_stop_reason=stop_reason,
         runtime_seconds=time.perf_counter()-started,
         notes=['Search estimates are not final headline numbers.',
-               'Named regret is measured against the top30 candidate set; it is a lower bound on unrestricted regret.',
+               'Named regret is measured against the prior top30 plus named screening leaders; it is a lower bound on unrestricted regret.',
                'A group always uses three opponents from the same population scenario.',
                'Each accepted local move is confirmed on a fresh independently seeded bank; fresh final validation is mandatory.'])
     save_json(output,result)
@@ -234,6 +276,13 @@ def validate_finalists(populations,named,prior,holdout,g1,g2,
         paired_g2={},notes=['Fresh seeds, fixed finalists, no tuning on holdout.',
             'Confidence intervals quantify Monte Carlo sampling only, conditional on the modeled populations.',
             'Place probabilities split tied occupied ranks equally; they are not the probability of sole first.'])
+    checkpoint=Path(output).with_suffix('.checkpoint.json')
+    if checkpoint.exists():
+        previous=json.loads(checkpoint.read_text())
+        signature_keys=('commit_sha','implementation_source_sha256','seed','scenarios','scenario_seeds','sample_counts','candidates')
+        if all(previous.get(key)==jsonable(result[key]) for key in signature_keys):
+            result['g2']=previous.get('g2',{})
+            result['paired_g2']=previous.get('paired_g2',{})
     for name in all_names:
         result['g1_exact'][name]=g1_exact(x1,g1_marginals(populations[name]))
     # One direct mixture of scenarios is valid for additive Game1 expectations.
@@ -268,6 +317,7 @@ def validate_finalists(populations,named,prior,holdout,g1,g2,
     # Store paired differences for every finalist pair on the same groups.
     pairs=list(itertools.combinations(range(len(x2)),2))
     for i,name in enumerate(all_names):
+        if name in result['g2'] and name in result['paired_g2']:continue
         opps=g2_sample_opponents(populations[name],n,seed+1000+i)
         result['g2'][name]=g2_eval(x2,opps)
         result['g2'][name].update(seed=seed+1000+i,groups=n)

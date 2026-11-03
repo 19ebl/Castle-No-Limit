@@ -41,3 +41,14 @@ def test_top100_dp_matches_all_4598126_allocations():
     np.testing.assert_allclose(actual, expected, atol=2e-14, rtol=0)
     np.testing.assert_allclose(g1_exact(paths, marginals), actual, atol=2e-14, rtol=0)
     assert len(np.unique(paths, axis=0)) == 100
+
+
+def test_numpy_fallback_exact_top100_matches_accelerated():
+    from castles.engine import _g1_top_numpy
+    rng = np.random.default_rng(771)
+    marg = rng.dirichlet(np.ones(101),size=5)
+    x, scores = _g1_top_numpy(g1_table(marg),100)
+    _, expected = g1_top(g1_table(marg),100)
+    np.testing.assert_allclose(scores,expected,atol=1e-13)
+    np.testing.assert_allclose(g1_exact(x,marg),scores,atol=1e-13)
+    assert len(np.unique(x,axis=0)) == 100

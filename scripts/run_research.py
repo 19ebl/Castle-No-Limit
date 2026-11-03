@@ -20,9 +20,10 @@ if args.phase in ('preregister','validate'):
     frozen=dict(finalists_g1=g1['finalists'],finalists_g2=g2['finalists'],
         population_seed=args.population_seed,validation_seed=args.seed or 505000,
         groups=args.groups,named=named,prior=prior,holdout=holdout,
-        population_source_sha256=hashlib.sha256(Path(population_module.__file__).read_bytes()).hexdigest(),
+        implementation_source_sha256={name:hashlib.sha256(Path(name).read_bytes()).hexdigest()
+            for name in ('src/castles/engine.py','src/castles/search.py','src/castles/rules.py','src/castles/populations.py','scripts/run_research.py')},
         primary_metric='arithmetic mean of scores over the frozen 200 prior scenarios',
-        tie_break='lower maximum named-scenario regret against the frozen top30 candidate set',
+        tie_break='lower maximum named-scenario regret against the frozen search benchmark candidate set',
         benchmark_candidates=g2['candidates'])
     if args.phase=='preregister':
         if prereg_path.exists() and json.loads(prereg_path.read_text())!=frozen:
