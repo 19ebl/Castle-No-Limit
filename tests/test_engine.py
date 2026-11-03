@@ -27,3 +27,17 @@ def test_top_k_dp_matches_exhaustive_restricted_budget():
     assert np.all(xs.sum(axis=1)==100)
     assert len(np.unique(xs,axis=0))==5
     assert np.all(np.diff(ss)<=0)
+
+def test_top100_dp_matches_all_4598126_allocations():
+    """Independent full feasible-set check of the k-best DP recurrence."""
+    from castles.engine import all_allocations
+    rng = np.random.default_rng(1681)
+    marginals = rng.dirichlet(np.ones(101), size=5)
+    allocations = all_allocations()
+    assert allocations.shape == (4_598_126, 5)
+    scores = g1_exact(allocations, marginals)
+    expected = np.sort(scores)[-100:][::-1]
+    paths, actual = g1_top(g1_table(marginals), 100)
+    np.testing.assert_allclose(actual, expected, atol=2e-14, rtol=0)
+    np.testing.assert_allclose(g1_exact(paths, marginals), actual, atol=2e-14, rtol=0)
+    assert len(np.unique(paths, axis=0)) == 100
