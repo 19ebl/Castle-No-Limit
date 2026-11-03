@@ -130,8 +130,11 @@ def render(g1, g2, final):
                                 prior_p10=item["prior_p10"]))
         sections += [f"### Game {game}", markdown_table(
             ["Rank", "Allocation", "Prior mean", "Prior 10th percentile", "Maximum named regret"] + named, rows)]
+    benchmark_count = len(g2.get("candidates", g2["ranking"]))
     sections.append("Game 1 scores and unrestricted scenario best responses are exact. Game 2 search means are Monte Carlo estimates; "
-                    "its regret is measured against the saved top-30 candidate set and is a lower bound on unrestricted regret.")
+                    f"its regret is measured against the saved {benchmark_count}-candidate benchmark set "
+                    "(prior leaders plus named-scenario screening leaders). Candidate-set regret is a lower bound on unrestricted regret "
+                    "when evaluated exactly; the reported estimates also contain Monte Carlo error.")
 
     decision = final["decision"]
     sections += ["## Decision and provenance", f"Game 2 paired prior leader-minus-runner-up interval: "
@@ -141,7 +144,13 @@ def render(g1, g2, final):
                        [[run.get("id", ""), run.get("commit_sha", ""), number(run.get("runtime_seconds", 0)),
                          json.dumps(run.get("sample_counts", {}), sort_keys=True),
                          json.dumps(run.get("seeds", run.get("seed", "")), sort_keys=True)] for run in (g1,g2,final)]),
-        "## Assumptions and limits",
+        ]
+    hashes = [[run.get("id", ""), source, digest]
+              for run in (g1, g2, final)
+              for source, digest in run.get("implementation_source_sha256", {}).items()]
+    if hashes:
+        sections += ["### Implementation source SHA-256", markdown_table(["Run", "Source", "SHA-256"], hashes)]
+    sections += ["## Assumptions and limits",
         "Scores are conditional on finite, seeded, hypothetical applicant populations. The fixed prior gives equal weight to its saved scenarios; "
         "it is a modeling choice rather than an empirically calibrated applicant forecast. Game 2 draws all three opponents from the same scenario. "
         "The prior Monte Carlo SE combines independent scenario errors as sqrt(sum(SE²))/number of scenarios. "
