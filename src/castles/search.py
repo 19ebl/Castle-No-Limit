@@ -198,11 +198,16 @@ def g2_search(populations, named, prior, g1, output='results/experiments/CX-030.
         leader=leaders[np.argmax(leader_eval['mean'])].copy()
         diff=(_payouts(leader,leader_opps)[0].astype(float)-_payouts(old_leader,leader_opps)[0])/12
         gain=float(diff.mean());gain_se=float(diff.std(ddof=1)/np.sqrt(len(diff)))
-        statistically_tied=abs(gain)<=1.96*gain_se
+        ranked=np.argsort(leader_eval['mean'])[::-1]
+        runner=leaders[ranked[1]] if len(ranked)>1 else leader
+        top_diff=(_payouts(leader,leader_opps)[0].astype(float)-_payouts(runner,leader_opps)[0])/12
+        top_gap=float(top_diff.mean());top_se=float(top_diff.std(ddof=1)/np.sqrt(len(top_diff)))
+        statistically_tied=abs(top_gap)<=1.96*top_se
         small_tied=gain<.01 and statistically_tied
         stale_rounds=stale_rounds+1 if small_tied else 0
-        round_stats.append(dict(round=round_i,leader=leader.copy(),prior_mean=float(np.max(leader_eval['mean'])),
-            paired_gain=gain,paired_se=gain_se,statistically_tied=statistically_tied,
+        round_stats.append(dict(round=round_i,leader=leader.copy(),runner_up=runner.copy(),prior_mean=float(np.max(leader_eval['mean'])),
+            paired_gain=gain,paired_se=gain_se,top_two_paired_gap=top_gap,top_two_paired_se=top_se,
+            statistically_tied=statistically_tied,
             accepted=accepted_this_round,consecutive_small_tied_rounds=stale_rounds))
         if stale_rounds>=2:
             stop_reason='two_consecutive_rounds_below_0.01_and_statistically_tied'

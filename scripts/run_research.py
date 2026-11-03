@@ -22,7 +22,7 @@ if args.phase in ('preregister','validate'):
         groups=args.groups,named=named,prior=prior,holdout=holdout,
         implementation_source_sha256={name:hashlib.sha256(Path(name).read_bytes()).hexdigest()
             for name in ('src/castles/engine.py','src/castles/search.py','src/castles/rules.py','src/castles/populations.py','scripts/run_research.py')},
-        primary_metric='arithmetic mean of scores over the frozen 200 prior scenarios',
+        primary_metric=f'arithmetic mean of scores over the frozen {len(prior)} prior scenarios',
         tie_break='lower maximum named-scenario regret against the frozen search benchmark candidate set',
         benchmark_candidates=g2['candidates'])
     if args.phase=='preregister':
