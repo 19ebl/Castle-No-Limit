@@ -90,12 +90,13 @@ def main():
     ap.add_argument("--seed", type=int, default=20261103)
     ap.add_argument("--procs", type=int, default=max(1, (os.cpu_count() or 2) // 2))
     ap.add_argument("--id", default="CC-000-difftest")
+    ap.add_argument("--agent", default="claude-code")
     args = ap.parse_args()
 
     from castles import engine  # imported late so the reference path never touches it
 
     t0 = time.time()
-    report = {"id": args.id, "agent": "claude-code", "game": "both", "seed": args.seed,
+    report = {"id": args.id, "agent": args.agent, "game": "both", "seed": args.seed,
               "groups": args.groups, "checks": {}}
     try:
         report["commit"] = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
