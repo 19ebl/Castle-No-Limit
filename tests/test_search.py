@@ -61,3 +61,14 @@ def test_validation_deterministic_mismatch_fails_zero_se(tmp_path,monkeypatch):
                                 output=tmp_path/'validation.json',n=16)
     assert not any(np.any(c['pass_3se']) for c in r['g1_crosschecks'].values())
     assert all(np.all(np.isinf(c['z'])) for c in r['g1_crosschecks'].values())
+
+def test_promotion_preserves_historically_strong_candidates():
+    from castles.search import promote_local_history
+    endpoint=[1,0,48,51,0]
+    earlier=[0,0,48,52,0]
+    old=[0,0,50,50,0]
+    runner=[0,0,35,0,65]
+    candidates=promote_local_history([endpoint],[dict(old=old,new=earlier)],
+                                     [dict(leader=earlier,runner_up=runner)])
+    for x in (endpoint,earlier,old,runner):assert np.any(np.all(candidates==x,axis=1))
+    assert len(candidates)==4

@@ -2,17 +2,19 @@
 """Run one reproducible research phase from the repository root."""
 import argparse,hashlib,json,time
 from pathlib import Path
-from castles.search import g1_search,g2_search,validate_finalists,save_json
+from castles.search import g1_search,g2_search,g2_promote_recorded_history,validate_finalists,save_json
 from castles.populations import Population,get_population,list_scenarios
 from castles.snapshots import save_population_snapshot,load_population_snapshot,file_sha256
 import castles.populations as population_module
 
 parser=argparse.ArgumentParser()
-parser.add_argument('phase',choices=['g1','g2','preregister','validate'])
+parser.add_argument('phase',choices=['g1','g2','promote','preregister','validate'])
 parser.add_argument('--population-seed',type=int,default=110300)
 parser.add_argument('--seed',type=int)
 parser.add_argument('--groups',type=int,default=1000000)
+parser.add_argument('--g2-results',type=Path)
 args=parser.parse_args()
+g2_path=args.g2_results or Path('results/experiments/CX-031.json' if Path('results/experiments/CX-031.json').exists() else 'results/experiments/CX-030.json')
 named=list_scenarios('named');prior=list_scenarios('prior');holdout=list_scenarios('holdout')
 prereg_path=Path('research/log/CX-050-preregistration.json')
 source_sha=file_sha256(population_module.__file__)
@@ -39,8 +41,9 @@ def prepare(names,base_seed,path):
 
 if args.phase in ('preregister','validate'):
     g1=json.loads(Path('results/experiments/CX-020.json').read_text())
-    g2=json.loads(Path('results/experiments/CX-030.json').read_text())
+    g2=json.loads(g2_path.read_text())
     frozen=dict(finalists_g1=g1['finalists'],finalists_g2=g2['finalists'],
+        g2_results_path=str(g2_path),g2_results_sha256=file_sha256(g2_path),
         population_seed=args.population_seed,validation_seed=args.seed or 505000,
         groups=args.groups,named=named,prior=prior,holdout=holdout,
         training_snapshot=snapshot_summary(training_path),
@@ -73,6 +76,13 @@ elif args.phase=='g2':
     g1=json.loads(Path('results/experiments/CX-020.json').read_text())
     r=g2_search(populations,named,prior,g1,seed=args.seed or 203000)
     output='results/experiments/CX-030.json'
+elif args.phase=='promote':
+    initial_path=args.g2_results or Path('results/experiments/CX-030-superseded-promotion.json')
+    initial=json.loads(initial_path.read_text())
+    r=g2_promote_recorded_history(populations,named,prior,initial,seed=args.seed or 313000)
+    r['initial_search_path']=str(initial_path)
+    r['initial_search_sha256']=file_sha256(initial_path)
+    output='results/experiments/CX-031.json'
 else:
     r=validate_finalists(populations,named,prior,holdout,g1,g2,seed=args.seed or 505000,n=args.groups)
     output='results/experiments/CX-050.json'
