@@ -1,0 +1,260 @@
+{
+ "id": "CC-001-difftest",
+ "agent": "claude-code",
+ "game": "both",
+ "seed": 9917,
+ "groups": 1000000,
+ "checks": {
+  "reference_invariants": "pass",
+  "g2_group_units_mismatches": 0,
+  "g1_pair_units_mismatches": 0,
+  "g2_eval_probe": [
+   {
+    "x": [
+     20,
+     20,
+     20,
+     20,
+     20
+    ],
+    "ref_payout": 2.24747875,
+    "engine_payout": 2.24747875,
+    "ref_points": 2.371605,
+    "engine_points": 2.371605
+   },
+   {
+    "x": [
+     0,
+     0,
+     0,
+     50,
+     50
+    ],
+    "ref_payout": 7.3082899999999995,
+    "engine_payout": 7.3082899999999995,
+    "ref_points": 6.8967729166666665,
+    "engine_points": 6.8967729166666665
+   },
+   {
+    "x": [
+     0,
+     0,
+     34,
+     33,
+     33
+    ],
+    "ref_payout": 5.458514999999999,
+    "engine_payout": 5.458514999999999,
+    "ref_points": 5.388122916666667,
+    "engine_points": 5.388122916666667
+   },
+   {
+    "x": [
+     0,
+     0,
+     30,
+     35,
+     35
+    ],
+    "ref_payout": 5.8689475,
+    "engine_payout": 5.8689475,
+    "ref_points": 5.7323095833333335,
+    "engine_points": 5.7323095833333335
+   },
+   {
+    "x": [
+     0,
+     25,
+     25,
+     25,
+     25
+    ],
+    "ref_payout": 3.6270624999999996,
+    "engine_payout": 3.6270624999999996,
+    "ref_points": 3.592440416666667,
+    "engine_points": 3.592440416666667
+   },
+   {
+    "x": [
+     10,
+     10,
+     20,
+     30,
+     30
+    ],
+    "ref_payout": 3.54889375,
+    "engine_payout": 3.54889375,
+    "ref_points": 3.526979583333333,
+    "engine_points": 3.526979583333333
+   },
+   {
+    "x": [
+     23,
+     11,
+     11,
+     4,
+     51
+    ],
+    "ref_payout": 5.9735825,
+    "engine_payout": 5.9735825,
+    "ref_points": 5.087715,
+    "engine_points": 5.087715
+   },
+   {
+    "x": [
+     52,
+     22,
+     7,
+     16,
+     3
+    ],
+    "ref_payout": 1.6266025,
+    "engine_payout": 1.6266025,
+    "ref_points": 2.0368475,
+    "engine_points": 2.0368475
+   },
+   {
+    "x": [
+     3,
+     32,
+     15,
+     12,
+     38
+    ],
+    "ref_payout": 4.5109375,
+    "engine_payout": 4.5109375,
+    "ref_points": 4.204487916666666,
+    "engine_points": 4.204487916666666
+   },
+   {
+    "x": [
+     43,
+     2,
+     13,
+     23,
+     19
+    ],
+    "ref_payout": 1.8672374999999999,
+    "engine_payout": 1.8672374999999999,
+    "ref_points": 2.116460416666667,
+    "engine_points": 2.116460416666667
+   }
+  ],
+  "g1_exact_probe": [
+   {
+    "x": [
+     20,
+     20,
+     20,
+     20,
+     20
+    ],
+    "ref": 7.312975000000001,
+    "engine": 7.312974999999999
+   },
+   {
+    "x": [
+     0,
+     0,
+     0,
+     50,
+     50
+    ],
+    "ref": 9.029774999999999,
+    "engine": 9.029775
+   },
+   {
+    "x": [
+     0,
+     0,
+     34,
+     33,
+     33
+    ],
+    "ref": 9.503575,
+    "engine": 9.503575
+   },
+   {
+    "x": [
+     0,
+     0,
+     30,
+     35,
+     35
+    ],
+    "ref": 9.798925,
+    "engine": 9.798925
+   },
+   {
+    "x": [
+     0,
+     25,
+     25,
+     25,
+     25
+    ],
+    "ref": 8.47235,
+    "engine": 8.472349999999999
+   },
+   {
+    "x": [
+     10,
+     10,
+     20,
+     30,
+     30
+    ],
+    "ref": 8.74885,
+    "engine": 8.74885
+   },
+   {
+    "x": [
+     23,
+     11,
+     11,
+     4,
+     51
+    ],
+    "ref": 8.516350000000001,
+    "engine": 8.51635
+   },
+   {
+    "x": [
+     52,
+     22,
+     7,
+     16,
+     3
+    ],
+    "ref": 5.788225,
+    "engine": 5.788225
+   },
+   {
+    "x": [
+     3,
+     32,
+     15,
+     12,
+     38
+    ],
+    "ref": 8.5374,
+    "engine": 8.5374
+   },
+   {
+    "x": [
+     43,
+     2,
+     13,
+     23,
+     19
+    ],
+    "ref": 6.510675,
+    "engine": 6.510674999999999
+   }
+  ]
+ },
+ "commit": "engine from origin/codex/research 69321e9; reference from claude-code d52f8c1",
+ "pass": true,
+ "runtime_s": 45.2,
+ "notes": "Independent reproduction of the differential-test gate with a different seed (9917)."
+}
