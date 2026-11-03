@@ -8,15 +8,18 @@ different from codex's.
   payout, SE, P(1st..4th) and mean castle points, plus paired 95% CIs on the
   differences vs the first finalist.
 
-Scenario sets: "prior" (240 priors at seed base), "holdout" (each holdout spec at
-the given population seeds), or "named".
+Scenario sets: "prior", "holdout" or "named". --pop-seeds is a comma list of seed
+BASES; each scenario uses base + its global index in (named, prior, holdout)
+order, the same layout as codex's frozen snapshots (base 110300 = training
+snapshot; holdout i then uses 110549+i).
+
+Place probabilities split ties: a candidate tied with e others over places
+q..q+e counts 1/(e+1) in each, so P(1st..4th) sums to 1.
 
 Usage:
   PYTHONPATH=src python scripts/cc_replicate.py --id CC-050 --kind holdout \
-      --pop-seeds 410300,510300,610300 --draw-seed 777001 --groups 1000000 \
+      --pop-seeds 110300,210300,310300 --draw-seed 777001 --groups 1000000 \
       --g1 '[[1,11,1,36,51],...]' --g2 '[[1,0,48,51,0],...]'
-For --kind prior, --pop-seeds is a seed BASE (scenario i uses base+i, as in the
-frozen training snapshot when base=110300).
 """
 import argparse
 import json
@@ -49,11 +52,14 @@ def g1_mc(cands, pop, n, rng):
     return out
 
 
-def g2_detail(cands, opps):
-    """Per-group payout units (C, n) and castle units (C, n) for each candidate."""
+def g2_detail(cands, opps, with_places=False):
+    """Per-group payout units (C, n) and castle units (C, n) for each candidate.
+    With with_places, also return (C, 4) summed place shares: a candidate tied
+    with e others for places q..q+e is counted 1/(e+1) in each of those places."""
     n = len(opps)
     pay = np.empty((len(cands), n), dtype=np.int64)
     pts = np.empty((len(cands), n), dtype=np.int64)
+    places = np.zeros((len(cands), 4))
     for c, x in enumerate(cands):
         g = np.concatenate([np.broadcast_to(x, (n, 1, 5)), opps], axis=1)
         top = g.max(axis=1, keepdims=True)
@@ -63,7 +69,19 @@ def g2_detail(cands, opps):
         eq = (u[:, 1:] == u[:, :1]).sum(1)
         pay[c] = (CS[above + eq + 1] - CS[above]) // (eq + 1)
         pts[c] = u[:, 0]
+        if with_places:
+            for q in range(4):
+                occ = (above <= q) & (q <= above + eq)
+                places[c, q] = (occ / (eq + 1)).sum()
+    if with_places:
+        return pay, pts, places
     return pay, pts
+
+
+def global_order():
+    """Scenario order used for population seeds (seed = base + global index):
+    named, then prior, then holdout, as in codex's frozen snapshots."""
+    return P.list_scenarios("named") + P.list_scenarios("prior") + P.list_scenarios("holdout")
 
 
 def main():
@@ -82,12 +100,10 @@ def main():
     G1 = np.array(json.loads(a.g1), dtype=np.int64)
     G2 = np.array(json.loads(a.g2), dtype=np.int64)
     seeds = [int(s) for s in a.pop_seeds.split(",")]
-    units = []  # (scenario name, population seed)
-    if a.kind == "prior":
-        units = [(n, seeds[0] + i) for i, n in enumerate(P.list_scenarios("prior"))]
-    else:
-        for s in seeds:
-            units += [(n, s) for n in P.list_scenarios(a.kind)]
+    order = global_order()
+    units = []  # (scenario name, population seed = base + global index)
+    for base in seeds:
+        units += [(n, base + order.index(n)) for n in P.list_scenarios(a.kind)]
     res = {"id": a.id, "agent": "claude-code", "kind": a.kind, "pop_seeds": seeds,
            "draw_seed": a.draw_seed, "groups": a.groups, "g1_mc_matchups": a.g1mc,
            "commit": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
@@ -105,15 +121,12 @@ def main():
         while n_done < a.groups:
             m = min(a.chunk, a.groups - n_done)
             opps = P.sample_opps(pop.g2, pop.w, m, rng)
-            pay, pts = g2_detail(G2, opps)
+            pay, pts, plc = g2_detail(G2, opps, with_places=True)
             pay_f = pay / 12.0
             sum_pay += pay_f.sum(1); sum_p2 += (pay_f ** 2).sum(1); sum_pts += (pts / 12.0).sum(1)
             d = pay_f - pay_f[:1]
             sum_d += d.sum(1); sum_d2 += (d ** 2).sum(1)
-            # place probabilities, ties split fractionally by payout-share convention:
-            # report P(sole or shared k-th) as payout-equivalent counts for exact places
-            for p_i, val in enumerate((108, 48, 24, 0)):
-                place[:, p_i] += (pay == val).sum(1)
+            place += plc
             n_done += m
         n = a.groups
         mean = sum_pay / n
@@ -129,7 +142,7 @@ def main():
                      "ci95": [float(mean[i] - 1.96 * se[i]), float(mean[i] + 1.96 * se[i])],
                      "diff_vs_first": float(dm[i]),
                      "diff_ci95": [float(dm[i] - 1.96 * dse[i]), float(dm[i] + 1.96 * dse[i])],
-                     "p_sole_place_1to4": (place[i] / n).tolist(),
+                     "p_place_1to4": (place[i] / n).tolist(),
                      "mean_castle_points": float(sum_pts[i] / n)} for i in range(len(G2))]}
         res["units"].append(u)
         print(f"[{time.time()-t0:6.0f}s] {name}@{ps}: G1 " +
