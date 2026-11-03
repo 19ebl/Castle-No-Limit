@@ -1,0 +1,50 @@
+{
+  "id": "CX-051",
+  "agent": "codex",
+  "commit_sha": "dd38ac69ee1dd1b60c99ebb9e844f193dd724ed4",
+  "game": 1,
+  "implementation_source_sha256": {
+    "src/castles/engine.py": "eb876192becf8d512eada655fe57e88ada7bd187727f055552b52d4aee875b46",
+    "src/castles/search.py": "b752a65f613bcc73bd232c76e6fcada7220b3731029f1d17a585bac24491e2a6",
+    "src/castles/rules.py": "8d735d80611abd20523a4a9b26c255cd716ac08c345209b497c2c85b1b3dbb86",
+    "src/castles/populations.py": "bee92b5b5fcc278f6958bfa6aa608827ddf6f688905a05faaa32b21058a18366"
+  },
+  "implementation": "Codex search; independent implementation checks recorded separately",
+  "scenarios": [
+    "holdout_sophisticated"
+  ],
+  "seed": 505503,
+  "candidates": [
+    [
+      1,
+      11,
+      1,
+      36,
+      51
+    ]
+  ],
+  "sample_counts": {
+    "finite_pool_rows": 1600,
+    "matchups": 1000000
+  },
+  "means": {
+    "independent_weighted_reference": 8.769437499999997,
+    "engine_exact": 8.769437499999999,
+    "fixed_sample": 8.7616525
+  },
+  "standard_errors": {
+    "fixed_sample": 0.002357716857061621
+  },
+  "z": -3.3019232045101896,
+  "reference_equals_engine": true,
+  "checkpoint_reproduced": true,
+  "holdout_archive_sha256": "d1f8827af9392b16af4ffd6231c19b08b5c304cce562ab8f8e6779a4f4f0a86f",
+  "runtime_seconds": 0.09584617400014395,
+  "notes": [
+    "Diagnostic of prespecified3SE failure, not a replacement sample.",
+    "Claude Fraction reference scorer applied independently to every finite opponent row, then weighted by exact frozen model weights.",
+    "The same seeded sampled opponent rowindices reproduce the originalcrosscheck mean and standarderror.",
+    "No engine mismatch found; original3SE tailfailure remains reported.",
+    "Independent freshseed replication is still required; do not selectseeds untilpassing."
+  ]
+}
