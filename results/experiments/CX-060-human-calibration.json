@@ -1,0 +1,1397 @@
+{
+  "id": "CX-060",
+  "agent": "codex",
+  "game": "historical-human-tendencies-only",
+  "generated_at": "2026-11-03T04:49:42.541566+00:00",
+  "commit_sha": "69321e97ee6394936d56e7ee46fc2545d4cb8347",
+  "upstream_repository": "fivethirtyeight/data",
+  "upstream_commit": "4c1ff5e3aef1816ae04af63218015066e186c147",
+  "scenarios": [],
+  "seeds": [],
+  "sample_counts": {
+    "historical_submissions": 5405
+  },
+  "candidates": [],
+  "means": [],
+  "standard_errors": [],
+  "runtime_seconds": 1.5594952540000122,
+  "rounds": [
+    {
+      "round": 1,
+      "file": "castle-solutions.csv",
+      "url": "https://raw.githubusercontent.com/fivethirtyeight/data/4c1ff5e3aef1816ae04af63218015066e186c147/riddler-castles/castle-solutions.csv",
+      "sha256": "b54bf29a0d4863b46585da6e2582f6791e1fc9a6e14b4c694186e9b7b9f848e2",
+      "bytes": 392784,
+      "raw_submissions": 1349,
+      "invalid_submissions": 0,
+      "invalid_csv_row_numbers": [],
+      "castle_columns": [
+        "Castle 1",
+        "Castle 2",
+        "Castle 3",
+        "Castle 4",
+        "Castle 5",
+        "Castle 6",
+        "Castle 7",
+        "Castle 8",
+        "Castle 9",
+        "Castle 10"
+      ],
+      "valid_submissions": 1349,
+      "castle_count": 10,
+      "unique_allocations": 1164,
+      "occupied_castles_mean": 8.166790214974055,
+      "zero_slots": {
+        "count": 2473,
+        "denominator": 13490,
+        "fraction": 0.18332097850259452
+      },
+      "first_castle_abandoned": {
+        "count": 427,
+        "denominator": 1349,
+        "fraction": 0.31653076352853965
+      },
+      "first_two_castles_both_abandoned": {
+        "count": 291,
+        "denominator": 1349,
+        "fraction": 0.2157153446997776
+      },
+      "first_three_castles_all_abandoned": {
+        "count": 208,
+        "denominator": 1349,
+        "fraction": 0.1541882876204596
+      },
+      "at_least_one_of_first_three_abandoned": {
+        "count": 488,
+        "denominator": 1349,
+        "fraction": 0.3617494440326168
+      },
+      "all_positive_counts_multiple_of_five": {
+        "count": 128,
+        "denominator": 1349,
+        "fraction": 0.09488510007412898
+      },
+      "all_positive_counts_multiple_of_ten": {
+        "count": 43,
+        "denominator": 1349,
+        "fraction": 0.03187546330615271
+      },
+      "positive_counts_multiple_of_five": {
+        "count": 2322,
+        "denominator": 11017,
+        "fraction": 0.21076518108377962
+      },
+      "positive_counts_multiple_of_ten": {
+        "count": 1118,
+        "denominator": 11017,
+        "fraction": 0.10147953163293093
+      },
+      "counts_ge5_multiple_of_five": {
+        "count": 2322,
+        "denominator": 7403,
+        "fraction": 0.3136566256922869
+      },
+      "counts_ge5_one_above_multiple_of_five": {
+        "count": 1906,
+        "denominator": 7403,
+        "fraction": 0.25746319059840606
+      },
+      "counts_ge10_multiple_of_ten": {
+        "count": 1118,
+        "denominator": 6085,
+        "fraction": 0.18373048479868528
+      },
+      "counts_ge10_one_above_multiple_of_ten": {
+        "count": 1057,
+        "denominator": 6085,
+        "fraction": 0.17370583401807724
+      },
+      "positive_counts_equal_one": {
+        "count": 1756,
+        "denominator": 11017,
+        "fraction": 0.15939003358446038
+      },
+      "last_three_castles_at_least70_soldiers": {
+        "count": 191,
+        "denominator": 1349,
+        "fraction": 0.14158636026686433
+      },
+      "castle_mean_counts": [
+        2.475908080059303,
+        3.23943661971831,
+        4.1875463306152705,
+        6.8687916975537435,
+        9.088213491475166,
+        12.995552260934025,
+        15.909562638991845,
+        18.89844329132691,
+        15.644922164566346,
+        10.691623424759081
+      ],
+      "castle_zero_rates": [
+        {
+          "count": 427,
+          "denominator": 1349,
+          "fraction": 0.31653076352853965
+        },
+        {
+          "count": 346,
+          "denominator": 1349,
+          "fraction": 0.25648628613787994
+        },
+        {
+          "count": 314,
+          "denominator": 1349,
+          "fraction": 0.23276501111934766
+        },
+        {
+          "count": 218,
+          "denominator": 1349,
+          "fraction": 0.16160118606375093
+        },
+        {
+          "count": 189,
+          "denominator": 1349,
+          "fraction": 0.14010378057820608
+        },
+        {
+          "count": 136,
+          "denominator": 1349,
+          "fraction": 0.10081541882876205
+        },
+        {
+          "count": 113,
+          "denominator": 1349,
+          "fraction": 0.083765752409192
+        },
+        {
+          "count": 122,
+          "denominator": 1349,
+          "fraction": 0.0904373610081542
+        },
+        {
+          "count": 240,
+          "denominator": 1349,
+          "fraction": 0.17790956263899185
+        },
+        {
+          "count": 368,
+          "denominator": 1349,
+          "fraction": 0.2727946627131208
+        }
+      ],
+      "count_histogram": [
+        2473,
+        1756,
+        1095,
+        453,
+        310,
+        415,
+        244,
+        264,
+        186,
+        209,
+        417,
+        564,
+        273,
+        273,
+        289,
+        410,
+        339,
+        227,
+        279,
+        218,
+        451,
+        350,
+        182,
+        120,
+        140,
+        313,
+        232,
+        83,
+        84,
+        86,
+        205,
+        124,
+        66,
+        50,
+        69,
+        57,
+        32,
+        19,
+        21,
+        9,
+        26,
+        15,
+        10,
+        1,
+        2,
+        4,
+        1,
+        1,
+        4,
+        1,
+        10,
+        4,
+        1,
+        1,
+        0,
+        3,
+        0,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        6
+      ]
+    },
+    {
+      "round": 2,
+      "file": "castle-solutions-2.csv",
+      "url": "https://raw.githubusercontent.com/fivethirtyeight/data/4c1ff5e3aef1816ae04af63218015066e186c147/riddler-castles/castle-solutions-2.csv",
+      "sha256": "0c241a3c06b97ab17e028bbdff745c51066cbf606beac770479f5fdc4d81463a",
+      "bytes": 206364,
+      "raw_submissions": 902,
+      "invalid_submissions": 0,
+      "invalid_csv_row_numbers": [],
+      "castle_columns": [
+        "Castle 1",
+        "Castle 2",
+        "Castle 3",
+        "Castle 4",
+        "Castle 5",
+        "Castle 6",
+        "Castle 7",
+        "Castle 8",
+        "Castle 9",
+        "Castle 10"
+      ],
+      "valid_submissions": 902,
+      "castle_count": 10,
+      "unique_allocations": 856,
+      "occupied_castles_mean": 9.022172949002217,
+      "zero_slots": {
+        "count": 882,
+        "denominator": 9020,
+        "fraction": 0.09778270509977827
+      },
+      "first_castle_abandoned": {
+        "count": 229,
+        "denominator": 902,
+        "fraction": 0.25388026607538805
+      },
+      "first_two_castles_both_abandoned": {
+        "count": 113,
+        "denominator": 902,
+        "fraction": 0.12527716186252771
+      },
+      "first_three_castles_all_abandoned": {
+        "count": 66,
+        "denominator": 902,
+        "fraction": 0.07317073170731707
+      },
+      "at_least_one_of_first_three_abandoned": {
+        "count": 276,
+        "denominator": 902,
+        "fraction": 0.30598669623059865
+      },
+      "all_positive_counts_multiple_of_five": {
+        "count": 47,
+        "denominator": 902,
+        "fraction": 0.052106430155210645
+      },
+      "all_positive_counts_multiple_of_ten": {
+        "count": 18,
+        "denominator": 902,
+        "fraction": 0.019955654101995565
+      },
+      "positive_counts_multiple_of_five": {
+        "count": 1556,
+        "denominator": 8138,
+        "fraction": 0.19120176947652986
+      },
+      "positive_counts_multiple_of_ten": {
+        "count": 608,
+        "denominator": 8138,
+        "fraction": 0.07471123126075203
+      },
+      "counts_ge5_multiple_of_five": {
+        "count": 1556,
+        "denominator": 5478,
+        "fraction": 0.28404527199707924
+      },
+      "counts_ge5_one_above_multiple_of_five": {
+        "count": 1488,
+        "denominator": 5478,
+        "fraction": 0.27163198247535597
+      },
+      "counts_ge10_multiple_of_ten": {
+        "count": 608,
+        "denominator": 3743,
+        "fraction": 0.16243654822335024
+      },
+      "counts_ge10_one_above_multiple_of_ten": {
+        "count": 675,
+        "denominator": 3743,
+        "fraction": 0.18033662837296285
+      },
+      "positive_counts_equal_one": {
+        "count": 623,
+        "denominator": 8138,
+        "fraction": 0.0765544359793561
+      },
+      "last_three_castles_at_least70_soldiers": {
+        "count": 78,
+        "denominator": 902,
+        "fraction": 0.08647450110864745
+      },
+      "castle_mean_counts": [
+        2.811529933481153,
+        4.015521064301552,
+        5.697339246119734,
+        7.941241685144124,
+        10.207317073170731,
+        11.84589800443459,
+        14.229490022172948,
+        17.26829268292683,
+        13.83370288248337,
+        12.149667405764967
+      ],
+      "castle_zero_rates": [
+        {
+          "count": 229,
+          "denominator": 902,
+          "fraction": 0.25388026607538805
+        },
+        {
+          "count": 150,
+          "denominator": 902,
+          "fraction": 0.1662971175166297
+        },
+        {
+          "count": 100,
+          "denominator": 902,
+          "fraction": 0.11086474501108648
+        },
+        {
+          "count": 86,
+          "denominator": 902,
+          "fraction": 0.09534368070953436
+        },
+        {
+          "count": 67,
+          "denominator": 902,
+          "fraction": 0.07427937915742794
+        },
+        {
+          "count": 62,
+          "denominator": 902,
+          "fraction": 0.06873614190687362
+        },
+        {
+          "count": 62,
+          "denominator": 902,
+          "fraction": 0.06873614190687362
+        },
+        {
+          "count": 44,
+          "denominator": 902,
+          "fraction": 0.04878048780487805
+        },
+        {
+          "count": 36,
+          "denominator": 902,
+          "fraction": 0.03991130820399113
+        },
+        {
+          "count": 46,
+          "denominator": 902,
+          "fraction": 0.050997782705099776
+        }
+      ],
+      "count_histogram": [
+        882,
+        623,
+        683,
+        736,
+        618,
+        525,
+        469,
+        292,
+        262,
+        187,
+        310,
+        302,
+        307,
+        203,
+        167,
+        247,
+        198,
+        153,
+        117,
+        80,
+        177,
+        201,
+        142,
+        111,
+        46,
+        146,
+        133,
+        106,
+        64,
+        23,
+        105,
+        161,
+        96,
+        42,
+        22,
+        30,
+        11,
+        3,
+        5,
+        0,
+        9,
+        5,
+        0,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "round": 3,
+      "file": "castle-solutions-3.csv",
+      "url": "https://raw.githubusercontent.com/fivethirtyeight/data/4c1ff5e3aef1816ae04af63218015066e186c147/riddler-castles/castle-solutions-3.csv",
+      "sha256": "d926f0996f6cb8779c966f65965f7eb30cfabe29d95423477287745b64f475a3",
+      "bytes": 253801,
+      "raw_submissions": 1321,
+      "invalid_submissions": 0,
+      "invalid_csv_row_numbers": [],
+      "castle_columns": [
+        "Castle 1",
+        "Castle 2",
+        "Castle 3",
+        "Castle 4",
+        "Castle 5",
+        "Castle 6",
+        "Castle 7",
+        "Castle 8",
+        "Castle 9",
+        "Castle 10"
+      ],
+      "valid_submissions": 1321,
+      "castle_count": 10,
+      "unique_allocations": 1269,
+      "occupied_castles_mean": 8.787282361847085,
+      "zero_slots": {
+        "count": 1602,
+        "denominator": 13210,
+        "fraction": 0.12127176381529145
+      },
+      "first_castle_abandoned": {
+        "count": 318,
+        "denominator": 1321,
+        "fraction": 0.24072672218016655
+      },
+      "first_two_castles_both_abandoned": {
+        "count": 186,
+        "denominator": 1321,
+        "fraction": 0.14080242240726723
+      },
+      "first_three_castles_all_abandoned": {
+        "count": 108,
+        "denominator": 1321,
+        "fraction": 0.0817562452687358
+      },
+      "at_least_one_of_first_three_abandoned": {
+        "count": 419,
+        "denominator": 1321,
+        "fraction": 0.31718395155185464
+      },
+      "all_positive_counts_multiple_of_five": {
+        "count": 67,
+        "denominator": 1321,
+        "fraction": 0.050719152157456475
+      },
+      "all_positive_counts_multiple_of_ten": {
+        "count": 21,
+        "denominator": 1321,
+        "fraction": 0.015897047691143074
+      },
+      "positive_counts_multiple_of_five": {
+        "count": 2344,
+        "denominator": 11608,
+        "fraction": 0.20192970365265334
+      },
+      "positive_counts_multiple_of_ten": {
+        "count": 1059,
+        "denominator": 11608,
+        "fraction": 0.0912301860785665
+      },
+      "counts_ge5_multiple_of_five": {
+        "count": 2344,
+        "denominator": 7366,
+        "fraction": 0.3182188433342384
+      },
+      "counts_ge5_one_above_multiple_of_five": {
+        "count": 1630,
+        "denominator": 7366,
+        "fraction": 0.22128699429812654
+      },
+      "counts_ge10_multiple_of_ten": {
+        "count": 1059,
+        "denominator": 5554,
+        "fraction": 0.19067338854879365
+      },
+      "counts_ge10_one_above_multiple_of_ten": {
+        "count": 733,
+        "denominator": 5554,
+        "fraction": 0.13197695354699315
+      },
+      "positive_counts_equal_one": {
+        "count": 1695,
+        "denominator": 11608,
+        "fraction": 0.14601998621640247
+      },
+      "last_three_castles_at_least70_soldiers": {
+        "count": 186,
+        "denominator": 1321,
+        "fraction": 0.14080242240726723
+      },
+      "castle_mean_counts": [
+        1.9386828160484482,
+        2.659348978046934,
+        4.05450416351249,
+        6.9182437547312645,
+        9.168811506434519,
+        12.009084027252081,
+        13.500378501135504,
+        16.89023467070401,
+        17.3111279333838,
+        15.549583648750946
+      ],
+      "castle_zero_rates": [
+        {
+          "count": 318,
+          "denominator": 1321,
+          "fraction": 0.24072672218016655
+        },
+        {
+          "count": 264,
+          "denominator": 1321,
+          "fraction": 0.19984859954579864
+        },
+        {
+          "count": 199,
+          "denominator": 1321,
+          "fraction": 0.1506434519303558
+        },
+        {
+          "count": 149,
+          "denominator": 1321,
+          "fraction": 0.11279333838001514
+        },
+        {
+          "count": 137,
+          "denominator": 1321,
+          "fraction": 0.10370931112793338
+        },
+        {
+          "count": 115,
+          "denominator": 1321,
+          "fraction": 0.08705526116578349
+        },
+        {
+          "count": 122,
+          "denominator": 1321,
+          "fraction": 0.09235427706283118
+        },
+        {
+          "count": 77,
+          "denominator": 1321,
+          "fraction": 0.0582891748675246
+        },
+        {
+          "count": 93,
+          "denominator": 1321,
+          "fraction": 0.07040121120363362
+        },
+        {
+          "count": 128,
+          "denominator": 1321,
+          "fraction": 0.09689629068887207
+        }
+      ],
+      "count_histogram": [
+        1602,
+        1695,
+        1171,
+        798,
+        578,
+        626,
+        383,
+        308,
+        259,
+        236,
+        406,
+        344,
+        281,
+        238,
+        217,
+        378,
+        312,
+        252,
+        257,
+        204,
+        405,
+        257,
+        238,
+        150,
+        154,
+        207,
+        168,
+        120,
+        105,
+        59,
+        196,
+        120,
+        112,
+        77,
+        77,
+        68,
+        31,
+        18,
+        6,
+        7,
+        34,
+        7,
+        3,
+        1,
+        4,
+        3,
+        3,
+        0,
+        1,
+        0,
+        12,
+        3,
+        0,
+        0,
+        2,
+        3,
+        0,
+        0,
+        0,
+        1,
+        3,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "round": 4,
+      "file": "castle-solutions-4.csv",
+      "url": "https://raw.githubusercontent.com/fivethirtyeight/data/4c1ff5e3aef1816ae04af63218015066e186c147/riddler-castles/castle-solutions-4.csv",
+      "sha256": "49f51653bdbb1f4962e4306a58a05f472d3f36117093dab923ec24fbdb4edf67",
+      "bytes": 23018,
+      "raw_submissions": 938,
+      "invalid_submissions": 0,
+      "invalid_csv_row_numbers": [],
+      "castle_columns": [
+        "Castle 1",
+        "Castle 2",
+        "Castle 3",
+        "Castle 4",
+        "Castle 5",
+        "Castle 6",
+        "Castle 7",
+        "Castle 8",
+        "Castle 9",
+        "Castle 10"
+      ],
+      "valid_submissions": 938,
+      "castle_count": 10,
+      "unique_allocations": 865,
+      "occupied_castles_mean": 7.865671641791045,
+      "zero_slots": {
+        "count": 2002,
+        "denominator": 9380,
+        "fraction": 0.21343283582089553
+      },
+      "first_castle_abandoned": {
+        "count": 358,
+        "denominator": 938,
+        "fraction": 0.3816631130063966
+      },
+      "first_two_castles_both_abandoned": {
+        "count": 235,
+        "denominator": 938,
+        "fraction": 0.2505330490405117
+      },
+      "first_three_castles_all_abandoned": {
+        "count": 149,
+        "denominator": 938,
+        "fraction": 0.15884861407249468
+      },
+      "at_least_one_of_first_three_abandoned": {
+        "count": 453,
+        "denominator": 938,
+        "fraction": 0.48294243070362475
+      },
+      "all_positive_counts_multiple_of_five": {
+        "count": 82,
+        "denominator": 938,
+        "fraction": 0.08742004264392324
+      },
+      "all_positive_counts_multiple_of_ten": {
+        "count": 36,
+        "denominator": 938,
+        "fraction": 0.03837953091684435
+      },
+      "positive_counts_multiple_of_five": {
+        "count": 1778,
+        "denominator": 7378,
+        "fraction": 0.2409867172675522
+      },
+      "positive_counts_multiple_of_ten": {
+        "count": 894,
+        "denominator": 7378,
+        "fraction": 0.1211710490647872
+      },
+      "counts_ge5_multiple_of_five": {
+        "count": 1778,
+        "denominator": 5349,
+        "fraction": 0.3323985791736773
+      },
+      "counts_ge5_one_above_multiple_of_five": {
+        "count": 1025,
+        "denominator": 5349,
+        "fraction": 0.19162460272948215
+      },
+      "counts_ge10_multiple_of_ten": {
+        "count": 894,
+        "denominator": 4165,
+        "fraction": 0.21464585834333733
+      },
+      "counts_ge10_one_above_multiple_of_ten": {
+        "count": 457,
+        "denominator": 4165,
+        "fraction": 0.10972388955582232
+      },
+      "positive_counts_equal_one": {
+        "count": 819,
+        "denominator": 7378,
+        "fraction": 0.1110056925996205
+      },
+      "last_three_castles_at_least70_soldiers": {
+        "count": 167,
+        "denominator": 938,
+        "fraction": 0.17803837953091683
+      },
+      "castle_mean_counts": [
+        2.2356076759061834,
+        2.7611940298507465,
+        4.157782515991471,
+        6.138592750533049,
+        8.284648187633262,
+        11.783582089552239,
+        12.809168443496802,
+        15.528784648187633,
+        18.074626865671643,
+        18.226012793176974
+      ],
+      "castle_zero_rates": [
+        {
+          "count": 358,
+          "denominator": 938,
+          "fraction": 0.3816631130063966
+        },
+        {
+          "count": 309,
+          "denominator": 938,
+          "fraction": 0.3294243070362473
+        },
+        {
+          "count": 262,
+          "denominator": 938,
+          "fraction": 0.279317697228145
+        },
+        {
+          "count": 210,
+          "denominator": 938,
+          "fraction": 0.22388059701492538
+        },
+        {
+          "count": 181,
+          "denominator": 938,
+          "fraction": 0.1929637526652452
+        },
+        {
+          "count": 171,
+          "denominator": 938,
+          "fraction": 0.18230277185501065
+        },
+        {
+          "count": 161,
+          "denominator": 938,
+          "fraction": 0.17164179104477612
+        },
+        {
+          "count": 122,
+          "denominator": 938,
+          "fraction": 0.1300639658848614
+        },
+        {
+          "count": 113,
+          "denominator": 938,
+          "fraction": 0.12046908315565032
+        },
+        {
+          "count": 115,
+          "denominator": 938,
+          "fraction": 0.12260127931769722
+        }
+      ],
+      "count_histogram": [
+        2002,
+        819,
+        530,
+        386,
+        294,
+        342,
+        257,
+        230,
+        198,
+        157,
+        327,
+        204,
+        187,
+        205,
+        196,
+        302,
+        184,
+        198,
+        242,
+        206,
+        379,
+        153,
+        152,
+        111,
+        97,
+        204,
+        108,
+        49,
+        69,
+        41,
+        172,
+        92,
+        75,
+        63,
+        46,
+        34,
+        19,
+        7,
+        7,
+        6,
+        13,
+        6,
+        2,
+        1,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "round": 5,
+      "file": "castle-solutions-5.csv",
+      "url": "https://raw.githubusercontent.com/fivethirtyeight/data/4c1ff5e3aef1816ae04af63218015066e186c147/riddler-castles/castle-solutions-5.csv",
+      "sha256": "070e23721257474a99b3ab444be51dc01b08d7d09ed191265eace931bc7eb55e",
+      "bytes": 27473,
+      "raw_submissions": 895,
+      "invalid_submissions": 0,
+      "invalid_csv_row_numbers": [],
+      "castle_columns": [
+        "Castle 1",
+        "Castle 2",
+        "Castle 3",
+        "Castle 4",
+        "Castle 5",
+        "Castle 6",
+        "Castle 7",
+        "Castle 8",
+        "Castle 9",
+        "Castle 10",
+        "Castle 11",
+        "Castle 12",
+        "Castle 13"
+      ],
+      "valid_submissions": 895,
+      "castle_count": 13,
+      "unique_allocations": 839,
+      "occupied_castles_mean": 10.508379888268156,
+      "zero_slots": {
+        "count": 2230,
+        "denominator": 11635,
+        "fraction": 0.19166308551783412
+      },
+      "first_castle_abandoned": {
+        "count": 387,
+        "denominator": 895,
+        "fraction": 0.4324022346368715
+      },
+      "first_two_castles_both_abandoned": {
+        "count": 298,
+        "denominator": 895,
+        "fraction": 0.3329608938547486
+      },
+      "first_three_castles_all_abandoned": {
+        "count": 243,
+        "denominator": 895,
+        "fraction": 0.27150837988826815
+      },
+      "at_least_one_of_first_three_abandoned": {
+        "count": 436,
+        "denominator": 895,
+        "fraction": 0.4871508379888268
+      },
+      "all_positive_counts_multiple_of_five": {
+        "count": 33,
+        "denominator": 895,
+        "fraction": 0.03687150837988827
+      },
+      "all_positive_counts_multiple_of_ten": {
+        "count": 14,
+        "denominator": 895,
+        "fraction": 0.01564245810055866
+      },
+      "positive_counts_multiple_of_five": {
+        "count": 1614,
+        "denominator": 9405,
+        "fraction": 0.17161084529505582
+      },
+      "positive_counts_multiple_of_ten": {
+        "count": 747,
+        "denominator": 9405,
+        "fraction": 0.07942583732057416
+      },
+      "counts_ge5_multiple_of_five": {
+        "count": 1614,
+        "denominator": 5714,
+        "fraction": 0.2824641232061603
+      },
+      "counts_ge5_one_above_multiple_of_five": {
+        "count": 1301,
+        "denominator": 5714,
+        "fraction": 0.22768638431921595
+      },
+      "counts_ge10_multiple_of_ten": {
+        "count": 747,
+        "denominator": 4081,
+        "fraction": 0.183043371722617
+      },
+      "counts_ge10_one_above_multiple_of_ten": {
+        "count": 554,
+        "denominator": 4081,
+        "fraction": 0.13575104141141878
+      },
+      "positive_counts_equal_one": {
+        "count": 1599,
+        "denominator": 9405,
+        "fraction": 0.1700159489633174
+      },
+      "last_three_castles_at_least70_soldiers": {
+        "count": 97,
+        "denominator": 895,
+        "fraction": 0.10837988826815642
+      },
+      "castle_mean_counts": [
+        1.3016759776536313,
+        1.5899441340782123,
+        2.1318435754189946,
+        3.0916201117318436,
+        4.5195530726256985,
+        5.697206703910615,
+        7.5050279329608935,
+        9.111731843575418,
+        10.316201117318435,
+        14.358659217877095,
+        14.46368715083799,
+        14.093854748603352,
+        11.818994413407822
+      ],
+      "castle_zero_rates": [
+        {
+          "count": 387,
+          "denominator": 895,
+          "fraction": 0.4324022346368715
+        },
+        {
+          "count": 336,
+          "denominator": 895,
+          "fraction": 0.3754189944134078
+        },
+        {
+          "count": 291,
+          "denominator": 895,
+          "fraction": 0.32513966480446926
+        },
+        {
+          "count": 220,
+          "denominator": 895,
+          "fraction": 0.24581005586592178
+        },
+        {
+          "count": 168,
+          "denominator": 895,
+          "fraction": 0.1877094972067039
+        },
+        {
+          "count": 135,
+          "denominator": 895,
+          "fraction": 0.15083798882681565
+        },
+        {
+          "count": 112,
+          "denominator": 895,
+          "fraction": 0.12513966480446928
+        },
+        {
+          "count": 104,
+          "denominator": 895,
+          "fraction": 0.11620111731843576
+        },
+        {
+          "count": 107,
+          "denominator": 895,
+          "fraction": 0.11955307262569832
+        },
+        {
+          "count": 42,
+          "denominator": 895,
+          "fraction": 0.04692737430167598
+        },
+        {
+          "count": 79,
+          "denominator": 895,
+          "fraction": 0.08826815642458101
+        },
+        {
+          "count": 104,
+          "denominator": 895,
+          "fraction": 0.11620111731843576
+        },
+        {
+          "count": 145,
+          "denominator": 895,
+          "fraction": 0.16201117318435754
+        }
+      ],
+      "count_histogram": [
+        2230,
+        1599,
+        1072,
+        634,
+        386,
+        393,
+        314,
+        318,
+        342,
+        266,
+        425,
+        356,
+        321,
+        290,
+        278,
+        306,
+        276,
+        153,
+        173,
+        109,
+        258,
+        156,
+        112,
+        99,
+        98,
+        160,
+        148,
+        75,
+        62,
+        46,
+        51,
+        40,
+        23,
+        13,
+        14,
+        6,
+        9,
+        2,
+        1,
+        0,
+        8,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    }
+  ],
+  "denominator_definitions": {
+    "submission_metrics": "One row per valid submission; duplicates retained because repeat submissions represent empirical frequencies.",
+    "positive_counts": "All castle slots with count>0, pooled within that round.",
+    "counts_ge5": "All castle slots with count>=5; +1 means counts6,11,16,...,96, not count1.",
+    "counts_ge10": "All castle slots with count>=10; +1 means counts11,21,...,91.",
+    "cheap_abandonment": "Zero soldiers in the explicitly listed lowest-value castles."
+  },
+  "notes": [
+    "Historical voluntary puzzle submissions, not a representative sample of finance applicants in2026.",
+    "Rounds1\u20134 have10 castles; round5 has13. Their rates are described separately.",
+    "Historical objective is head-to-head war wins, unlike this task's average castle points and four-way payouts.",
+    "One-above-round-number residues describe allocations, not proven intent to undercut.",
+    "Repeated rounds may contain returning players; no participant identifiers exist to estimate independence.",
+    "No standard errors or population inference reported for this descriptive convenience sample.",
+    "No allocations or coefficients are directly transferred to the five-castle model; canonical populations and final picks unchanged."
+  ]
+}

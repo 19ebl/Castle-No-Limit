@@ -1,0 +1,4 @@
+VALUES = (1, 2, 3, 4, 5)
+TOTAL = 100
+UNIT = 12
+PAYOUTS_UNITS = (108, 48, 24, 0)
