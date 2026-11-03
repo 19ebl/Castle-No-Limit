@@ -1,0 +1,3510 @@
+{
+  "id": "CX-061",
+  "agent": "codex",
+  "game": 1,
+  "commit_sha": "ec6fdfe5b820309fb118264acb4f8ff618296709",
+  "implementation_source_sha256": {
+    "/workspace/Castle-No-Limit/benchmarks/g1_equilibrium_audit.py": "f1ca4b9cb48d11c3a697a250b65396be7e2803d1fbeb61866d690e4ef387c17e",
+    "src/castles/engine.py": "eb876192becf8d512eada655fe57e88ada7bd187727f055552b52d4aee875b46",
+    "src/castles/rules.py": "8d735d80611abd20523a4a9b26c255cd716ac08c345209b497c2c85b1b3dbb86"
+  },
+  "seed": 610300,
+  "scenarios": [
+    "supplemental_exact_best_response_fictitious_play"
+  ],
+  "sample_counts": {
+    "fictitious_play_updates": 64663,
+    "empirical_actions": 64664,
+    "unique_support": 2464,
+    "feasible_best_response_allocations": 4598126
+  },
+  "candidates": [
+    [
+      1,
+      11,
+      1,
+      36,
+      51
+    ],
+    [
+      6,
+      3,
+      2,
+      38,
+      51
+    ],
+    [
+      1,
+      16,
+      1,
+      36,
+      46
+    ],
+    [
+      6,
+      3,
+      3,
+      37,
+      51
+    ],
+    [
+      6,
+      4,
+      1,
+      38,
+      51
+    ]
+  ],
+  "means": [
+    7.506703884696276,
+    7.507036372633923,
+    7.486151490783124,
+    7.504755350736113,
+    7.515866633675616
+  ],
+  "standard_errors": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "method": "Symmetric fictitious play: one exact unrestricted integer-allocation best response per iteration; uniform empirical past actions including seeded initializer; incremental marginal counts.",
+  "stopping": {
+    "max_iterations": 100000,
+    "tolerance": 0.049,
+    "attained_tolerance": true
+  },
+  "certificate": {
+    "exact_best_response": [
+      8,
+      24,
+      19,
+      47,
+      2
+    ],
+    "exact_best_response_score": 7.54899944327601,
+    "empirical_self_play_score": 7.5,
+    "exhaustive_allocation_scan_best": 7.54899944327601,
+    "exhaustive_verification_passed": true,
+    "exact_exploitability_above_symmetric_value": 0.04899944327600991
+  },
+  "source_search": {
+    "path": "results/experiments/CX-020.json",
+    "sha256": "9e04c270d60fe3754fc6e28d49ec902b73fa6cafbd698901f768ead25ea4d271",
+    "fixed_finalists": "CX-020 finalists; no tuning or primary selection on this supplemental stress"
+  },
+  "canonical_equilibrium_named_scenario": {
+    "best_response": [
+      1,
+      2,
+      11,
+      40,
+      46
+    ],
+    "exact_best_response_score": 9.497500000000004,
+    "exploitability_above_7_5": 1.997500000000004
+  },
+  "pool": {
+    "path": "results/experiments/CX-061-g1pool.npz",
+    "sha256": "958d6871fd7cdbe2c30a23a1eb6950dae1f1b2388ac6e2cbad6bb40d3d70b281",
+    "weighting": "multiplicity / total empirical actions",
+    "initializer": [
+      17,
+      21,
+      20,
+      22,
+      20
+    ]
+  },
+  "trace": [
+    {
+      "iteration": 0,
+      "support_samples": 1,
+      "best_response": [
+        13,
+        22,
+        21,
+        23,
+        21
+      ],
+      "exact_best_response_score": 14.0,
+      "exploitability": 6.5
+    },
+    {
+      "iteration": 250,
+      "support_samples": 251,
+      "best_response": [
+        10,
+        3,
+        40,
+        6,
+        41
+      ],
+      "exact_best_response_score": 8.535856573705177,
+      "exploitability": 1.0358565737051766
+    },
+    {
+      "iteration": 500,
+      "support_samples": 501,
+      "best_response": [
+        2,
+        18,
+        11,
+        51,
+        18
+      ],
+      "exact_best_response_score": 8.202594810379242,
+      "exploitability": 0.7025948103792423
+    },
+    {
+      "iteration": 750,
+      "support_samples": 751,
+      "best_response": [
+        9,
+        5,
+        1,
+        30,
+        55
+      ],
+      "exact_best_response_score": 8.080559254327564,
+      "exploitability": 0.5805592543275644
+    },
+    {
+      "iteration": 1000,
+      "support_samples": 1001,
+      "best_response": [
+        0,
+        10,
+        11,
+        44,
+        35
+      ],
+      "exact_best_response_score": 7.994505494505495,
+      "exploitability": 0.4945054945054954
+    },
+    {
+      "iteration": 1250,
+      "support_samples": 1251,
+      "best_response": [
+        4,
+        2,
+        24,
+        12,
+        58
+      ],
+      "exact_best_response_score": 7.931654676258993,
+      "exploitability": 0.4316546762589928
+    },
+    {
+      "iteration": 1500,
+      "support_samples": 1501,
+      "best_response": [
+        0,
+        6,
+        36,
+        26,
+        32
+      ],
+      "exact_best_response_score": 7.894070619586943,
+      "exploitability": 0.3940706195869428
+    },
+    {
+      "iteration": 1750,
+      "support_samples": 1751,
+      "best_response": [
+        9,
+        10,
+        8,
+        13,
+        60
+      ],
+      "exact_best_response_score": 7.862935465448314,
+      "exploitability": 0.3629354654483139
+    },
+    {
+      "iteration": 2000,
+      "support_samples": 2001,
+      "best_response": [
+        9,
+        16,
+        9,
+        4,
+        62
+      ],
+      "exact_best_response_score": 7.837831084457772,
+      "exploitability": 0.3378310844577719
+    },
+    {
+      "iteration": 2250,
+      "support_samples": 2251,
+      "best_response": [
+        12,
+        24,
+        28,
+        13,
+        23
+      ],
+      "exact_best_response_score": 7.817858729453576,
+      "exploitability": 0.31785872945357596
+    },
+    {
+      "iteration": 2500,
+      "support_samples": 2501,
+      "best_response": [
+        4,
+        9,
+        0,
+        20,
+        67
+      ],
+      "exact_best_response_score": 7.800479808076769,
+      "exploitability": 0.3004798080767692
+    },
+    {
+      "iteration": 2750,
+      "support_samples": 2751,
+      "best_response": [
+        12,
+        17,
+        12,
+        33,
+        26
+      ],
+      "exact_best_response_score": 7.785169029443839,
+      "exploitability": 0.28516902944383915
+    },
+    {
+      "iteration": 3000,
+      "support_samples": 3001,
+      "best_response": [
+        1,
+        21,
+        21,
+        23,
+        34
+      ],
+      "exact_best_response_score": 7.773242252582472,
+      "exploitability": 0.27324225258247203
+    },
+    {
+      "iteration": 3250,
+      "support_samples": 3251,
+      "best_response": [
+        10,
+        11,
+        28,
+        2,
+        49
+      ],
+      "exact_best_response_score": 7.761304214087973,
+      "exploitability": 0.2613042140879731
+    },
+    {
+      "iteration": 3500,
+      "support_samples": 3501,
+      "best_response": [
+        2,
+        4,
+        37,
+        41,
+        16
+      ],
+      "exact_best_response_score": 7.750357040845473,
+      "exploitability": 0.25035704084547294
+    },
+    {
+      "iteration": 3750,
+      "support_samples": 3751,
+      "best_response": [
+        12,
+        18,
+        5,
+        9,
+        56
+      ],
+      "exact_best_response_score": 7.739669421487602,
+      "exploitability": 0.23966942148760229
+    },
+    {
+      "iteration": 4000,
+      "support_samples": 4001,
+      "best_response": [
+        1,
+        7,
+        14,
+        14,
+        64
+      ],
+      "exact_best_response_score": 7.7286928267933,
+      "exploitability": 0.22869282679330016
+    },
+    {
+      "iteration": 4250,
+      "support_samples": 4251,
+      "best_response": [
+        6,
+        19,
+        30,
+        38,
+        7
+      ],
+      "exact_best_response_score": 7.720183486238533,
+      "exploitability": 0.22018348623853257
+    },
+    {
+      "iteration": 4500,
+      "support_samples": 4501,
+      "best_response": [
+        8,
+        9,
+        33,
+        16,
+        34
+      ],
+      "exact_best_response_score": 7.7138413685847596,
+      "exploitability": 0.21384136858475955
+    },
+    {
+      "iteration": 4750,
+      "support_samples": 4751,
+      "best_response": [
+        9,
+        10,
+        20,
+        19,
+        42
+      ],
+      "exact_best_response_score": 7.708482424752683,
+      "exploitability": 0.20848242475268286
+    },
+    {
+      "iteration": 5000,
+      "support_samples": 5001,
+      "best_response": [
+        6,
+        23,
+        22,
+        3,
+        46
+      ],
+      "exact_best_response_score": 7.7029594081183745,
+      "exploitability": 0.20295940811837454
+    },
+    {
+      "iteration": 5250,
+      "support_samples": 5251,
+      "best_response": [
+        12,
+        26,
+        0,
+        50,
+        12
+      ],
+      "exact_best_response_score": 7.6993905922681405,
+      "exploitability": 0.1993905922681405
+    },
+    {
+      "iteration": 5500,
+      "support_samples": 5501,
+      "best_response": [
+        1,
+        11,
+        10,
+        19,
+        59
+      ],
+      "exact_best_response_score": 7.694146518814762,
+      "exploitability": 0.19414651881476175
+    },
+    {
+      "iteration": 5750,
+      "support_samples": 5751,
+      "best_response": [
+        2,
+        26,
+        25,
+        29,
+        18
+      ],
+      "exact_best_response_score": 7.688923665449487,
+      "exploitability": 0.18892366544948658
+    },
+    {
+      "iteration": 6000,
+      "support_samples": 6001,
+      "best_response": [
+        3,
+        26,
+        40,
+        8,
+        23
+      ],
+      "exact_best_response_score": 7.683052824529245,
+      "exploitability": 0.18305282452924487
+    },
+    {
+      "iteration": 6250,
+      "support_samples": 6251,
+      "best_response": [
+        5,
+        17,
+        14,
+        33,
+        31
+      ],
+      "exact_best_response_score": 7.68109102543593,
+      "exploitability": 0.18109102543593014
+    },
+    {
+      "iteration": 6500,
+      "support_samples": 6501,
+      "best_response": [
+        5,
+        5,
+        16,
+        9,
+        65
+      ],
+      "exact_best_response_score": 7.677357329641596,
+      "exploitability": 0.17735732964159556
+    },
+    {
+      "iteration": 6750,
+      "support_samples": 6751,
+      "best_response": [
+        8,
+        9,
+        4,
+        14,
+        65
+      ],
+      "exact_best_response_score": 7.673752036735298,
+      "exploitability": 0.17375203673529782
+    },
+    {
+      "iteration": 7000,
+      "support_samples": 7001,
+      "best_response": [
+        7,
+        17,
+        18,
+        53,
+        5
+      ],
+      "exact_best_response_score": 7.671046993286673,
+      "exploitability": 0.17104699328667294
+    },
+    {
+      "iteration": 7250,
+      "support_samples": 7251,
+      "best_response": [
+        8,
+        19,
+        5,
+        25,
+        43
+      ],
+      "exact_best_response_score": 7.666735622672734,
+      "exploitability": 0.1667356226727339
+    },
+    {
+      "iteration": 7500,
+      "support_samples": 7501,
+      "best_response": [
+        11,
+        0,
+        6,
+        33,
+        50
+      ],
+      "exact_best_response_score": 7.663911478469538,
+      "exploitability": 0.16391147846953835
+    },
+    {
+      "iteration": 7750,
+      "support_samples": 7751,
+      "best_response": [
+        0,
+        21,
+        21,
+        3,
+        55
+      ],
+      "exact_best_response_score": 7.661011482389369,
+      "exploitability": 0.1610114823893687
+    },
+    {
+      "iteration": 8000,
+      "support_samples": 8001,
+      "best_response": [
+        13,
+        1,
+        24,
+        5,
+        57
+      ],
+      "exact_best_response_score": 7.6576052993375825,
+      "exploitability": 0.1576052993375825
+    },
+    {
+      "iteration": 8250,
+      "support_samples": 8251,
+      "best_response": [
+        1,
+        6,
+        36,
+        37,
+        20
+      ],
+      "exact_best_response_score": 7.654950915040601,
+      "exploitability": 0.154950915040601
+    },
+    {
+      "iteration": 8500,
+      "support_samples": 8501,
+      "best_response": [
+        1,
+        2,
+        8,
+        30,
+        59
+      ],
+      "exact_best_response_score": 7.652393836019289,
+      "exploitability": 0.15239383601928935
+    },
+    {
+      "iteration": 8750,
+      "support_samples": 8751,
+      "best_response": [
+        3,
+        12,
+        12,
+        7,
+        66
+      ],
+      "exact_best_response_score": 7.650039995429093,
+      "exploitability": 0.1500399954290934
+    },
+    {
+      "iteration": 9000,
+      "support_samples": 9001,
+      "best_response": [
+        3,
+        22,
+        14,
+        53,
+        8
+      ],
+      "exact_best_response_score": 7.646594822797469,
+      "exploitability": 0.14659482279746872
+    },
+    {
+      "iteration": 9250,
+      "support_samples": 9251,
+      "best_response": [
+        4,
+        13,
+        22,
+        31,
+        30
+      ],
+      "exact_best_response_score": 7.6453356393903364,
+      "exploitability": 0.14533563939033645
+    },
+    {
+      "iteration": 9500,
+      "support_samples": 9501,
+      "best_response": [
+        4,
+        15,
+        28,
+        42,
+        11
+      ],
+      "exact_best_response_score": 7.64309020103147,
+      "exploitability": 0.14309020103146963
+    },
+    {
+      "iteration": 9750,
+      "support_samples": 9751,
+      "best_response": [
+        7,
+        15,
+        0,
+        31,
+        47
+      ],
+      "exact_best_response_score": 7.640600964003692,
+      "exploitability": 0.14060096400369204
+    },
+    {
+      "iteration": 10000,
+      "support_samples": 10001,
+      "best_response": [
+        8,
+        16,
+        2,
+        13,
+        61
+      ],
+      "exact_best_response_score": 7.638336166383361,
+      "exploitability": 0.1383361663833611
+    },
+    {
+      "iteration": 10250,
+      "support_samples": 10251,
+      "best_response": [
+        8,
+        24,
+        17,
+        49,
+        2
+      ],
+      "exact_best_response_score": 7.6364744902936295,
+      "exploitability": 0.13647449029362946
+    },
+    {
+      "iteration": 10500,
+      "support_samples": 10501,
+      "best_response": [
+        9,
+        4,
+        39,
+        25,
+        23
+      ],
+      "exact_best_response_score": 7.634320540900867,
+      "exploitability": 0.13432054090086698
+    },
+    {
+      "iteration": 10750,
+      "support_samples": 10751,
+      "best_response": [
+        10,
+        6,
+        29,
+        2,
+        53
+      ],
+      "exact_best_response_score": 7.632359780485535,
+      "exploitability": 0.13235978048553498
+    },
+    {
+      "iteration": 11000,
+      "support_samples": 11001,
+      "best_response": [
+        11,
+        16,
+        9,
+        31,
+        33
+      ],
+      "exact_best_response_score": 7.630079083719663,
+      "exploitability": 0.1300790837196626
+    },
+    {
+      "iteration": 11250,
+      "support_samples": 11251,
+      "best_response": [
+        12,
+        7,
+        30,
+        14,
+        37
+      ],
+      "exact_best_response_score": 7.628610790151986,
+      "exploitability": 0.12861079015198573
+    },
+    {
+      "iteration": 11500,
+      "support_samples": 11501,
+      "best_response": [
+        0,
+        17,
+        31,
+        14,
+        38
+      ],
+      "exact_best_response_score": 7.626902008520998,
+      "exploitability": 0.12690200852099842
+    },
+    {
+      "iteration": 11750,
+      "support_samples": 11751,
+      "best_response": [
+        13,
+        25,
+        39,
+        16,
+        7
+      ],
+      "exact_best_response_score": 7.625393583524805,
+      "exploitability": 0.12539358352480523
+    },
+    {
+      "iteration": 12000,
+      "support_samples": 12001,
+      "best_response": [
+        0,
+        26,
+        14,
+        47,
+        13
+      ],
+      "exact_best_response_score": 7.62403133072244,
+      "exploitability": 0.1240313307224401
+    },
+    {
+      "iteration": 12250,
+      "support_samples": 12251,
+      "best_response": [
+        1,
+        9,
+        22,
+        53,
+        15
+      ],
+      "exact_best_response_score": 7.623173618480122,
+      "exploitability": 0.12317361848012176
+    },
+    {
+      "iteration": 12500,
+      "support_samples": 12501,
+      "best_response": [
+        1,
+        17,
+        22,
+        5,
+        55
+      ],
+      "exact_best_response_score": 7.621870250379969,
+      "exploitability": 0.12187025037996868
+    },
+    {
+      "iteration": 12750,
+      "support_samples": 12751,
+      "best_response": [
+        4,
+        26,
+        40,
+        6,
+        24
+      ],
+      "exact_best_response_score": 7.620892479021254,
+      "exploitability": 0.12089247902125422
+    },
+    {
+      "iteration": 13000,
+      "support_samples": 13001,
+      "best_response": [
+        4,
+        9,
+        23,
+        39,
+        25
+      ],
+      "exact_best_response_score": 7.6196061841396805,
+      "exploitability": 0.1196061841396805
+    },
+    {
+      "iteration": 13250,
+      "support_samples": 13251,
+      "best_response": [
+        5,
+        10,
+        9,
+        15,
+        61
+      ],
+      "exact_best_response_score": 7.6182174930193955,
+      "exploitability": 0.11821749301939555
+    },
+    {
+      "iteration": 13500,
+      "support_samples": 13501,
+      "best_response": [
+        6,
+        18,
+        24,
+        26,
+        26
+      ],
+      "exact_best_response_score": 7.616695059625213,
+      "exploitability": 0.1166950596252132
+    },
+    {
+      "iteration": 13750,
+      "support_samples": 13751,
+      "best_response": [
+        6,
+        11,
+        35,
+        41,
+        7
+      ],
+      "exact_best_response_score": 7.615773398298306,
+      "exploitability": 0.11577339829830624
+    },
+    {
+      "iteration": 14000,
+      "support_samples": 14001,
+      "best_response": [
+        7,
+        1,
+        0,
+        50,
+        42
+      ],
+      "exact_best_response_score": 7.614206128133704,
+      "exploitability": 0.1142061281337039
+    },
+    {
+      "iteration": 14250,
+      "support_samples": 14251,
+      "best_response": [
+        8,
+        2,
+        25,
+        21,
+        44
+      ],
+      "exact_best_response_score": 7.6130446986176405,
+      "exploitability": 0.11304469861764055
+    },
+    {
+      "iteration": 14500,
+      "support_samples": 14501,
+      "best_response": [
+        8,
+        3,
+        26,
+        1,
+        62
+      ],
+      "exact_best_response_score": 7.611647472588098,
+      "exploitability": 0.11164747258809804
+    },
+    {
+      "iteration": 14750,
+      "support_samples": 14751,
+      "best_response": [
+        9,
+        12,
+        3,
+        31,
+        45
+      ],
+      "exact_best_response_score": 7.611077215104061,
+      "exploitability": 0.11107721510406066
+    },
+    {
+      "iteration": 15000,
+      "support_samples": 15001,
+      "best_response": [
+        10,
+        13,
+        17,
+        32,
+        28
+      ],
+      "exact_best_response_score": 7.609959336044261,
+      "exploitability": 0.10995933604426078
+    },
+    {
+      "iteration": 15250,
+      "support_samples": 15251,
+      "best_response": [
+        11,
+        20,
+        6,
+        34,
+        29
+      ],
+      "exact_best_response_score": 7.6091403842371,
+      "exploitability": 0.10914038423709993
+    },
+    {
+      "iteration": 15500,
+      "support_samples": 15501,
+      "best_response": [
+        12,
+        20,
+        31,
+        34,
+        3
+      ],
+      "exact_best_response_score": 7.60854138442681,
+      "exploitability": 0.10854138442681016
+    },
+    {
+      "iteration": 15750,
+      "support_samples": 15751,
+      "best_response": [
+        0,
+        21,
+        7,
+        43,
+        29
+      ],
+      "exact_best_response_score": 7.607707447146213,
+      "exploitability": 0.10770744714621294
+    },
+    {
+      "iteration": 16000,
+      "support_samples": 16001,
+      "best_response": [
+        2,
+        21,
+        18,
+        44,
+        15
+      ],
+      "exact_best_response_score": 7.606555840259983,
+      "exploitability": 0.10655584025998266
+    },
+    {
+      "iteration": 16250,
+      "support_samples": 16251,
+      "best_response": [
+        1,
+        6,
+        34,
+        8,
+        51
+      ],
+      "exact_best_response_score": 7.605531967263554,
+      "exploitability": 0.10553196726355374
+    },
+    {
+      "iteration": 16500,
+      "support_samples": 16501,
+      "best_response": [
+        2,
+        14,
+        38,
+        46,
+        0
+      ],
+      "exact_best_response_score": 7.604720926004487,
+      "exploitability": 0.10472092600448679
+    },
+    {
+      "iteration": 16750,
+      "support_samples": 16751,
+      "best_response": [
+        2,
+        22,
+        1,
+        23,
+        52
+      ],
+      "exact_best_response_score": 7.603605754880305,
+      "exploitability": 0.10360575488030488
+    },
+    {
+      "iteration": 17000,
+      "support_samples": 17001,
+      "best_response": [
+        3,
+        6,
+        19,
+        8,
+        64
+      ],
+      "exact_best_response_score": 7.602699841185812,
+      "exploitability": 0.10269984118581199
+    },
+    {
+      "iteration": 17250,
+      "support_samples": 17251,
+      "best_response": [
+        4,
+        13,
+        20,
+        26,
+        37
+      ],
+      "exact_best_response_score": 7.6017042490290425,
+      "exploitability": 0.10170424902904251
+    },
+    {
+      "iteration": 17500,
+      "support_samples": 17501,
+      "best_response": [
+        8,
+        7,
+        21,
+        27,
+        37
+      ],
+      "exact_best_response_score": 7.600879949717161,
+      "exploitability": 0.10087994971716086
+    },
+    {
+      "iteration": 17750,
+      "support_samples": 17751,
+      "best_response": [
+        5,
+        8,
+        28,
+        37,
+        22
+      ],
+      "exact_best_response_score": 7.600304208213622,
+      "exploitability": 0.10030420821362185
+    },
+    {
+      "iteration": 18000,
+      "support_samples": 18001,
+      "best_response": [
+        9,
+        25,
+        4,
+        9,
+        53
+      ],
+      "exact_best_response_score": 7.599577801233266,
+      "exploitability": 0.09957780123326643
+    },
+    {
+      "iteration": 18250,
+      "support_samples": 18251,
+      "best_response": [
+        8,
+        10,
+        33,
+        38,
+        11
+      ],
+      "exact_best_response_score": 7.598789107446166,
+      "exploitability": 0.09878910744616576
+    },
+    {
+      "iteration": 18500,
+      "support_samples": 18501,
+      "best_response": [
+        10,
+        11,
+        10,
+        47,
+        22
+      ],
+      "exact_best_response_score": 7.597994702989028,
+      "exploitability": 0.0979947029890278
+    },
+    {
+      "iteration": 18750,
+      "support_samples": 18751,
+      "best_response": [
+        10,
+        14,
+        12,
+        41,
+        23
+      ],
+      "exact_best_response_score": 7.597301477254548,
+      "exploitability": 0.09730147725454774
+    },
+    {
+      "iteration": 19000,
+      "support_samples": 19001,
+      "best_response": [
+        12,
+        15,
+        21,
+        13,
+        39
+      ],
+      "exact_best_response_score": 7.596626493342455,
+      "exploitability": 0.09662649334245543
+    },
+    {
+      "iteration": 19250,
+      "support_samples": 19251,
+      "best_response": [
+        0,
+        15,
+        28,
+        16,
+        41
+      ],
+      "exact_best_response_score": 7.595813204508856,
+      "exploitability": 0.09581320450885578
+    },
+    {
+      "iteration": 19500,
+      "support_samples": 19501,
+      "best_response": [
+        2,
+        16,
+        6,
+        19,
+        57
+      ],
+      "exact_best_response_score": 7.594892569611814,
+      "exploitability": 0.09489256961181436
+    },
+    {
+      "iteration": 19750,
+      "support_samples": 19751,
+      "best_response": [
+        0,
+        1,
+        13,
+        27,
+        59
+      ],
+      "exact_best_response_score": 7.593969925573388,
+      "exploitability": 0.09396992557338812
+    },
+    {
+      "iteration": 20000,
+      "support_samples": 20001,
+      "best_response": [
+        4,
+        16,
+        14,
+        41,
+        25
+      ],
+      "exact_best_response_score": 7.593420328983551,
+      "exploitability": 0.09342032898355068
+    },
+    {
+      "iteration": 20250,
+      "support_samples": 20251,
+      "best_response": [
+        5,
+        16,
+        20,
+        0,
+        59
+      ],
+      "exact_best_response_score": 7.592908992148537,
+      "exploitability": 0.0929089921485371
+    },
+    {
+      "iteration": 20500,
+      "support_samples": 20501,
+      "best_response": [
+        0,
+        2,
+        30,
+        2,
+        66
+      ],
+      "exact_best_response_score": 7.592239402955953,
+      "exploitability": 0.09223940295595323
+    },
+    {
+      "iteration": 20750,
+      "support_samples": 20751,
+      "best_response": [
+        12,
+        18,
+        1,
+        3,
+        66
+      ],
+      "exact_best_response_score": 7.591658233338153,
+      "exploitability": 0.09165823333815304
+    },
+    {
+      "iteration": 21000,
+      "support_samples": 21001,
+      "best_response": [
+        0,
+        22,
+        40,
+        32,
+        6
+      ],
+      "exact_best_response_score": 7.590852816532544,
+      "exploitability": 0.09085281653254373
+    },
+    {
+      "iteration": 21250,
+      "support_samples": 21251,
+      "best_response": [
+        12,
+        26,
+        16,
+        32,
+        14
+      ],
+      "exact_best_response_score": 7.590254576255235,
+      "exploitability": 0.09025457625523536
+    },
+    {
+      "iteration": 21500,
+      "support_samples": 21501,
+      "best_response": [
+        6,
+        26,
+        18,
+        6,
+        44
+      ],
+      "exact_best_response_score": 7.589740012092462,
+      "exploitability": 0.08974001209246207
+    },
+    {
+      "iteration": 21750,
+      "support_samples": 21751,
+      "best_response": [
+        13,
+        2,
+        24,
+        45,
+        16
+      ],
+      "exact_best_response_score": 7.589122339202795,
+      "exploitability": 0.08912233920279533
+    },
+    {
+      "iteration": 22000,
+      "support_samples": 22001,
+      "best_response": [
+        7,
+        3,
+        40,
+        33,
+        17
+      ],
+      "exact_best_response_score": 7.588518703695287,
+      "exploitability": 0.08851870369528658
+    },
+    {
+      "iteration": 22250,
+      "support_samples": 22251,
+      "best_response": [
+        8,
+        5,
+        24,
+        45,
+        18
+      ],
+      "exact_best_response_score": 7.587973574221383,
+      "exploitability": 0.08797357422138319
+    },
+    {
+      "iteration": 22500,
+      "support_samples": 22501,
+      "best_response": [
+        2,
+        7,
+        7,
+        16,
+        68
+      ],
+      "exact_best_response_score": 7.587596106839696,
+      "exploitability": 0.08759610683969576
+    },
+    {
+      "iteration": 22750,
+      "support_samples": 22751,
+      "best_response": [
+        9,
+        9,
+        9,
+        23,
+        50
+      ],
+      "exact_best_response_score": 7.586919256296426,
+      "exploitability": 0.08691925629642583
+    },
+    {
+      "iteration": 23000,
+      "support_samples": 23001,
+      "best_response": [
+        2,
+        10,
+        32,
+        38,
+        18
+      ],
+      "exact_best_response_score": 7.586431024738055,
+      "exploitability": 0.0864310247380553
+    },
+    {
+      "iteration": 23250,
+      "support_samples": 23251,
+      "best_response": [
+        2,
+        10,
+        10,
+        51,
+        27
+      ],
+      "exact_best_response_score": 7.58588877897725,
+      "exploitability": 0.08588877897724956
+    },
+    {
+      "iteration": 23500,
+      "support_samples": 23501,
+      "best_response": [
+        3,
+        11,
+        13,
+        54,
+        19
+      ],
+      "exact_best_response_score": 7.585592102463724,
+      "exploitability": 0.08559210246372384
+    },
+    {
+      "iteration": 23750,
+      "support_samples": 23751,
+      "best_response": [
+        2,
+        11,
+        26,
+        27,
+        34
+      ],
+      "exact_best_response_score": 7.584985895330723,
+      "exploitability": 0.08498589533072298
+    },
+    {
+      "iteration": 24000,
+      "support_samples": 24001,
+      "best_response": [
+        3,
+        19,
+        32,
+        10,
+        36
+      ],
+      "exact_best_response_score": 7.584454814382734,
+      "exploitability": 0.08445481438273372
+    },
+    {
+      "iteration": 24250,
+      "support_samples": 24251,
+      "best_response": [
+        6,
+        20,
+        35,
+        30,
+        9
+      ],
+      "exact_best_response_score": 7.58393468310585,
+      "exploitability": 0.08393468310585028
+    },
+    {
+      "iteration": 24500,
+      "support_samples": 24501,
+      "best_response": [
+        4,
+        22,
+        11,
+        12,
+        51
+      ],
+      "exact_best_response_score": 7.583506795640995,
+      "exploitability": 0.08350679564099472
+    },
+    {
+      "iteration": 24750,
+      "support_samples": 24751,
+      "best_response": [
+        7,
+        23,
+        13,
+        46,
+        11
+      ],
+      "exact_best_response_score": 7.582925942386168,
+      "exploitability": 0.08292594238616768
+    },
+    {
+      "iteration": 25000,
+      "support_samples": 25001,
+      "best_response": [
+        8,
+        2,
+        21,
+        16,
+        53
+      ],
+      "exact_best_response_score": 7.582516699332026,
+      "exploitability": 0.0825166993320261
+    },
+    {
+      "iteration": 25250,
+      "support_samples": 25251,
+      "best_response": [
+        9,
+        26,
+        28,
+        17,
+        20
+      ],
+      "exact_best_response_score": 7.582056156191833,
+      "exploitability": 0.08205615619183337
+    },
+    {
+      "iteration": 25500,
+      "support_samples": 25501,
+      "best_response": [
+        9,
+        6,
+        28,
+        2,
+        55
+      ],
+      "exact_best_response_score": 7.581722285400572,
+      "exploitability": 0.08172228540057169
+    },
+    {
+      "iteration": 25750,
+      "support_samples": 25751,
+      "best_response": [
+        9,
+        12,
+        3,
+        18,
+        58
+      ],
+      "exact_best_response_score": 7.581220146790414,
+      "exploitability": 0.08122014679041367
+    },
+    {
+      "iteration": 26000,
+      "support_samples": 26001,
+      "best_response": [
+        10,
+        12,
+        22,
+        33,
+        23
+      ],
+      "exact_best_response_score": 7.58070843429099,
+      "exploitability": 0.08070843429099028
+    },
+    {
+      "iteration": 26250,
+      "support_samples": 26251,
+      "best_response": [
+        10,
+        13,
+        14,
+        36,
+        27
+      ],
+      "exact_best_response_score": 7.580492171726792,
+      "exploitability": 0.08049217172679235
+    },
+    {
+      "iteration": 26500,
+      "support_samples": 26501,
+      "best_response": [
+        10,
+        14,
+        29,
+        47,
+        0
+      ],
+      "exact_best_response_score": 7.580091317308781,
+      "exploitability": 0.08009131730878138
+    },
+    {
+      "iteration": 26750,
+      "support_samples": 26751,
+      "best_response": [
+        0,
+        16,
+        5,
+        51,
+        28
+      ],
+      "exact_best_response_score": 7.579604500766326,
+      "exploitability": 0.07960450076632597
+    },
+    {
+      "iteration": 27000,
+      "support_samples": 27001,
+      "best_response": [
+        0,
+        18,
+        16,
+        6,
+        60
+      ],
+      "exact_best_response_score": 7.5790896633458,
+      "exploitability": 0.07908966334580025
+    },
+    {
+      "iteration": 27250,
+      "support_samples": 27251,
+      "best_response": [
+        0,
+        25,
+        7,
+        8,
+        60
+      ],
+      "exact_best_response_score": 7.578510880334667,
+      "exploitability": 0.07851088033466702
+    },
+    {
+      "iteration": 27500,
+      "support_samples": 27501,
+      "best_response": [
+        3,
+        26,
+        32,
+        26,
+        13
+      ],
+      "exact_best_response_score": 7.578324424566379,
+      "exploitability": 0.07832442456637878
+    },
+    {
+      "iteration": 27750,
+      "support_samples": 27751,
+      "best_response": [
+        3,
+        0,
+        37,
+        30,
+        30
+      ],
+      "exact_best_response_score": 7.577907102446758,
+      "exploitability": 0.07790710244675836
+    },
+    {
+      "iteration": 28000,
+      "support_samples": 28001,
+      "best_response": [
+        3,
+        4,
+        8,
+        40,
+        45
+      ],
+      "exact_best_response_score": 7.577586514767329,
+      "exploitability": 0.07758651476732936
+    },
+    {
+      "iteration": 28250,
+      "support_samples": 28251,
+      "best_response": [
+        4,
+        6,
+        16,
+        12,
+        62
+      ],
+      "exact_best_response_score": 7.577218505539627,
+      "exploitability": 0.07721850553962728
+    },
+    {
+      "iteration": 28500,
+      "support_samples": 28501,
+      "best_response": [
+        10,
+        14,
+        19,
+        51,
+        6
+      ],
+      "exact_best_response_score": 7.576979755096311,
+      "exploitability": 0.07697975509631139
+    },
+    {
+      "iteration": 28750,
+      "support_samples": 28751,
+      "best_response": [
+        4,
+        14,
+        38,
+        13,
+        31
+      ],
+      "exact_best_response_score": 7.57664081249348,
+      "exploitability": 0.07664081249347987
+    },
+    {
+      "iteration": 29000,
+      "support_samples": 29001,
+      "best_response": [
+        5,
+        19,
+        40,
+        20,
+        16
+      ],
+      "exact_best_response_score": 7.5762042688183175,
+      "exploitability": 0.07620426881831754
+    },
+    {
+      "iteration": 29250,
+      "support_samples": 29251,
+      "best_response": [
+        5,
+        19,
+        8,
+        22,
+        46
+      ],
+      "exact_best_response_score": 7.576048682096338,
+      "exploitability": 0.07604868209633775
+    },
+    {
+      "iteration": 29500,
+      "support_samples": 29501,
+      "best_response": [
+        5,
+        20,
+        12,
+        43,
+        20
+      ],
+      "exact_best_response_score": 7.575810989457985,
+      "exploitability": 0.07581098945798459
+    },
+    {
+      "iteration": 29750,
+      "support_samples": 29751,
+      "best_response": [
+        11,
+        21,
+        20,
+        0,
+        48
+      ],
+      "exact_best_response_score": 7.575409229941851,
+      "exploitability": 0.07540922994185095
+    },
+    {
+      "iteration": 30000,
+      "support_samples": 30001,
+      "best_response": [
+        10,
+        0,
+        25,
+        3,
+        62
+      ],
+      "exact_best_response_score": 7.575097496750108,
+      "exploitability": 0.07509749675010813
+    },
+    {
+      "iteration": 30250,
+      "support_samples": 30251,
+      "best_response": [
+        11,
+        7,
+        0,
+        19,
+        63
+      ],
+      "exact_best_response_score": 7.574724802485869,
+      "exploitability": 0.07472480248586866
+    },
+    {
+      "iteration": 30500,
+      "support_samples": 30501,
+      "best_response": [
+        11,
+        8,
+        27,
+        23,
+        31
+      ],
+      "exact_best_response_score": 7.574243467427298,
+      "exploitability": 0.07424346742729782
+    },
+    {
+      "iteration": 30750,
+      "support_samples": 30751,
+      "best_response": [
+        11,
+        24,
+        30,
+        35,
+        0
+      ],
+      "exact_best_response_score": 7.573965074306525,
+      "exploitability": 0.07396507430652477
+    },
+    {
+      "iteration": 31000,
+      "support_samples": 31001,
+      "best_response": [
+        11,
+        8,
+        4,
+        45,
+        32
+      ],
+      "exact_best_response_score": 7.573546014644689,
+      "exploitability": 0.07354601464468935
+    },
+    {
+      "iteration": 31250,
+      "support_samples": 31251,
+      "best_response": [
+        0,
+        9,
+        5,
+        47,
+        39
+      ],
+      "exact_best_response_score": 7.573261655627021,
+      "exploitability": 0.0732616556270207
+    },
+    {
+      "iteration": 31500,
+      "support_samples": 31501,
+      "best_response": [
+        12,
+        14,
+        9,
+        14,
+        51
+      ],
+      "exact_best_response_score": 7.572965937589284,
+      "exploitability": 0.07296593758928438
+    },
+    {
+      "iteration": 31750,
+      "support_samples": 31751,
+      "best_response": [
+        12,
+        14,
+        14,
+        8,
+        52
+      ],
+      "exact_best_response_score": 7.572580391168781,
+      "exploitability": 0.07258039116878123
+    },
+    {
+      "iteration": 32000,
+      "support_samples": 32001,
+      "best_response": [
+        12,
+        21,
+        32,
+        28,
+        7
+      ],
+      "exact_best_response_score": 7.57223211774632,
+      "exploitability": 0.07223211774631988
+    },
+    {
+      "iteration": 32250,
+      "support_samples": 32251,
+      "best_response": [
+        0,
+        15,
+        33,
+        36,
+        16
+      ],
+      "exact_best_response_score": 7.571858236953893,
+      "exploitability": 0.0718582369538927
+    },
+    {
+      "iteration": 32500,
+      "support_samples": 32501,
+      "best_response": [
+        1,
+        1,
+        38,
+        36,
+        24
+      ],
+      "exact_best_response_score": 7.571520876280731,
+      "exploitability": 0.07152087628073112
+    },
+    {
+      "iteration": 32750,
+      "support_samples": 32751,
+      "best_response": [
+        1,
+        16,
+        38,
+        4,
+        41
+      ],
+      "exact_best_response_score": 7.571112332447862,
+      "exploitability": 0.07111233244786241
+    },
+    {
+      "iteration": 33000,
+      "support_samples": 33001,
+      "best_response": [
+        6,
+        2,
+        0,
+        37,
+        55
+      ],
+      "exact_best_response_score": 7.570770582709615,
+      "exploitability": 0.07077058270961523
+    },
+    {
+      "iteration": 33250,
+      "support_samples": 33251,
+      "best_response": [
+        2,
+        9,
+        21,
+        5,
+        63
+      ],
+      "exact_best_response_score": 7.5704038976271395,
+      "exploitability": 0.0704038976271395
+    },
+    {
+      "iteration": 33500,
+      "support_samples": 33501,
+      "best_response": [
+        2,
+        9,
+        0,
+        24,
+        65
+      ],
+      "exact_best_response_score": 7.570087460075819,
+      "exploitability": 0.07008746007581923
+    },
+    {
+      "iteration": 33750,
+      "support_samples": 33751,
+      "best_response": [
+        4,
+        16,
+        9,
+        6,
+        65
+      ],
+      "exact_best_response_score": 7.569731267221712,
+      "exploitability": 0.0697312672217123
+    },
+    {
+      "iteration": 34000,
+      "support_samples": 34001,
+      "best_response": [
+        6,
+        17,
+        27,
+        49,
+        1
+      ],
+      "exact_best_response_score": 7.569380312343755,
+      "exploitability": 0.06938031234375508
+    },
+    {
+      "iteration": 34250,
+      "support_samples": 34251,
+      "best_response": [
+        6,
+        10,
+        33,
+        9,
+        42
+      ],
+      "exact_best_response_score": 7.569019882631163,
+      "exploitability": 0.06901988263116277
+    },
+    {
+      "iteration": 34500,
+      "support_samples": 34501,
+      "best_response": [
+        7,
+        21,
+        0,
+        29,
+        43
+      ],
+      "exact_best_response_score": 7.568708153386861,
+      "exploitability": 0.06870815338686143
+    },
+    {
+      "iteration": 34750,
+      "support_samples": 34751,
+      "best_response": [
+        7,
+        2,
+        4,
+        40,
+        47
+      ],
+      "exact_best_response_score": 7.568343357025695,
+      "exploitability": 0.06834335702569483
+    },
+    {
+      "iteration": 35000,
+      "support_samples": 35001,
+      "best_response": [
+        7,
+        23,
+        22,
+        0,
+        48
+      ],
+      "exact_best_response_score": 7.568112339647438,
+      "exploitability": 0.06811233964743835
+    },
+    {
+      "iteration": 35250,
+      "support_samples": 35251,
+      "best_response": [
+        7,
+        3,
+        15,
+        10,
+        65
+      ],
+      "exact_best_response_score": 7.567927151002809,
+      "exploitability": 0.06792715100280944
+    },
+    {
+      "iteration": 35500,
+      "support_samples": 35501,
+      "best_response": [
+        7,
+        23,
+        23,
+        30,
+        17
+      ],
+      "exact_best_response_score": 7.567519224810569,
+      "exploitability": 0.06751922481056916
+    },
+    {
+      "iteration": 35750,
+      "support_samples": 35751,
+      "best_response": [
+        8,
+        11,
+        24,
+        31,
+        26
+      ],
+      "exact_best_response_score": 7.567270845570754,
+      "exploitability": 0.06727084557075358
+    },
+    {
+      "iteration": 36000,
+      "support_samples": 36001,
+      "best_response": [
+        8,
+        3,
+        28,
+        33,
+        28
+      ],
+      "exact_best_response_score": 7.566887030915808,
+      "exploitability": 0.06688703091580805
+    },
+    {
+      "iteration": 36250,
+      "support_samples": 36251,
+      "best_response": [
+        8,
+        11,
+        0,
+        33,
+        48
+      ],
+      "exact_best_response_score": 7.5666602300626185,
+      "exploitability": 0.06666023006261845
+    },
+    {
+      "iteration": 36500,
+      "support_samples": 36501,
+      "best_response": [
+        8,
+        12,
+        35,
+        43,
+        2
+      ],
+      "exact_best_response_score": 7.566381742965944,
+      "exploitability": 0.06638174296594368
+    },
+    {
+      "iteration": 36750,
+      "support_samples": 36751,
+      "best_response": [
+        9,
+        14,
+        5,
+        16,
+        56
+      ],
+      "exact_best_response_score": 7.566270305569915,
+      "exploitability": 0.06627030556991542
+    },
+    {
+      "iteration": 37000,
+      "support_samples": 37001,
+      "best_response": [
+        12,
+        18,
+        6,
+        46,
+        18
+      ],
+      "exact_best_response_score": 7.5659982162644255,
+      "exploitability": 0.06599821626442548
+    },
+    {
+      "iteration": 37250,
+      "support_samples": 37251,
+      "best_response": [
+        12,
+        19,
+        12,
+        54,
+        3
+      ],
+      "exact_best_response_score": 7.565595554481759,
+      "exploitability": 0.06559555448175924
+    },
+    {
+      "iteration": 37500,
+      "support_samples": 37501,
+      "best_response": [
+        8,
+        20,
+        17,
+        20,
+        35
+      ],
+      "exact_best_response_score": 7.565624916668888,
+      "exploitability": 0.06562491666888803
+    },
+    {
+      "iteration": 37750,
+      "support_samples": 37751,
+      "best_response": [
+        12,
+        25,
+        25,
+        1,
+        37
+      ],
+      "exact_best_response_score": 7.565336017588937,
+      "exploitability": 0.06533601758893681
+    },
+    {
+      "iteration": 38000,
+      "support_samples": 38001,
+      "best_response": [
+        1,
+        26,
+        36,
+        25,
+        12
+      ],
+      "exact_best_response_score": 7.565261440488408,
+      "exploitability": 0.06526144048840798
+    },
+    {
+      "iteration": 38250,
+      "support_samples": 38251,
+      "best_response": [
+        8,
+        4,
+        36,
+        34,
+        18
+      ],
+      "exact_best_response_score": 7.565030979582232,
+      "exploitability": 0.06503097958223236
+    },
+    {
+      "iteration": 38500,
+      "support_samples": 38501,
+      "best_response": [
+        2,
+        4,
+        36,
+        2,
+        56
+      ],
+      "exact_best_response_score": 7.564985325056493,
+      "exploitability": 0.0649853250564929
+    },
+    {
+      "iteration": 38750,
+      "support_samples": 38751,
+      "best_response": [
+        2,
+        26,
+        12,
+        3,
+        57
+      ],
+      "exact_best_response_score": 7.564759619106604,
+      "exploitability": 0.06475961910660377
+    },
+    {
+      "iteration": 39000,
+      "support_samples": 39001,
+      "best_response": [
+        2,
+        5,
+        39,
+        34,
+        20
+      ],
+      "exact_best_response_score": 7.5644598856439575,
+      "exploitability": 0.06445988564395755
+    },
+    {
+      "iteration": 39250,
+      "support_samples": 39251,
+      "best_response": [
+        2,
+        5,
+        7,
+        20,
+        66
+      ],
+      "exact_best_response_score": 7.564253140047386,
+      "exploitability": 0.06425314004738603
+    },
+    {
+      "iteration": 39500,
+      "support_samples": 39501,
+      "best_response": [
+        2,
+        6,
+        7,
+        47,
+        38
+      ],
+      "exact_best_response_score": 7.564137616769195,
+      "exploitability": 0.06413761676919538
+    },
+    {
+      "iteration": 39750,
+      "support_samples": 39751,
+      "best_response": [
+        2,
+        14,
+        7,
+        10,
+        67
+      ],
+      "exact_best_response_score": 7.563897763578275,
+      "exploitability": 0.06389776357827515
+    },
+    {
+      "iteration": 40000,
+      "support_samples": 40001,
+      "best_response": [
+        3,
+        15,
+        40,
+        21,
+        21
+      ],
+      "exact_best_response_score": 7.563585910352241,
+      "exploitability": 0.06358591035224137
+    },
+    {
+      "iteration": 40250,
+      "support_samples": 40251,
+      "best_response": [
+        3,
+        16,
+        1,
+        41,
+        39
+      ],
+      "exact_best_response_score": 7.563377307396089,
+      "exploitability": 0.06337730739608904
+    },
+    {
+      "iteration": 40500,
+      "support_samples": 40501,
+      "best_response": [
+        4,
+        17,
+        10,
+        12,
+        57
+      ],
+      "exact_best_response_score": 7.563245351966617,
+      "exploitability": 0.06324535196661696
+    },
+    {
+      "iteration": 40750,
+      "support_samples": 40751,
+      "best_response": [
+        4,
+        19,
+        20,
+        49,
+        8
+      ],
+      "exact_best_response_score": 7.563016858482001,
+      "exploitability": 0.06301685848200123
+    },
+    {
+      "iteration": 41000,
+      "support_samples": 41001,
+      "best_response": [
+        4,
+        20,
+        12,
+        13,
+        51
+      ],
+      "exact_best_response_score": 7.562839930733398,
+      "exploitability": 0.06283993073339822
+    },
+    {
+      "iteration": 41250,
+      "support_samples": 41251,
+      "best_response": [
+        4,
+        20,
+        26,
+        27,
+        23
+      ],
+      "exact_best_response_score": 7.562543938328767,
+      "exploitability": 0.06254393832876737
+    },
+    {
+      "iteration": 41500,
+      "support_samples": 41501,
+      "best_response": [
+        4,
+        7,
+        28,
+        34,
+        27
+      ],
+      "exact_best_response_score": 7.562552709573264,
+      "exploitability": 0.06255270957326431
+    },
+    {
+      "iteration": 41750,
+      "support_samples": 41751,
+      "best_response": [
+        5,
+        23,
+        13,
+        29,
+        30
+      ],
+      "exact_best_response_score": 7.562357787837416,
+      "exploitability": 0.06235778783741619
+    },
+    {
+      "iteration": 42000,
+      "support_samples": 42001,
+      "best_response": [
+        8,
+        26,
+        28,
+        34,
+        4
+      ],
+      "exact_best_response_score": 7.562224708935502,
+      "exploitability": 0.062224708935501916
+    },
+    {
+      "iteration": 42250,
+      "support_samples": 42251,
+      "best_response": [
+        5,
+        8,
+        4,
+        51,
+        32
+      ],
+      "exact_best_response_score": 7.562294383564884,
+      "exploitability": 0.06229438356488437
+    },
+    {
+      "iteration": 42500,
+      "support_samples": 42501,
+      "best_response": [
+        9,
+        9,
+        7,
+        16,
+        59
+      ],
+      "exact_best_response_score": 7.562069127785227,
+      "exploitability": 0.062069127785226996
+    },
+    {
+      "iteration": 42750,
+      "support_samples": 42751,
+      "best_response": [
+        9,
+        22,
+        29,
+        35,
+        5
+      ],
+      "exact_best_response_score": 7.561811419615917,
+      "exploitability": 0.06181141961591674
+    },
+    {
+      "iteration": 43000,
+      "support_samples": 43001,
+      "best_response": [
+        10,
+        11,
+        29,
+        17,
+        33
+      ],
+      "exact_best_response_score": 7.5617776330783,
+      "exploitability": 0.0617776330783002
+    },
+    {
+      "iteration": 43250,
+      "support_samples": 43251,
+      "best_response": [
+        10,
+        12,
+        30,
+        37,
+        11
+      ],
+      "exact_best_response_score": 7.561489907747798,
+      "exploitability": 0.06148990774779772
+    },
+    {
+      "iteration": 43500,
+      "support_samples": 43501,
+      "best_response": [
+        5,
+        13,
+        30,
+        38,
+        14
+      ],
+      "exact_best_response_score": 7.561239971494908,
+      "exploitability": 0.06123997149490812
+    },
+    {
+      "iteration": 43750,
+      "support_samples": 43751,
+      "best_response": [
+        10,
+        16,
+        31,
+        3,
+        40
+      ],
+      "exact_best_response_score": 7.561290027656511,
+      "exploitability": 0.06129002765651137
+    },
+    {
+      "iteration": 44000,
+      "support_samples": 44001,
+      "best_response": [
+        10,
+        0,
+        31,
+        7,
+        52
+      ],
+      "exact_best_response_score": 7.561146337583237,
+      "exploitability": 0.06114633758323684
+    },
+    {
+      "iteration": 44250,
+      "support_samples": 44251,
+      "best_response": [
+        12,
+        0,
+        31,
+        42,
+        15
+      ],
+      "exact_best_response_score": 7.56094777519152,
+      "exploitability": 0.06094777519152039
+    },
+    {
+      "iteration": 44500,
+      "support_samples": 44501,
+      "best_response": [
+        12,
+        14,
+        15,
+        43,
+        16
+      ],
+      "exact_best_response_score": 7.560661558167232,
+      "exploitability": 0.060661558167232066
+    },
+    {
+      "iteration": 44750,
+      "support_samples": 44751,
+      "best_response": [
+        12,
+        14,
+        32,
+        8,
+        34
+      ],
+      "exact_best_response_score": 7.56044557663516,
+      "exploitability": 0.060445576635159703
+    },
+    {
+      "iteration": 45000,
+      "support_samples": 45001,
+      "best_response": [
+        12,
+        8,
+        33,
+        23,
+        24
+      ],
+      "exact_best_response_score": 7.560343103486588,
+      "exploitability": 0.06034310348658778
+    },
+    {
+      "iteration": 45250,
+      "support_samples": 45251,
+      "best_response": [
+        12,
+        1,
+        17,
+        29,
+        41
+      ],
+      "exact_best_response_score": 7.560241762612982,
+      "exploitability": 0.060241762612982086
+    },
+    {
+      "iteration": 45500,
+      "support_samples": 45501,
+      "best_response": [
+        4,
+        16,
+        9,
+        30,
+        41
+      ],
+      "exact_best_response_score": 7.560053625195049,
+      "exploitability": 0.06005362519504942
+    },
+    {
+      "iteration": 45750,
+      "support_samples": 45751,
+      "best_response": [
+        13,
+        17,
+        18,
+        10,
+        42
+      ],
+      "exact_best_response_score": 7.559769185372997,
+      "exploitability": 0.059769185372997136
+    },
+    {
+      "iteration": 46000,
+      "support_samples": 46001,
+      "best_response": [
+        5,
+        17,
+        34,
+        44,
+        0
+      ],
+      "exact_best_response_score": 7.559661746483772,
+      "exploitability": 0.05966174648377187
+    },
+    {
+      "iteration": 46250,
+      "support_samples": 46251,
+      "best_response": [
+        0,
+        18,
+        21,
+        45,
+        16
+      ],
+      "exact_best_response_score": 7.559436552723184,
+      "exploitability": 0.05943655272318438
+    },
+    {
+      "iteration": 46500,
+      "support_samples": 46501,
+      "best_response": [
+        0,
+        18,
+        35,
+        30,
+        17
+      ],
+      "exact_best_response_score": 7.55921378034881,
+      "exploitability": 0.0592137803488102
+    },
+    {
+      "iteration": 46750,
+      "support_samples": 46751,
+      "best_response": [
+        1,
+        19,
+        36,
+        10,
+        34
+      ],
+      "exact_best_response_score": 7.559025475390901,
+      "exploitability": 0.05902547539090097
+    },
+    {
+      "iteration": 47000,
+      "support_samples": 47001,
+      "best_response": [
+        1,
+        20,
+        1,
+        31,
+        47
+      ],
+      "exact_best_response_score": 7.558913640135316,
+      "exploitability": 0.05891364013531586
+    },
+    {
+      "iteration": 47250,
+      "support_samples": 47251,
+      "best_response": [
+        2,
+        20,
+        22,
+        51,
+        5
+      ],
+      "exact_best_response_score": 7.558707752216885,
+      "exploitability": 0.05870775221688529
+    },
+    {
+      "iteration": 47500,
+      "support_samples": 47501,
+      "best_response": [
+        4,
+        23,
+        5,
+        51,
+        17
+      ],
+      "exact_best_response_score": 7.558556661965012,
+      "exploitability": 0.05855666196501197
+    },
+    {
+      "iteration": 47750,
+      "support_samples": 47751,
+      "best_response": [
+        2,
+        23,
+        23,
+        0,
+        52
+      ],
+      "exact_best_response_score": 7.558386211807083,
+      "exploitability": 0.05838621180708259
+    },
+    {
+      "iteration": 48000,
+      "support_samples": 48001,
+      "best_response": [
+        5,
+        5,
+        9,
+        18,
+        63
+      ],
+      "exact_best_response_score": 7.558144621987041,
+      "exploitability": 0.058144621987040956
+    },
+    {
+      "iteration": 48250,
+      "support_samples": 48251,
+      "best_response": [
+        6,
+        7,
+        37,
+        32,
+        18
+      ],
+      "exact_best_response_score": 7.557926260595636,
+      "exploitability": 0.05792626059563588
+    },
+    {
+      "iteration": 48500,
+      "support_samples": 48501,
+      "best_response": [
+        6,
+        8,
+        5,
+        52,
+        29
+      ],
+      "exact_best_response_score": 7.557782313766726,
+      "exploitability": 0.057782313766725935
+    },
+    {
+      "iteration": 48750,
+      "support_samples": 48751,
+      "best_response": [
+        6,
+        20,
+        38,
+        1,
+        35
+      ],
+      "exact_best_response_score": 7.557557793686283,
+      "exploitability": 0.057557793686283
+    },
+    {
+      "iteration": 49000,
+      "support_samples": 49001,
+      "best_response": [
+        6,
+        9,
+        10,
+        22,
+        53
+      ],
+      "exact_best_response_score": 7.557366176200485,
+      "exploitability": 0.05736617620048534
+    },
+    {
+      "iteration": 49250,
+      "support_samples": 49251,
+      "best_response": [
+        6,
+        24,
+        11,
+        23,
+        36
+      ],
+      "exact_best_response_score": 7.557267872733549,
+      "exploitability": 0.05726787273354894
+    },
+    {
+      "iteration": 49500,
+      "support_samples": 49501,
+      "best_response": [
+        7,
+        10,
+        25,
+        5,
+        53
+      ],
+      "exact_best_response_score": 7.557069554150423,
+      "exploitability": 0.0570695541504227
+    },
+    {
+      "iteration": 49750,
+      "support_samples": 49751,
+      "best_response": [
+        7,
+        10,
+        38,
+        37,
+        8
+      ],
+      "exact_best_response_score": 7.556853128580329,
+      "exploitability": 0.05685312858032887
+    },
+    {
+      "iteration": 50000,
+      "support_samples": 50001,
+      "best_response": [
+        8,
+        11,
+        0,
+        39,
+        42
+      ],
+      "exact_best_response_score": 7.556648867022659,
+      "exploitability": 0.05664886702265903
+    },
+    {
+      "iteration": 50250,
+      "support_samples": 50251,
+      "best_response": [
+        8,
+        25,
+        12,
+        2,
+        53
+      ],
+      "exact_best_response_score": 7.556436687827108,
+      "exploitability": 0.05643668782710787
+    },
+    {
+      "iteration": 50500,
+      "support_samples": 50501,
+      "best_response": [
+        10,
+        26,
+        15,
+        39,
+        10
+      ],
+      "exact_best_response_score": 7.55635531969664,
+      "exploitability": 0.05635531969663976
+    },
+    {
+      "iteration": 50750,
+      "support_samples": 50751,
+      "best_response": [
+        8,
+        0,
+        26,
+        47,
+        19
+      ],
+      "exact_best_response_score": 7.556166380958011,
+      "exploitability": 0.056166380958011075
+    },
+    {
+      "iteration": 51000,
+      "support_samples": 51001,
+      "best_response": [
+        10,
+        0,
+        32,
+        15,
+        43
+      ],
+      "exact_best_response_score": 7.556038116899668,
+      "exploitability": 0.056038116899667756
+    },
+    {
+      "iteration": 51250,
+      "support_samples": 51251,
+      "best_response": [
+        12,
+        2,
+        13,
+        19,
+        54
+      ],
+      "exact_best_response_score": 7.555833056915962,
+      "exploitability": 0.05583305691596241
+    },
+    {
+      "iteration": 51500,
+      "support_samples": 51501,
+      "best_response": [
+        10,
+        2,
+        2,
+        23,
+        63
+      ],
+      "exact_best_response_score": 7.55561057066853,
+      "exploitability": 0.055610570668529924
+    },
+    {
+      "iteration": 51750,
+      "support_samples": 51751,
+      "best_response": [
+        12,
+        13,
+        3,
+        48,
+        24
+      ],
+      "exact_best_response_score": 7.555438542250391,
+      "exploitability": 0.05543854225039091
+    },
+    {
+      "iteration": 52000,
+      "support_samples": 52001,
+      "best_response": [
+        0,
+        5,
+        17,
+        24,
+        54
+      ],
+      "exact_best_response_score": 7.555373935116633,
+      "exploitability": 0.055373935116633355
+    },
+    {
+      "iteration": 52250,
+      "support_samples": 52251,
+      "best_response": [
+        0,
+        13,
+        26,
+        6,
+        55
+      ],
+      "exact_best_response_score": 7.555271669441732,
+      "exploitability": 0.055271669441731675
+    },
+    {
+      "iteration": 52500,
+      "support_samples": 52501,
+      "best_response": [
+        0,
+        3,
+        26,
+        5,
+        66
+      ],
+      "exact_best_response_score": 7.555227519475821,
+      "exploitability": 0.05522751947582094
+    },
+    {
+      "iteration": 52750,
+      "support_samples": 52751,
+      "best_response": [
+        2,
+        15,
+        27,
+        26,
+        30
+      ],
+      "exact_best_response_score": 7.555070046065477,
+      "exploitability": 0.055070046065477385
+    },
+    {
+      "iteration": 53000,
+      "support_samples": 53001,
+      "best_response": [
+        2,
+        15,
+        33,
+        6,
+        44
+      ],
+      "exact_best_response_score": 7.554914058225316,
+      "exploitability": 0.054914058225316253
+    },
+    {
+      "iteration": 53250,
+      "support_samples": 53251,
+      "best_response": [
+        2,
+        17,
+        6,
+        8,
+        67
+      ],
+      "exact_best_response_score": 7.554787703517304,
+      "exploitability": 0.05478770351730411
+    },
+    {
+      "iteration": 53500,
+      "support_samples": 53501,
+      "best_response": [
+        2,
+        16,
+        39,
+        41,
+        2
+      ],
+      "exact_best_response_score": 7.554615801573803,
+      "exploitability": 0.05461580157380297
+    },
+    {
+      "iteration": 53750,
+      "support_samples": 53751,
+      "best_response": [
+        2,
+        20,
+        6,
+        42,
+        30
+      ],
+      "exact_best_response_score": 7.5543896857732875,
+      "exploitability": 0.05438968577328751
+    },
+    {
+      "iteration": 54000,
+      "support_samples": 54001,
+      "best_response": [
+        3,
+        20,
+        13,
+        52,
+        12
+      ],
+      "exact_best_response_score": 7.554304549915742,
+      "exploitability": 0.054304549915742406
+    },
+    {
+      "iteration": 54250,
+      "support_samples": 54251,
+      "best_response": [
+        3,
+        24,
+        18,
+        9,
+        46
+      ],
+      "exact_best_response_score": 7.554109601666329,
+      "exploitability": 0.05410960166632872
+    },
+    {
+      "iteration": 54500,
+      "support_samples": 54501,
+      "best_response": [
+        3,
+        21,
+        7,
+        12,
+        57
+      ],
+      "exact_best_response_score": 7.554026531623274,
+      "exploitability": 0.054026531623273755
+    },
+    {
+      "iteration": 54750,
+      "support_samples": 54751,
+      "best_response": [
+        6,
+        26,
+        40,
+        15,
+        13
+      ],
+      "exact_best_response_score": 7.553834633157386,
+      "exploitability": 0.053834633157386236
+    },
+    {
+      "iteration": 55000,
+      "support_samples": 55001,
+      "best_response": [
+        6,
+        0,
+        8,
+        28,
+        58
+      ],
+      "exact_best_response_score": 7.553662660678896,
+      "exploitability": 0.05366266067889569
+    },
+    {
+      "iteration": 55250,
+      "support_samples": 55251,
+      "best_response": [
+        8,
+        26,
+        19,
+        32,
+        15
+      ],
+      "exact_best_response_score": 7.5535465421440335,
+      "exploitability": 0.05354654214403354
+    },
+    {
+      "iteration": 55500,
+      "support_samples": 55501,
+      "best_response": [
+        4,
+        6,
+        20,
+        53,
+        17
+      ],
+      "exact_best_response_score": 7.553359398929751,
+      "exploitability": 0.053359398929750945
+    },
+    {
+      "iteration": 55750,
+      "support_samples": 55751,
+      "best_response": [
+        7,
+        6,
+        24,
+        32,
+        31
+      ],
+      "exact_best_response_score": 7.553218776344819,
+      "exploitability": 0.05321877634481886
+    },
+    {
+      "iteration": 56000,
+      "support_samples": 56001,
+      "best_response": [
+        8,
+        7,
+        27,
+        19,
+        39
+      ],
+      "exact_best_response_score": 7.553043695648292,
+      "exploitability": 0.05304369564829159
+    },
+    {
+      "iteration": 56250,
+      "support_samples": 56251,
+      "best_response": [
+        8,
+        7,
+        9,
+        29,
+        47
+      ],
+      "exact_best_response_score": 7.552896837389556,
+      "exploitability": 0.05289683738955642
+    },
+    {
+      "iteration": 56500,
+      "support_samples": 56501,
+      "best_response": [
+        8,
+        9,
+        1,
+        33,
+        49
+      ],
+      "exact_best_response_score": 7.552733579936639,
+      "exploitability": 0.052733579936639075
+    },
+    {
+      "iteration": 56750,
+      "support_samples": 56751,
+      "best_response": [
+        10,
+        10,
+        34,
+        44,
+        2
+      ],
+      "exact_best_response_score": 7.5525717608500305,
+      "exploitability": 0.05257176085003046
+    },
+    {
+      "iteration": 57000,
+      "support_samples": 57001,
+      "best_response": [
+        8,
+        11,
+        34,
+        44,
+        3
+      ],
+      "exact_best_response_score": 7.552393817652322,
+      "exploitability": 0.052393817652322205
+    },
+    {
+      "iteration": 57250,
+      "support_samples": 57251,
+      "best_response": [
+        10,
+        13,
+        10,
+        49,
+        18
+      ],
+      "exact_best_response_score": 7.552261095876054,
+      "exploitability": 0.05226109587605432
+    },
+    {
+      "iteration": 57500,
+      "support_samples": 57501,
+      "best_response": [
+        10,
+        14,
+        13,
+        3,
+        60
+      ],
+      "exact_best_response_score": 7.552129528182118,
+      "exploitability": 0.052129528182118356
+    },
+    {
+      "iteration": 57750,
+      "support_samples": 57751,
+      "best_response": [
+        11,
+        20,
+        35,
+        16,
+        18
+      ],
+      "exact_best_response_score": 7.55205104673512,
+      "exploitability": 0.05205104673512029
+    },
+    {
+      "iteration": 58000,
+      "support_samples": 58001,
+      "best_response": [
+        12,
+        21,
+        36,
+        6,
+        25
+      ],
+      "exact_best_response_score": 7.551904277512456,
+      "exploitability": 0.051904277512456076
+    },
+    {
+      "iteration": 58250,
+      "support_samples": 58251,
+      "best_response": [
+        12,
+        0,
+        37,
+        20,
+        31
+      ],
+      "exact_best_response_score": 7.551784518720709,
+      "exploitability": 0.05178451872070866
+    },
+    {
+      "iteration": 58500,
+      "support_samples": 58501,
+      "best_response": [
+        12,
+        26,
+        2,
+        20,
+        40
+      ],
+      "exact_best_response_score": 7.551657236628434,
+      "exploitability": 0.0516572366284338
+    },
+    {
+      "iteration": 58750,
+      "support_samples": 58751,
+      "best_response": [
+        12,
+        1,
+        3,
+        21,
+        63
+      ],
+      "exact_best_response_score": 7.551573590236762,
+      "exploitability": 0.051573590236762
+    },
+    {
+      "iteration": 59000,
+      "support_samples": 59001,
+      "best_response": [
+        0,
+        1,
+        14,
+        21,
+        64
+      ],
+      "exact_best_response_score": 7.551422857239709,
+      "exploitability": 0.051422857239709074
+    },
+    {
+      "iteration": 59250,
+      "support_samples": 59251,
+      "best_response": [
+        0,
+        2,
+        14,
+        35,
+        49
+      ],
+      "exact_best_response_score": 7.551222764172759,
+      "exploitability": 0.05122276417275895
+    },
+    {
+      "iteration": 59500,
+      "support_samples": 59501,
+      "best_response": [
+        13,
+        12,
+        24,
+        45,
+        6
+      ],
+      "exact_best_response_score": 7.551083175072688,
+      "exploitability": 0.051083175072688114
+    },
+    {
+      "iteration": 59750,
+      "support_samples": 59751,
+      "best_response": [
+        0,
+        3,
+        28,
+        37,
+        32
+      ],
+      "exact_best_response_score": 7.551028434670549,
+      "exploitability": 0.05102843467054896
+    },
+    {
+      "iteration": 60000,
+      "support_samples": 60001,
+      "best_response": [
+        2,
+        3,
+        29,
+        53,
+        13
+      ],
+      "exact_best_response_score": 7.550849152514125,
+      "exploitability": 0.05084915251412525
+    },
+    {
+      "iteration": 60250,
+      "support_samples": 60251,
+      "best_response": [
+        3,
+        7,
+        37,
+        3,
+        50
+      ],
+      "exact_best_response_score": 7.550746045708785,
+      "exploitability": 0.05074604570878538
+    },
+    {
+      "iteration": 60500,
+      "support_samples": 60501,
+      "best_response": [
+        3,
+        11,
+        29,
+        7,
+        50
+      ],
+      "exact_best_response_score": 7.550585940728252,
+      "exploitability": 0.05058594072825162
+    },
+    {
+      "iteration": 60750,
+      "support_samples": 60751,
+      "best_response": [
+        0,
+        13,
+        11,
+        9,
+        67
+      ],
+      "exact_best_response_score": 7.550476535365672,
+      "exploitability": 0.050476535365672426
+    },
+    {
+      "iteration": 61000,
+      "support_samples": 61001,
+      "best_response": [
+        4,
+        3,
+        15,
+        11,
+        67
+      ],
+      "exact_best_response_score": 7.550302454058128,
+      "exploitability": 0.050302454058128276
+    },
+    {
+      "iteration": 61250,
+      "support_samples": 61251,
+      "best_response": [
+        4,
+        14,
+        39,
+        23,
+        20
+      ],
+      "exact_best_response_score": 7.550211425119589,
+      "exploitability": 0.050211425119589315
+    },
+    {
+      "iteration": 61500,
+      "support_samples": 61501,
+      "best_response": [
+        4,
+        17,
+        29,
+        29,
+        21
+      ],
+      "exact_best_response_score": 7.550064226597942,
+      "exploitability": 0.050064226597942074
+    },
+    {
+      "iteration": 61750,
+      "support_samples": 61751,
+      "best_response": [
+        5,
+        21,
+        16,
+        24,
+        34
+      ],
+      "exact_best_response_score": 7.5499668021570505,
+      "exploitability": 0.049966802157050516
+    },
+    {
+      "iteration": 62000,
+      "support_samples": 62001,
+      "best_response": [
+        5,
+        3,
+        16,
+        38,
+        38
+      ],
+      "exact_best_response_score": 7.54987822777052,
+      "exploitability": 0.04987822777052031
+    },
+    {
+      "iteration": 62250,
+      "support_samples": 62251,
+      "best_response": [
+        5,
+        21,
+        24,
+        41,
+        9
+      ],
+      "exact_best_response_score": 7.54978233281393,
+      "exploitability": 0.04978233281392974
+    },
+    {
+      "iteration": 62500,
+      "support_samples": 62501,
+      "best_response": [
+        6,
+        9,
+        30,
+        12,
+        43
+      ],
+      "exact_best_response_score": 7.549807203084749,
+      "exploitability": 0.049807203084749396
+    },
+    {
+      "iteration": 62750,
+      "support_samples": 62751,
+      "best_response": [
+        6,
+        4,
+        30,
+        9,
+        51
+      ],
+      "exact_best_response_score": 7.54970438718108,
+      "exploitability": 0.04970438718108028
+    },
+    {
+      "iteration": 63000,
+      "support_samples": 63001,
+      "best_response": [
+        6,
+        4,
+        31,
+        45,
+        14
+      ],
+      "exact_best_response_score": 7.549594450881731,
+      "exploitability": 0.04959445088173098
+    },
+    {
+      "iteration": 63250,
+      "support_samples": 63251,
+      "best_response": [
+        6,
+        22,
+        5,
+        13,
+        54
+      ],
+      "exact_best_response_score": 7.549477478616938,
+      "exploitability": 0.04947747861693763
+    },
+    {
+      "iteration": 63500,
+      "support_samples": 63501,
+      "best_response": [
+        7,
+        15,
+        31,
+        25,
+        22
+      ],
+      "exact_best_response_score": 7.549329931812098,
+      "exploitability": 0.04932993181209788
+    },
+    {
+      "iteration": 63750,
+      "support_samples": 63751,
+      "best_response": [
+        7,
+        9,
+        32,
+        29,
+        23
+      ],
+      "exact_best_response_score": 7.549261972361218,
+      "exploitability": 0.049261972361217765
+    },
+    {
+      "iteration": 64000,
+      "support_samples": 64001,
+      "best_response": [
+        8,
+        17,
+        35,
+        14,
+        26
+      ],
+      "exact_best_response_score": 7.5492023562131845,
+      "exploitability": 0.04920235621318447
+    },
+    {
+      "iteration": 64250,
+      "support_samples": 64251,
+      "best_response": [
+        8,
+        4,
+        7,
+        25,
+        56
+      ],
+      "exact_best_response_score": 7.549166549936966,
+      "exploitability": 0.04916654993696579
+    },
+    {
+      "iteration": 64500,
+      "support_samples": 64501,
+      "best_response": [
+        8,
+        24,
+        10,
+        30,
+        28
+      ],
+      "exact_best_response_score": 7.549061254864267,
+      "exploitability": 0.0490612548642666
+    },
+    {
+      "iteration": 64663,
+      "support_samples": 64664,
+      "best_response": [
+        8,
+        24,
+        19,
+        47,
+        2
+      ],
+      "exact_best_response_score": 7.54899944327601,
+      "exploitability": 0.04899944327600991
+    }
+  ],
+  "runtime_seconds": 7.879429036000147,
+  "notes": [
+    "Supplemental stress only: outside canonical populations, preregistered prior, holdout, and primary selection.",
+    "Exact exploitability certificate is conditional on this finite empirical population and the Game 1 rules; it is not a proof of an exact Nash equilibrium or a forecast of actual applicants.",
+    "The canonical named equilibrium scenario is a coarse approximation: its unrestricted best response can score materially above the symmetric 7.5-point benchmark.",
+    "Finite-support fictitious play with exact best responses is stronger evidence of equilibrium-like play only to the extent the saved exploitability certificate is small.",
+    "Game 2 equilibrium behavior is not assessed by this audit."
+  ]
+}
