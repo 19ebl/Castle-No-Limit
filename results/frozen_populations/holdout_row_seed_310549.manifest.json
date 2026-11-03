@@ -1,0 +1,245 @@
+{
+  "schema": 1,
+  "base_seed": 310549,
+  "source_sha256": "bee92b5b5fcc278f6958bfa6aa608827ddf6f688905a05faaa32b21058a18366",
+  "python_version": "3.12.14",
+  "numpy_version": "2.3.5",
+  "archive_sha256": "d867705841562ac22a188908905c5c20cbfe11438c368113c0bcac139aef7bfe",
+  "populations": [
+    {
+      "name": "holdout_best_guess",
+      "seed": 310549,
+      "meta": {
+        "weights": {
+          "A": 0.18,
+          "B": 0.12,
+          "C": 0.1,
+          "D": 0.12,
+          "E": 0.25,
+          "F": 0.08,
+          "XA": 0.1,
+          "XC": 0.05
+        },
+        "params": {
+          "noise": 1.0,
+          "round_prob": 0.5,
+          "tau": 1.5,
+          "reuse": 0.5
+        },
+        "lib_seed": 2
+      },
+      "meta_arrays": {
+        "arch": {
+          "key": "000_meta_arch",
+          "dtype": "<U2",
+          "shape": [
+            3200
+          ],
+          "sha256": "2c8c459ff9d4ba7c02a8a48f83f46eef2079fe4d80d15bf7b8059e66d2776154"
+        }
+      },
+      "arrays": {
+        "g1": {
+          "key": "000_g1",
+          "dtype": "<i8",
+          "shape": [
+            3200,
+            5
+          ],
+          "sha256": "3b96ae758316b1912045811635965f782936f86c5d9049d4c7f6f7bbbb8c5b57"
+        },
+        "g2": {
+          "key": "000_g2",
+          "dtype": "<i8",
+          "shape": [
+            3200,
+            5
+          ],
+          "sha256": "6a894d67afd99c25e72c2e47b1b3b5b742da2bed289f22806d58b51f19c62402"
+        },
+        "w": {
+          "key": "000_w",
+          "dtype": "<f8",
+          "shape": [
+            3200
+          ],
+          "sha256": "3621847ba21381fdaf0a8575a005828e17b844e96dda8b1cc394d57c20fd33ed"
+        }
+      }
+    },
+    {
+      "name": "holdout_ai2_heavy",
+      "seed": 310550,
+      "meta": {
+        "weights": {
+          "XA": 0.45,
+          "E": 0.2,
+          "A": 0.15,
+          "D": 0.1,
+          "C": 0.1
+        },
+        "params": {
+          "noise": 1.0,
+          "round_prob": 0.5,
+          "tau": 1.5,
+          "reuse": 0.4
+        },
+        "lib_seed": 2
+      },
+      "meta_arrays": {
+        "arch": {
+          "key": "001_meta_arch",
+          "dtype": "<U2",
+          "shape": [
+            2000
+          ],
+          "sha256": "944c3f065337d24ee81f4a6ce590f9652793ff4f2b70106ae009673f3c15d511"
+        }
+      },
+      "arrays": {
+        "g1": {
+          "key": "001_g1",
+          "dtype": "<i8",
+          "shape": [
+            2000,
+            5
+          ],
+          "sha256": "77ed9b70ec30b097534e651bcdb2939487ebdb6690d7bd9b33161188343e9ec2"
+        },
+        "g2": {
+          "key": "001_g2",
+          "dtype": "<i8",
+          "shape": [
+            2000,
+            5
+          ],
+          "sha256": "7dd90f59a2346a353d6f11731a7c026c97b84f7115d110f636d919d497c207e5"
+        },
+        "w": {
+          "key": "001_w",
+          "dtype": "<f8",
+          "shape": [
+            2000
+          ],
+          "sha256": "28dd24e2d90e9d3f4c66660ceca6ee8a3daf1223b3b632a5442e60f614839783"
+        }
+      }
+    },
+    {
+      "name": "holdout_contrarian",
+      "seed": 310551,
+      "meta": {
+        "weights": {
+          "XC": 0.3,
+          "A": 0.2,
+          "E": 0.2,
+          "B": 0.1,
+          "C": 0.1,
+          "F": 0.1
+        },
+        "params": {
+          "noise": 1.0,
+          "round_prob": 0.5,
+          "tau": 1.5,
+          "reuse": 0.4
+        },
+        "lib_seed": 2
+      },
+      "meta_arrays": {
+        "arch": {
+          "key": "002_meta_arch",
+          "dtype": "<U2",
+          "shape": [
+            2400
+          ],
+          "sha256": "01bd6dea370b58f26f8780159cfb0409b7348d2fb3215bddd676c6ebce6cc22c"
+        }
+      },
+      "arrays": {
+        "g1": {
+          "key": "002_g1",
+          "dtype": "<i8",
+          "shape": [
+            2400,
+            5
+          ],
+          "sha256": "fdaa1eab043636423c0e66abac851a62fc98e70a52f503658b427b458479efa8"
+        },
+        "g2": {
+          "key": "002_g2",
+          "dtype": "<i8",
+          "shape": [
+            2400,
+            5
+          ],
+          "sha256": "0b6598d33a11125ed57637a41b660679956f42158a49117fa31cf02c21c46c82"
+        },
+        "w": {
+          "key": "002_w",
+          "dtype": "<f8",
+          "shape": [
+            2400
+          ],
+          "sha256": "d5d0c28d42f30e610d2d4dfb7d2ffb7a3f8e80ac6cc012a2f836f3a2b3970c0a"
+        }
+      }
+    },
+    {
+      "name": "holdout_sophisticated",
+      "seed": 310552,
+      "meta": {
+        "weights": {
+          "F": 0.35,
+          "D": 0.35,
+          "C": 0.15,
+          "XA": 0.15
+        },
+        "params": {
+          "noise": 1.0,
+          "round_prob": 0.5,
+          "tau": 3.0,
+          "reuse": 0.4
+        },
+        "lib_seed": 2
+      },
+      "meta_arrays": {
+        "arch": {
+          "key": "003_meta_arch",
+          "dtype": "<U2",
+          "shape": [
+            1600
+          ],
+          "sha256": "479eecf01dab14118c7b19f57f954ada072110791d094c7024e075b86cb2f9d8"
+        }
+      },
+      "arrays": {
+        "g1": {
+          "key": "003_g1",
+          "dtype": "<i8",
+          "shape": [
+            1600,
+            5
+          ],
+          "sha256": "15b0b8bf6e4020b06f502fe935c5839a34af047e9dc8acf08076bbc4e95541f5"
+        },
+        "g2": {
+          "key": "003_g2",
+          "dtype": "<i8",
+          "shape": [
+            1600,
+            5
+          ],
+          "sha256": "358abef674eb3aa5d03768f1c8fefa7b3ff0c31253391d0c74ddd2ec16bec47d"
+        },
+        "w": {
+          "key": "003_w",
+          "dtype": "<f8",
+          "shape": [
+            1600
+          ],
+          "sha256": "b853a8e695896ad0f7a47d8aa447f0452b93fa2b60a346749c6beb6a1e0aa9b1"
+        }
+      }
+    }
+  ]
+}

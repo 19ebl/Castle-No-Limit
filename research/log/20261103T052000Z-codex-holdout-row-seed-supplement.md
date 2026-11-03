@@ -35,3 +35,28 @@ NUMBA_NUM_THREADS=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 \
 Only import/shape/covariance reconstruction checks were run at script creation;
 those checks did not read holdout arrays or outcomes. Actual execution status
 and results must be established from the completed CX-064 JSON, not this plan.
+
+## Completed after explicit parent go
+
+CX-064 completed in 10.51 seconds after primary CX-050 finished. It evaluated
+all eight extra model units (four holdouts × two new row seeds), with one million
+groups for every fixed candidate in each model. The four original baseline
+units were copied from CX-050. All three population archives were rechecked
+against their saved SHA256 hashes after the run.
+
+For the fixed primary Game 2 allocation (1,0,48,51,0), the following are
+descriptive finite-row-model sensitivity diagnostics, **not confidence intervals**:
+
+| Holdout | Mean over three row seeds | Across-row-seed SD | Range of three row-seed means |
+|---|---:|---:|---:|
+| best_guess | 7.759414 | 0.046314 | 7.713654–7.806262 |
+| ai2_heavy | 8.298898 | 0.072334 | 8.227001–8.371661 |
+| contrarian | 7.937238 | 0.046961 | 7.883036–7.965725 |
+| sophisticated | 5.612952 | 0.158615 | 5.454059–5.771287 |
+
+The sophisticated holdout has substantial sensitivity to the finite applicant
+rows, much larger than its conditional Monte Carlo error. Candidate ordering
+also depends on the scenario; those held-out outcomes are reported without
+changing the primary prior-based pick. Exact Game 1 scores for the two extra
+row models are included in CX-064. The original Game 1 cross-check and its
+previously diagnosed 3-SE tail event remain unchanged.
