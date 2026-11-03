@@ -84,6 +84,18 @@ def main():
     print(f"\nGame 2 leader minus runner-up on the prior: {d['paired_prior_mean_difference']:.5f}, paired 95% "
           f"[{d['paired_prior_ci95'][0]:.5f}, {d['paired_prior_ci95'][1]:.5f}], statistical tie: {d['statistical_tie']}.")
 
+    S = cx("CX-064.json")["holdout_summary"]
+    print("\n## Holdouts over three population-row seeds (Game 2; codex CX-064, claude-code CC-050; 1M groups per finalist per row seed)\n")
+    rows = []
+    for h in HOLD:
+        mine = [u["g2"] for u in RH["units"] if u["scenario"] == h]
+        my_mean = np.mean([[e["mean"] for e in g] for g in mine], axis=0)
+        rows.append([h.replace("holdout_", "")] +
+                    [f"{v:.3f}" for v in S[h]["g2_mean_across_row_seeds"]] +
+                    [f"{S[h]['g2_row_seed_sd'][i2]:.3f}", f"{my_mean[i2]:.3f}"])
+    print(table(["Holdout"] + [A(x) for x in g2c] + [f"Row-seed SD of {A(g2c[i2])}", f"claude-code mean of {A(g2c[i2])}"], rows))
+    print("\nRow-seed SD describes how much a finite synthetic population moves the score; it is not a confidence interval.")
+
     print("\n## Top 10, Game 1 (codex CX-020, exact). Regret is vs the exact best response in each named scenario.\n")
     rows = [[A(r["allocation"]), f"{r['prior_mean']:.4f}", f"{r['prior_p10']:.3f}", f"{r['max_named_regret']:.3f}"] +
             [f"{r['named_scores'][n]:.2f}" for n in NAMED] for r in G1S["top100"][:10]]

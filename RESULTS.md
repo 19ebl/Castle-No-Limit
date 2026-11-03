@@ -2,7 +2,7 @@
 
 Castle allocation research by two coding agents (codex, claude-code), directed by Emilio. Every number below is computed from saved experiment files and is conditional on our modeled applicant pool (`src/castles/populations.py`). It is not a prediction about real applicants.
 
-Status: final draft by claude-code. Headline numbers are codex's final validation (CX-050), independently reproduced by claude-code with different draw seeds and its own scorer (CC-050, CC-051, CC-052). Awaiting codex approval (AGENTS.md section 7).
+Status: final. Headline numbers are codex's final validation (CX-050, CX-064), independently reproduced by claude-code with different draw seeds and its own scorer (CC-050, CC-051, CC-052). Codex approved the two picks and the headline numbers in its signed DECISION and HANDOFF comments on the Coordination issue (2026-11-03 05:22 and 05:24 UTC). It then stopped work at the owner's request, so it has not reviewed the prose in this file, which claude-code wrote afterwards.
 
 ## 1. Final answers
 
@@ -55,6 +55,17 @@ All 20 holdout comparisons between codex and claude-code (5 finalists x 4 holdou
 | G2 | (0,0,47,53,0) | 7.4242 | 7.627 | 8.287 | 7.879 | 5.493 |
 
 Game 2 leader minus runner-up on the prior: 0.00343, paired 95% [0.00337, 0.00350], statistical tie: False.
+
+### Holdouts over three population-row seeds (Game 2; codex CX-064, claude-code CC-050; 1M groups per finalist per row seed)
+
+| Holdout | (1,0,48,51,0) | (0,0,48,52,0) | (0,0,35,0,65) | (1,0,47,52,0) | (0,0,47,53,0) | Row-seed SD of (1,0,48,51,0) | claude-code mean of (1,0,48,51,0) |
+|---|---|---|---|---|---|---|---|
+| best_guess | 7.759 | 7.744 | 7.796 | 7.701 | 7.664 | 0.046 | 7.761 |
+| ai2_heavy | 8.299 | 8.282 | 8.112 | 8.374 | 8.285 | 0.072 | 8.299 |
+| contrarian | 7.937 | 7.931 | 7.771 | 7.873 | 7.863 | 0.047 | 7.938 |
+| sophisticated | 5.613 | 5.612 | 5.610 | 5.646 | 5.643 | 0.159 | 5.616 |
+
+Row-seed SD describes how much a finite synthetic population moves the score; it is not a confidence interval. Holdouts are diagnostic only: they never selected or tuned a pick.
 
 ## 3. Top 10 per game
 
@@ -109,7 +120,7 @@ The large "max named regret" values come from the two most sophisticated named p
 
 ## 6. What would change the pick
 
-- **Game 2, most likely flip: how sophisticated the pool is.** If many applicants think several steps ahead (level-k tau 3, game-theory literate), (0,0,35,0,65) is better: +0.29 payout on holdout_sophisticated, better on the level-k tau 1.5 / tau 3 and equilibrium named pools, and the smallest worst-case shortfall in the sensitivity set (0.16 vs 0.60). It costs 0.040 on the prior mean. **Runner-up to use if Emilio believes the pool is sophisticated: Castle 1 = 0, Castle 2 = 0, Castle 3 = 35, Castle 4 = 0, Castle 5 = 65.**
+- **Game 2, most likely flip: how sophisticated the pool is.** If many applicants think several steps ahead (level-k tau 3, game-theory literate), (0,0,35,0,65) is better. It scores higher on the level-k tau 1.5 / tau 3 and equilibrium named pools (6.40 / 5.08 / 4.94 vs 5.99 / 4.83 / 4.72, CX-031) and has the smallest worst-case shortfall in the sensitivity set (0.16 vs 0.60, CC-041). On holdout_sophisticated it is +0.29 on the baseline row seed but level with the pick over three row seeds (5.610 vs 5.613), so that holdout does not separate them. It costs 0.040 on the prior mean. **Runner-up to use if Emilio believes the pool is sophisticated: Castle 1 = 0, Castle 2 = 0, Castle 3 = 35, Castle 4 = 0, Castle 5 = 65.**
 - **Game 1, most likely flip: the share of chatbot and naive answers.** At an AI-assisted share of 0.5 to 0.7, (1,16,1,36,46) or (1,1,21,36,41) do 0.19 to 0.40 better. They do much worse on sophisticated pools (holdout_sophisticated 8.28 vs 8.77). **Runner-up if Emilio believes most applicants paste a chatbot answer: Castle 1 = 1, Castle 2 = 16, Castle 3 = 1, Castle 4 = 36, Castle 5 = 46.**
 - **Copycat risk (red team, CC-042).** If 20% of applicants played a near-copy that beats ours on one castle, such as (0,0,48,52,0) or (0,0,49,51,0), the Game 2 payout would fall by about 2.5 points; at 40%, by about 4.2. Every two-castle contender has the same weakness, so it does not change the ranking, but it is the main way the pick fails.
 
@@ -203,6 +214,8 @@ Regenerate every table in this file from saved results, with no simulation:
 ```bash
 python scripts/cc_results_tables.py
 ```
+
+Codex's numerical tables (`results/TABLES.md`, `results/tables.csv`) are regenerated with `python scripts/render_tables.py`.
 
 ## 8. Unfinished work and limitations
 
