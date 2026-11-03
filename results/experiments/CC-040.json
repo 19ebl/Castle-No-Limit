@@ -1,0 +1,3022 @@
+{
+ "id": "CC-040",
+ "agent": "claude-code",
+ "population_seed": 7,
+ "groups": 100000,
+ "commit": "0f9c92c9f3f04b6e01d8336cd0b5e0c3590a1788",
+ "bases": {
+  "best_guess": {
+   "g1": [
+    {
+     "allocation": [
+      1,
+      11,
+      1,
+      36,
+      51
+     ],
+     "counter_share": 0.2,
+     "base_score": 9.895612500000006,
+     "stress_score": 8.936489999999994,
+     "damage": 0.9591225000000119,
+     "counter_bank_size": 95,
+     "counter_examples": [
+      [
+       0,
+       5,
+       2,
+       39,
+       54
+      ],
+      [
+       0,
+       6,
+       2,
+       37,
+       55
+      ],
+      [
+       0,
+       7,
+       2,
+       34,
+       57
+      ],
+      [
+       0,
+       8,
+       1,
+       38,
+       53
+      ],
+      [
+       0,
+       8,
+       3,
+       37,
+       52
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      1,
+      11,
+      1,
+      36,
+      51
+     ],
+     "counter_share": 0.4,
+     "base_score": 9.895612500000006,
+     "stress_score": 7.9773675,
+     "damage": 1.918245000000006,
+     "counter_bank_size": 95,
+     "counter_examples": [
+      [
+       0,
+       5,
+       2,
+       39,
+       54
+      ],
+      [
+       0,
+       6,
+       2,
+       37,
+       55
+      ],
+      [
+       0,
+       7,
+       2,
+       34,
+       57
+      ],
+      [
+       0,
+       8,
+       1,
+       38,
+       53
+      ],
+      [
+       0,
+       8,
+       3,
+       37,
+       52
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      6,
+      3,
+      2,
+      38,
+      51
+     ],
+     "counter_share": 0.2,
+     "base_score": 9.834587500000007,
+     "stress_score": 8.708781111111106,
+     "damage": 1.1258063888889005,
+     "counter_bank_size": 90,
+     "counter_examples": [
+      [
+       0,
+       0,
+       7,
+       40,
+       53
+      ],
+      [
+       0,
+       2,
+       2,
+       41,
+       55
+      ],
+      [
+       0,
+       2,
+       3,
+       40,
+       55
+      ],
+      [
+       0,
+       2,
+       7,
+       39,
+       52
+      ],
+      [
+       0,
+       3,
+       3,
+       39,
+       55
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      6,
+      3,
+      2,
+      38,
+      51
+     ],
+     "counter_share": 0.4,
+     "base_score": 9.834587500000007,
+     "stress_score": 7.582974722222221,
+     "damage": 2.251612777777786,
+     "counter_bank_size": 90,
+     "counter_examples": [
+      [
+       0,
+       0,
+       7,
+       40,
+       53
+      ],
+      [
+       0,
+       2,
+       2,
+       41,
+       55
+      ],
+      [
+       0,
+       2,
+       3,
+       40,
+       55
+      ],
+      [
+       0,
+       2,
+       7,
+       39,
+       52
+      ],
+      [
+       0,
+       3,
+       3,
+       39,
+       55
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      1,
+      16,
+      1,
+      36,
+      46
+     ],
+     "counter_share": 0.2,
+     "base_score": 9.990362500000007,
+     "stress_score": 8.94421307692307,
+     "damage": 1.0461494230769368,
+     "counter_bank_size": 104,
+     "counter_examples": [
+      [
+       4,
+       5,
+       2,
+       39,
+       50
+      ],
+      [
+       4,
+       6,
+       2,
+       37,
+       51
+      ],
+      [
+       4,
+       7,
+       2,
+       40,
+       47
+      ],
+      [
+       4,
+       9,
+       0,
+       37,
+       50
+      ],
+      [
+       5,
+       7,
+       3,
+       38,
+       47
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      1,
+      16,
+      1,
+      36,
+      46
+     ],
+     "counter_share": 0.4,
+     "base_score": 9.990362500000007,
+     "stress_score": 7.898063653846155,
+     "damage": 2.0922988461538523,
+     "counter_bank_size": 104,
+     "counter_examples": [
+      [
+       4,
+       5,
+       2,
+       39,
+       50
+      ],
+      [
+       4,
+       6,
+       2,
+       37,
+       51
+      ],
+      [
+       4,
+       7,
+       2,
+       40,
+       47
+      ],
+      [
+       4,
+       9,
+       0,
+       37,
+       50
+      ],
+      [
+       5,
+       7,
+       3,
+       38,
+       47
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      1,
+      1,
+      21,
+      36,
+      41
+     ],
+     "counter_share": 0.2,
+     "base_score": 9.930012500000005,
+     "stress_score": 9.009442098765419,
+     "damage": 0.9205704012345866,
+     "counter_bank_size": 81,
+     "counter_examples": [
+      [
+       9,
+       9,
+       3,
+       37,
+       42
+      ],
+      [
+       10,
+       6,
+       1,
+       37,
+       46
+      ],
+      [
+       10,
+       6,
+       2,
+       37,
+       45
+      ],
+      [
+       10,
+       8,
+       0,
+       37,
+       45
+      ],
+      [
+       10,
+       8,
+       3,
+       37,
+       42
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      1,
+      1,
+      21,
+      36,
+      41
+     ],
+     "counter_share": 0.4,
+     "base_score": 9.930012500000005,
+     "stress_score": 8.08887169753086,
+     "damage": 1.8411408024691447,
+     "counter_bank_size": 81,
+     "counter_examples": [
+      [
+       9,
+       9,
+       3,
+       37,
+       42
+      ],
+      [
+       10,
+       6,
+       1,
+       37,
+       46
+      ],
+      [
+       10,
+       6,
+       2,
+       37,
+       45
+      ],
+      [
+       10,
+       8,
+       0,
+       37,
+       45
+      ],
+      [
+       10,
+       8,
+       3,
+       37,
+       42
+      ]
+     ],
+     "exact": true
+    }
+   ],
+   "g2": [
+    {
+     "allocation": [
+      0,
+      0,
+      35,
+      0,
+      65
+     ],
+     "counter_share": 0.2,
+     "base_score": 7.609495,
+     "stress_score": 5.17714,
+     "damage": 2.432355,
+     "damage_se": 0.010911205574262674,
+     "damage_ci95": [
+      2.410969037074445,
+      2.4537409629255547
+     ],
+     "groups": 100000,
+     "validation_seed": 86201,
+     "counter_bank_size": 39,
+     "counter_search": {
+      "candidate_count": 1065,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 86101,
+      "anchor_counters": [
+       [
+        1,
+        32,
+        0,
+        1,
+        66
+       ],
+       [
+        0,
+        33,
+        0,
+        1,
+        66
+       ],
+       [
+        0,
+        20,
+        0,
+        10,
+        70
+       ],
+       [
+        10,
+        10,
+        0,
+        10,
+        70
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      0,
+      0,
+      35,
+      0,
+      65
+     ],
+     "counter_share": 0.4,
+     "base_score": 7.609495,
+     "stress_score": 3.583245,
+     "damage": 4.02625,
+     "damage_se": 0.011383508036521613,
+     "damage_ci95": [
+      4.003938324248418,
+      4.048561675751582
+     ],
+     "groups": 100000,
+     "validation_seed": 86201,
+     "counter_bank_size": 39,
+     "counter_search": {
+      "candidate_count": 1065,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 86101,
+      "anchor_counters": [
+       [
+        1,
+        32,
+        0,
+        1,
+        66
+       ],
+       [
+        0,
+        33,
+        0,
+        1,
+        66
+       ],
+       [
+        0,
+        20,
+        0,
+        10,
+        70
+       ],
+       [
+        10,
+        10,
+        0,
+        10,
+        70
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      2,
+      1,
+      41,
+      56,
+      0
+     ],
+     "counter_share": 0.2,
+     "base_score": 7.45223,
+     "stress_score": 4.993315,
+     "damage": 2.458915,
+     "damage_se": 0.010782358639014389,
+     "damage_ci95": [
+      2.437781577067532,
+      2.480048422932468
+     ],
+     "groups": 100000,
+     "validation_seed": 86202,
+     "counter_bank_size": 37,
+     "counter_search": {
+      "candidate_count": 1066,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 86102,
+      "anchor_counters": [
+       [
+        0,
+        1,
+        42,
+        57,
+        0
+       ],
+       [
+        0,
+        0,
+        42,
+        57,
+        1
+       ],
+       [
+        0,
+        2,
+        41,
+        57,
+        0
+       ],
+       [
+        0,
+        2,
+        42,
+        56,
+        0
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      2,
+      1,
+      41,
+      56,
+      0
+     ],
+     "counter_share": 0.4,
+     "base_score": 7.45223,
+     "stress_score": 3.207645,
+     "damage": 4.244585,
+     "damage_se": 0.011469599918696944,
+     "damage_ci95": [
+      4.222104584159354,
+      4.267065415840646
+     ],
+     "groups": 100000,
+     "validation_seed": 86202,
+     "counter_bank_size": 37,
+     "counter_search": {
+      "candidate_count": 1066,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 86102,
+      "anchor_counters": [
+       [
+        0,
+        1,
+        42,
+        57,
+        0
+       ],
+       [
+        0,
+        0,
+        42,
+        57,
+        1
+       ],
+       [
+        0,
+        2,
+        41,
+        57,
+        0
+       ],
+       [
+        0,
+        2,
+        42,
+        56,
+        0
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      0,
+      0,
+      48,
+      52,
+      0
+     ],
+     "counter_share": 0.2,
+     "base_score": 7.549445,
+     "stress_score": 4.983745,
+     "damage": 2.5657,
+     "damage_se": 0.010349084797003132,
+     "damage_ci95": [
+      2.545415793797874,
+      2.5859842062021263
+     ],
+     "groups": 100000,
+     "validation_seed": 86203,
+     "counter_bank_size": 39,
+     "counter_search": {
+      "candidate_count": 1065,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 86103,
+      "anchor_counters": [
+       [
+        10,
+        20,
+        0,
+        60,
+        10
+       ],
+       [
+        1,
+        45,
+        0,
+        53,
+        1
+       ],
+       [
+        10,
+        10,
+        0,
+        60,
+        20
+       ],
+       [
+        10,
+        10,
+        10,
+        60,
+        10
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      0,
+      0,
+      48,
+      52,
+      0
+     ],
+     "counter_share": 0.4,
+     "base_score": 7.549445,
+     "stress_score": 3.390455,
+     "damage": 4.15899,
+     "damage_se": 0.01032135345302984,
+     "damage_ci95": [
+      4.138760147232062,
+      4.179219852767939
+     ],
+     "groups": 100000,
+     "validation_seed": 86203,
+     "counter_bank_size": 39,
+     "counter_search": {
+      "candidate_count": 1065,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 86103,
+      "anchor_counters": [
+       [
+        10,
+        20,
+        0,
+        60,
+        10
+       ],
+       [
+        1,
+        45,
+        0,
+        53,
+        1
+       ],
+       [
+        10,
+        10,
+        0,
+        60,
+        20
+       ],
+       [
+        10,
+        10,
+        10,
+        60,
+        10
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      5,
+      0,
+      40,
+      55,
+      0
+     ],
+     "counter_share": 0.2,
+     "base_score": 7.41862,
+     "stress_score": 4.497695,
+     "damage": 2.920925,
+     "damage_se": 0.011584843051575418,
+     "damage_ci95": [
+      2.8982187076189123,
+      2.9436312923810877
+     ],
+     "groups": 100000,
+     "validation_seed": 86204,
+     "counter_bank_size": 37,
+     "counter_search": {
+      "candidate_count": 1073,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 86104,
+      "anchor_counters": [
+       [
+        2,
+        0,
+        41,
+        56,
+        1
+       ],
+       [
+        0,
+        0,
+        41,
+        59,
+        0
+       ],
+       [
+        0,
+        0,
+        41,
+        58,
+        1
+       ],
+       [
+        0,
+        0,
+        43,
+        56,
+        1
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      5,
+      0,
+      40,
+      55,
+      0
+     ],
+     "counter_share": 0.4,
+     "base_score": 7.41862,
+     "stress_score": 2.56275,
+     "damage": 4.85587,
+     "damage_se": 0.011598157638332307,
+     "damage_ci95": [
+      4.833137611028869,
+      4.878602388971132
+     ],
+     "groups": 100000,
+     "validation_seed": 86204,
+     "counter_bank_size": 37,
+     "counter_search": {
+      "candidate_count": 1073,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 86104,
+      "anchor_counters": [
+       [
+        2,
+        0,
+        41,
+        56,
+        1
+       ],
+       [
+        0,
+        0,
+        41,
+        59,
+        0
+       ],
+       [
+        0,
+        0,
+        41,
+        58,
+        1
+       ],
+       [
+        0,
+        0,
+        43,
+        56,
+        1
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      7,
+      26,
+      0,
+      0,
+      67
+     ],
+     "counter_share": 0.2,
+     "base_score": 7.612185,
+     "stress_score": 4.844415,
+     "damage": 2.76777,
+     "damage_se": 0.01200824859216957,
+     "damage_ci95": [
+      2.7442338327593476,
+      2.7913061672406525
+     ],
+     "groups": 100000,
+     "validation_seed": 86205,
+     "counter_bank_size": 50,
+     "counter_search": {
+      "candidate_count": 1073,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 86105,
+      "anchor_counters": [
+       [
+        3,
+        27,
+        1,
+        1,
+        68
+       ],
+       [
+        0,
+        27,
+        1,
+        4,
+        68
+       ],
+       [
+        0,
+        27,
+        1,
+        1,
+        71
+       ],
+       [
+        0,
+        27,
+        0,
+        5,
+        68
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      7,
+      26,
+      0,
+      0,
+      67
+     ],
+     "counter_share": 0.4,
+     "base_score": 7.612185,
+     "stress_score": 2.88706,
+     "damage": 4.725125,
+     "damage_se": 0.012445967674908352,
+     "damage_ci95": [
+      4.70073090335718,
+      4.74951909664282
+     ],
+     "groups": 100000,
+     "validation_seed": 86205,
+     "counter_bank_size": 50,
+     "counter_search": {
+      "candidate_count": 1073,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 86105,
+      "anchor_counters": [
+       [
+        3,
+        27,
+        1,
+        1,
+        68
+       ],
+       [
+        0,
+        27,
+        1,
+        4,
+        68
+       ],
+       [
+        0,
+        27,
+        1,
+        1,
+        71
+       ],
+       [
+        0,
+        27,
+        0,
+        5,
+        68
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    }
+   ],
+   "seed": 86001,
+   "notes": "Conditional adversarial scenarios, not calibrated applicant forecasts; no holdout tuning."
+  },
+  "ai_heavy": {
+   "g1": [
+    {
+     "allocation": [
+      1,
+      11,
+      1,
+      36,
+      51
+     ],
+     "counter_share": 0.2,
+     "base_score": 10.143812499999981,
+     "stress_score": 9.1170702020202,
+     "damage": 1.0267422979797818,
+     "counter_bank_size": 99,
+     "counter_examples": [
+      [
+       0,
+       3,
+       2,
+       42,
+       53
+      ],
+      [
+       0,
+       6,
+       2,
+       39,
+       53
+      ],
+      [
+       0,
+       7,
+       0,
+       40,
+       53
+      ],
+      [
+       0,
+       9,
+       2,
+       37,
+       52
+      ],
+      [
+       1,
+       4,
+       6,
+       35,
+       54
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      1,
+      11,
+      1,
+      36,
+      51
+     ],
+     "counter_share": 0.4,
+     "base_score": 10.143812499999981,
+     "stress_score": 8.090327904040414,
+     "damage": 2.053484595959567,
+     "counter_bank_size": 99,
+     "counter_examples": [
+      [
+       0,
+       3,
+       2,
+       42,
+       53
+      ],
+      [
+       0,
+       6,
+       2,
+       39,
+       53
+      ],
+      [
+       0,
+       7,
+       0,
+       40,
+       53
+      ],
+      [
+       0,
+       9,
+       2,
+       37,
+       52
+      ],
+      [
+       1,
+       4,
+       6,
+       35,
+       54
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      6,
+      3,
+      2,
+      38,
+      51
+     ],
+     "counter_share": 0.2,
+     "base_score": 9.938062499999983,
+     "stress_score": 8.850449999999999,
+     "damage": 1.0876124999999845,
+     "counter_bank_size": 92,
+     "counter_examples": [
+      [
+       0,
+       1,
+       2,
+       40,
+       57
+      ],
+      [
+       0,
+       1,
+       6,
+       38,
+       55
+      ],
+      [
+       0,
+       1,
+       7,
+       40,
+       52
+      ],
+      [
+       0,
+       1,
+       11,
+       37,
+       51
+      ],
+      [
+       0,
+       2,
+       3,
+       40,
+       55
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      6,
+      3,
+      2,
+      38,
+      51
+     ],
+     "counter_share": 0.4,
+     "base_score": 9.938062499999983,
+     "stress_score": 7.7628375000000105,
+     "damage": 2.1752249999999727,
+     "counter_bank_size": 92,
+     "counter_examples": [
+      [
+       0,
+       1,
+       2,
+       40,
+       57
+      ],
+      [
+       0,
+       1,
+       6,
+       38,
+       55
+      ],
+      [
+       0,
+       1,
+       7,
+       40,
+       52
+      ],
+      [
+       0,
+       1,
+       11,
+       37,
+       51
+      ],
+      [
+       0,
+       2,
+       3,
+       40,
+       55
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      1,
+      16,
+      1,
+      36,
+      46
+     ],
+     "counter_share": 0.2,
+     "base_score": 10.457937499999982,
+     "stress_score": 9.323492857142853,
+     "damage": 1.1344446428571295,
+     "counter_bank_size": 98,
+     "counter_examples": [
+      [
+       3,
+       3,
+       7,
+       37,
+       50
+      ],
+      [
+       5,
+       6,
+       1,
+       39,
+       49
+      ],
+      [
+       5,
+       6,
+       4,
+       38,
+       47
+      ],
+      [
+       5,
+       7,
+       2,
+       37,
+       49
+      ],
+      [
+       5,
+       8,
+       4,
+       37,
+       46
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      1,
+      16,
+      1,
+      36,
+      46
+     ],
+     "counter_share": 0.4,
+     "base_score": 10.457937499999982,
+     "stress_score": 8.189048214285723,
+     "damage": 2.268889285714259,
+     "counter_bank_size": 98,
+     "counter_examples": [
+      [
+       3,
+       3,
+       7,
+       37,
+       50
+      ],
+      [
+       5,
+       6,
+       1,
+       39,
+       49
+      ],
+      [
+       5,
+       6,
+       4,
+       38,
+       47
+      ],
+      [
+       5,
+       7,
+       2,
+       37,
+       49
+      ],
+      [
+       5,
+       8,
+       4,
+       37,
+       46
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      1,
+      1,
+      21,
+      36,
+      41
+     ],
+     "counter_share": 0.2,
+     "base_score": 10.39675,
+     "stress_score": 9.467400000000012,
+     "damage": 0.9293499999999888,
+     "counter_bank_size": 86,
+     "counter_examples": [
+      [
+       10,
+       7,
+       4,
+       37,
+       42
+      ],
+      [
+       10,
+       9,
+       0,
+       37,
+       44
+      ],
+      [
+       10,
+       9,
+       0,
+       39,
+       42
+      ],
+      [
+       10,
+       9,
+       0,
+       40,
+       41
+      ],
+      [
+       10,
+       10,
+       2,
+       38,
+       40
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      1,
+      1,
+      21,
+      36,
+      41
+     ],
+     "counter_share": 0.4,
+     "base_score": 10.39675,
+     "stress_score": 8.538050000000013,
+     "damage": 1.8586999999999883,
+     "counter_bank_size": 86,
+     "counter_examples": [
+      [
+       10,
+       7,
+       4,
+       37,
+       42
+      ],
+      [
+       10,
+       9,
+       0,
+       37,
+       44
+      ],
+      [
+       10,
+       9,
+       0,
+       39,
+       42
+      ],
+      [
+       10,
+       9,
+       0,
+       40,
+       41
+      ],
+      [
+       10,
+       10,
+       2,
+       38,
+       40
+      ]
+     ],
+     "exact": true
+    }
+   ],
+   "g2": [
+    {
+     "allocation": [
+      0,
+      0,
+      35,
+      0,
+      65
+     ],
+     "counter_share": 0.2,
+     "base_score": 8.10776,
+     "stress_score": 5.317955,
+     "damage": 2.789805,
+     "damage_se": 0.011153470294878908,
+     "damage_ci95": [
+      2.7679441982220374,
+      2.8116658017779623
+     ],
+     "groups": 100000,
+     "validation_seed": 87201,
+     "counter_bank_size": 44,
+     "counter_search": {
+      "candidate_count": 1065,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 87101,
+      "anchor_counters": [
+       [
+        1,
+        32,
+        0,
+        1,
+        66
+       ],
+       [
+        0,
+        33,
+        0,
+        1,
+        66
+       ],
+       [
+        0,
+        20,
+        0,
+        10,
+        70
+       ],
+       [
+        0,
+        10,
+        0,
+        20,
+        70
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      0,
+      0,
+      35,
+      0,
+      65
+     ],
+     "counter_share": 0.4,
+     "base_score": 8.10776,
+     "stress_score": 3.571495,
+     "damage": 4.536265,
+     "damage_se": 0.010957601205920566,
+     "damage_ci95": [
+      4.5147881016363955,
+      4.557741898363605
+     ],
+     "groups": 100000,
+     "validation_seed": 87201,
+     "counter_bank_size": 44,
+     "counter_search": {
+      "candidate_count": 1065,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 87101,
+      "anchor_counters": [
+       [
+        1,
+        32,
+        0,
+        1,
+        66
+       ],
+       [
+        0,
+        33,
+        0,
+        1,
+        66
+       ],
+       [
+        0,
+        20,
+        0,
+        10,
+        70
+       ],
+       [
+        0,
+        10,
+        0,
+        20,
+        70
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      2,
+      1,
+      41,
+      56,
+      0
+     ],
+     "counter_share": 0.2,
+     "base_score": 8.011895,
+     "stress_score": 5.423525,
+     "damage": 2.58837,
+     "damage_se": 0.011021071729701277,
+     "damage_ci95": [
+      2.5667686994097854,
+      2.6099713005902143
+     ],
+     "groups": 100000,
+     "validation_seed": 87202,
+     "counter_bank_size": 34,
+     "counter_search": {
+      "candidate_count": 1066,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 87102,
+      "anchor_counters": [
+       [
+        0,
+        1,
+        42,
+        57,
+        0
+       ],
+       [
+        0,
+        0,
+        42,
+        57,
+        1
+       ],
+       [
+        0,
+        2,
+        41,
+        57,
+        0
+       ],
+       [
+        0,
+        2,
+        42,
+        56,
+        0
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      2,
+      1,
+      41,
+      56,
+      0
+     ],
+     "counter_share": 0.4,
+     "base_score": 8.011895,
+     "stress_score": 3.538095,
+     "damage": 4.4738,
+     "damage_se": 0.01152067762156934,
+     "damage_ci95": [
+      4.451219471861724,
+      4.496380528138276
+     ],
+     "groups": 100000,
+     "validation_seed": 87202,
+     "counter_bank_size": 34,
+     "counter_search": {
+      "candidate_count": 1066,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 87102,
+      "anchor_counters": [
+       [
+        0,
+        1,
+        42,
+        57,
+        0
+       ],
+       [
+        0,
+        0,
+        42,
+        57,
+        1
+       ],
+       [
+        0,
+        2,
+        41,
+        57,
+        0
+       ],
+       [
+        0,
+        2,
+        42,
+        56,
+        0
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      0,
+      0,
+      48,
+      52,
+      0
+     ],
+     "counter_share": 0.2,
+     "base_score": 8.03293,
+     "stress_score": 5.23854,
+     "damage": 2.79439,
+     "damage_se": 0.010595565956530089,
+     "damage_ci95": [
+      2.773622690725201,
+      2.815157309274799
+     ],
+     "groups": 100000,
+     "validation_seed": 87203,
+     "counter_bank_size": 52,
+     "counter_search": {
+      "candidate_count": 1065,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 87103,
+      "anchor_counters": [
+       [
+        10,
+        20,
+        0,
+        60,
+        10
+       ],
+       [
+        1,
+        45,
+        0,
+        53,
+        1
+       ],
+       [
+        10,
+        10,
+        0,
+        60,
+        20
+       ],
+       [
+        10,
+        10,
+        10,
+        60,
+        10
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      0,
+      0,
+      48,
+      52,
+      0
+     ],
+     "counter_share": 0.4,
+     "base_score": 8.03293,
+     "stress_score": 3.494695,
+     "damage": 4.538235,
+     "damage_se": 0.0101036516510377,
+     "damage_ci95": [
+      4.518431842763967,
+      4.558038157236034
+     ],
+     "groups": 100000,
+     "validation_seed": 87203,
+     "counter_bank_size": 52,
+     "counter_search": {
+      "candidate_count": 1065,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 87103,
+      "anchor_counters": [
+       [
+        10,
+        20,
+        0,
+        60,
+        10
+       ],
+       [
+        1,
+        45,
+        0,
+        53,
+        1
+       ],
+       [
+        10,
+        10,
+        0,
+        60,
+        20
+       ],
+       [
+        10,
+        10,
+        10,
+        60,
+        10
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      5,
+      0,
+      40,
+      55,
+      0
+     ],
+     "counter_share": 0.2,
+     "base_score": 7.916965,
+     "stress_score": 4.72139,
+     "damage": 3.195575,
+     "damage_se": 0.011806306496211286,
+     "damage_ci95": [
+      3.1724346392674256,
+      3.218715360732574
+     ],
+     "groups": 100000,
+     "validation_seed": 87204,
+     "counter_bank_size": 28,
+     "counter_search": {
+      "candidate_count": 1073,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 87104,
+      "anchor_counters": [
+       [
+        0,
+        0,
+        41,
+        58,
+        1
+       ],
+       [
+        0,
+        0,
+        41,
+        59,
+        0
+       ],
+       [
+        0,
+        0,
+        44,
+        56,
+        0
+       ],
+       [
+        0,
+        0,
+        41,
+        56,
+        3
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      5,
+      0,
+      40,
+      55,
+      0
+     ],
+     "counter_share": 0.4,
+     "base_score": 7.916965,
+     "stress_score": 2.56857,
+     "damage": 5.348395,
+     "damage_se": 0.011356444158625939,
+     "damage_ci95": [
+      5.3261363694490935,
+      5.3706536305509065
+     ],
+     "groups": 100000,
+     "validation_seed": 87204,
+     "counter_bank_size": 28,
+     "counter_search": {
+      "candidate_count": 1073,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 87104,
+      "anchor_counters": [
+       [
+        0,
+        0,
+        41,
+        58,
+        1
+       ],
+       [
+        0,
+        0,
+        41,
+        59,
+        0
+       ],
+       [
+        0,
+        0,
+        44,
+        56,
+        0
+       ],
+       [
+        0,
+        0,
+        41,
+        56,
+        3
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      7,
+      26,
+      0,
+      0,
+      67
+     ],
+     "counter_share": 0.2,
+     "base_score": 8.20241,
+     "stress_score": 5.22556,
+     "damage": 2.97685,
+     "damage_se": 0.012154304506888924,
+     "damage_ci95": [
+      2.953027563166498,
+      3.0006724368335025
+     ],
+     "groups": 100000,
+     "validation_seed": 87205,
+     "counter_bank_size": 44,
+     "counter_search": {
+      "candidate_count": 1073,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 87105,
+      "anchor_counters": [
+       [
+        3,
+        27,
+        1,
+        1,
+        68
+       ],
+       [
+        4,
+        27,
+        0,
+        1,
+        68
+       ],
+       [
+        0,
+        27,
+        1,
+        4,
+        68
+       ],
+       [
+        0,
+        27,
+        0,
+        5,
+        68
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      7,
+      26,
+      0,
+      0,
+      67
+     ],
+     "counter_share": 0.4,
+     "base_score": 8.20241,
+     "stress_score": 3.133625,
+     "damage": 5.068785,
+     "damage_se": 0.012197210703978166,
+     "damage_ci95": [
+      5.044878467020203,
+      5.0926915329797975
+     ],
+     "groups": 100000,
+     "validation_seed": 87205,
+     "counter_bank_size": 44,
+     "counter_search": {
+      "candidate_count": 1073,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 87105,
+      "anchor_counters": [
+       [
+        3,
+        27,
+        1,
+        1,
+        68
+       ],
+       [
+        4,
+        27,
+        0,
+        1,
+        68
+       ],
+       [
+        0,
+        27,
+        1,
+        4,
+        68
+       ],
+       [
+        0,
+        27,
+        0,
+        5,
+        68
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    }
+   ],
+   "seed": 87001,
+   "notes": "Conditional adversarial scenarios, not calibrated applicant forecasts; no holdout tuning."
+  },
+  "levelk_tau3": {
+   "g1": [
+    {
+     "allocation": [
+      1,
+      11,
+      1,
+      36,
+      51
+     ],
+     "counter_share": 0.2,
+     "base_score": 7.5262500000000045,
+     "stress_score": 7.051769230769235,
+     "damage": 0.47448076923076954,
+     "counter_bank_size": 91,
+     "counter_examples": [
+      [
+       0,
+       3,
+       2,
+       40,
+       55
+      ],
+      [
+       0,
+       6,
+       5,
+       37,
+       52
+      ],
+      [
+       0,
+       8,
+       4,
+       36,
+       52
+      ],
+      [
+       0,
+       9,
+       2,
+       36,
+       53
+      ],
+      [
+       0,
+       9,
+       5,
+       34,
+       52
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      1,
+      11,
+      1,
+      36,
+      51
+     ],
+     "counter_share": 0.4,
+     "base_score": 7.5262500000000045,
+     "stress_score": 6.577288461538465,
+     "damage": 0.94896153846154,
+     "counter_bank_size": 91,
+     "counter_examples": [
+      [
+       0,
+       3,
+       2,
+       40,
+       55
+      ],
+      [
+       0,
+       6,
+       5,
+       37,
+       52
+      ],
+      [
+       0,
+       8,
+       4,
+       36,
+       52
+      ],
+      [
+       0,
+       9,
+       2,
+       36,
+       53
+      ],
+      [
+       0,
+       9,
+       5,
+       34,
+       52
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      6,
+      3,
+      2,
+      38,
+      51
+     ],
+     "counter_share": 0.2,
+     "base_score": 7.4462500000000045,
+     "stress_score": 6.805809523809527,
+     "damage": 0.6404404761904772,
+     "counter_bank_size": 84,
+     "counter_examples": [
+      [
+       0,
+       0,
+       2,
+       46,
+       52
+      ],
+      [
+       0,
+       1,
+       0,
+       44,
+       55
+      ],
+      [
+       0,
+       1,
+       3,
+       42,
+       54
+      ],
+      [
+       0,
+       1,
+       4,
+       39,
+       56
+      ],
+      [
+       0,
+       1,
+       6,
+       40,
+       53
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      6,
+      3,
+      2,
+      38,
+      51
+     ],
+     "counter_share": 0.4,
+     "base_score": 7.4462500000000045,
+     "stress_score": 6.16536904761905,
+     "damage": 1.2808809523809543,
+     "counter_bank_size": 84,
+     "counter_examples": [
+      [
+       0,
+       0,
+       2,
+       46,
+       52
+      ],
+      [
+       0,
+       1,
+       0,
+       44,
+       55
+      ],
+      [
+       0,
+       1,
+       3,
+       42,
+       54
+      ],
+      [
+       0,
+       1,
+       4,
+       39,
+       56
+      ],
+      [
+       0,
+       1,
+       6,
+       40,
+       53
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      1,
+      16,
+      1,
+      36,
+      46
+     ],
+     "counter_share": 0.2,
+     "base_score": 6.9375000000000036,
+     "stress_score": 6.509550561797756,
+     "damage": 0.42794943820224773,
+     "counter_bank_size": 89,
+     "counter_examples": [
+      [
+       3,
+       9,
+       2,
+       37,
+       49
+      ],
+      [
+       4,
+       7,
+       2,
+       38,
+       49
+      ],
+      [
+       4,
+       8,
+       4,
+       40,
+       44
+      ],
+      [
+       5,
+       6,
+       3,
+       37,
+       49
+      ],
+      [
+       6,
+       6,
+       2,
+       37,
+       49
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      1,
+      16,
+      1,
+      36,
+      46
+     ],
+     "counter_share": 0.4,
+     "base_score": 6.9375000000000036,
+     "stress_score": 6.081601123595506,
+     "damage": 0.8558988764044972,
+     "counter_bank_size": 89,
+     "counter_examples": [
+      [
+       3,
+       9,
+       2,
+       37,
+       49
+      ],
+      [
+       4,
+       7,
+       2,
+       38,
+       49
+      ],
+      [
+       4,
+       8,
+       4,
+       40,
+       44
+      ],
+      [
+       5,
+       6,
+       3,
+       37,
+       49
+      ],
+      [
+       6,
+       6,
+       2,
+       37,
+       49
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      1,
+      1,
+      21,
+      36,
+      41
+     ],
+     "counter_share": 0.2,
+     "base_score": 5.7237500000000034,
+     "stress_score": 5.682225806451615,
+     "damage": 0.041524193548388766,
+     "counter_bank_size": 93,
+     "counter_examples": [
+      [
+       5,
+       9,
+       7,
+       37,
+       42
+      ],
+      [
+       7,
+       12,
+       0,
+       37,
+       44
+      ],
+      [
+       9,
+       9,
+       3,
+       35,
+       44
+      ],
+      [
+       9,
+       11,
+       0,
+       37,
+       43
+      ],
+      [
+       10,
+       13,
+       0,
+       37,
+       40
+      ]
+     ],
+     "exact": true
+    },
+    {
+     "allocation": [
+      1,
+      1,
+      21,
+      36,
+      41
+     ],
+     "counter_share": 0.4,
+     "base_score": 5.7237500000000034,
+     "stress_score": 5.640701612903227,
+     "damage": 0.08304838709677664,
+     "counter_bank_size": 93,
+     "counter_examples": [
+      [
+       5,
+       9,
+       7,
+       37,
+       42
+      ],
+      [
+       7,
+       12,
+       0,
+       37,
+       44
+      ],
+      [
+       9,
+       9,
+       3,
+       35,
+       44
+      ],
+      [
+       9,
+       11,
+       0,
+       37,
+       43
+      ],
+      [
+       10,
+       13,
+       0,
+       37,
+       40
+      ]
+     ],
+     "exact": true
+    }
+   ],
+   "g2": [
+    {
+     "allocation": [
+      0,
+      0,
+      35,
+      0,
+      65
+     ],
+     "counter_share": 0.2,
+     "base_score": 5.26875,
+     "stress_score": 3.833805,
+     "damage": 1.434945,
+     "damage_se": 0.009336845036547536,
+     "damage_ci95": [
+      1.4166447837283667,
+      1.4532452162716332
+     ],
+     "groups": 100000,
+     "validation_seed": 88201,
+     "counter_bank_size": 48,
+     "counter_search": {
+      "candidate_count": 1065,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 88101,
+      "anchor_counters": [
+       [
+        1,
+        32,
+        0,
+        1,
+        66
+       ],
+       [
+        10,
+        10,
+        0,
+        10,
+        70
+       ],
+       [
+        0,
+        33,
+        0,
+        1,
+        66
+       ],
+       [
+        0,
+        10,
+        0,
+        20,
+        70
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      0,
+      0,
+      35,
+      0,
+      65
+     ],
+     "counter_share": 0.4,
+     "base_score": 5.26875,
+     "stress_score": 2.97024,
+     "damage": 2.29851,
+     "damage_se": 0.01092508862090435,
+     "damage_ci95": [
+      2.277096826303027,
+      2.3199231736969725
+     ],
+     "groups": 100000,
+     "validation_seed": 88201,
+     "counter_bank_size": 48,
+     "counter_search": {
+      "candidate_count": 1065,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 88101,
+      "anchor_counters": [
+       [
+        1,
+        32,
+        0,
+        1,
+        66
+       ],
+       [
+        10,
+        10,
+        0,
+        10,
+        70
+       ],
+       [
+        0,
+        33,
+        0,
+        1,
+        66
+       ],
+       [
+        0,
+        10,
+        0,
+        20,
+        70
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      2,
+      1,
+      41,
+      56,
+      0
+     ],
+     "counter_share": 0.2,
+     "base_score": 5.763595,
+     "stress_score": 3.93789,
+     "damage": 1.825705,
+     "damage_se": 0.009646274826892003,
+     "damage_ci95": [
+      1.8067983013392916,
+      1.8446116986607082
+     ],
+     "groups": 100000,
+     "validation_seed": 88202,
+     "counter_bank_size": 36,
+     "counter_search": {
+      "candidate_count": 1066,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 88102,
+      "anchor_counters": [
+       [
+        0,
+        1,
+        42,
+        57,
+        0
+       ],
+       [
+        0,
+        0,
+        42,
+        57,
+        1
+       ],
+       [
+        0,
+        2,
+        42,
+        56,
+        0
+       ],
+       [
+        0,
+        2,
+        41,
+        57,
+        0
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      2,
+      1,
+      41,
+      56,
+      0
+     ],
+     "counter_share": 0.4,
+     "base_score": 5.763595,
+     "stress_score": 2.6630625,
+     "damage": 3.1005325,
+     "damage_se": 0.011095387306923197,
+     "damage_ci95": [
+      3.0787855408784304,
+      3.1222794591215695
+     ],
+     "groups": 100000,
+     "validation_seed": 88202,
+     "counter_bank_size": 36,
+     "counter_search": {
+      "candidate_count": 1066,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 88102,
+      "anchor_counters": [
+       [
+        0,
+        1,
+        42,
+        57,
+        0
+       ],
+       [
+        0,
+        0,
+        42,
+        57,
+        1
+       ],
+       [
+        0,
+        2,
+        42,
+        56,
+        0
+       ],
+       [
+        0,
+        2,
+        41,
+        57,
+        0
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      0,
+      0,
+      48,
+      52,
+      0
+     ],
+     "counter_share": 0.2,
+     "base_score": 4.44466,
+     "stress_score": 3.399485,
+     "damage": 1.045175,
+     "damage_se": 0.008104447792076282,
+     "damage_ci95": [
+      1.0292902823275305,
+      1.0610597176724694
+     ],
+     "groups": 100000,
+     "validation_seed": 88203,
+     "counter_bank_size": 48,
+     "counter_search": {
+      "candidate_count": 1065,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 88103,
+      "anchor_counters": [
+       [
+        10,
+        20,
+        0,
+        60,
+        10
+       ],
+       [
+        1,
+        45,
+        0,
+        53,
+        1
+       ],
+       [
+        0,
+        30,
+        0,
+        60,
+        10
+       ],
+       [
+        20,
+        10,
+        0,
+        60,
+        10
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      0,
+      0,
+      48,
+      52,
+      0
+     ],
+     "counter_share": 0.4,
+     "base_score": 4.44466,
+     "stress_score": 2.77173,
+     "damage": 1.67293,
+     "damage_se": 0.009754799009310087,
+     "damage_ci95": [
+      1.6538105939417522,
+      1.6920494060582478
+     ],
+     "groups": 100000,
+     "validation_seed": 88203,
+     "counter_bank_size": 48,
+     "counter_search": {
+      "candidate_count": 1065,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 88103,
+      "anchor_counters": [
+       [
+        10,
+        20,
+        0,
+        60,
+        10
+       ],
+       [
+        1,
+        45,
+        0,
+        53,
+        1
+       ],
+       [
+        0,
+        30,
+        0,
+        60,
+        10
+       ],
+       [
+        20,
+        10,
+        0,
+        60,
+        10
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      5,
+      0,
+      40,
+      55,
+      0
+     ],
+     "counter_share": 0.2,
+     "base_score": 5.12917,
+     "stress_score": 3.326275,
+     "damage": 1.802895,
+     "damage_se": 0.00927010952141642,
+     "damage_ci95": [
+      1.7847255853380237,
+      1.821064414661976
+     ],
+     "groups": 100000,
+     "validation_seed": 88204,
+     "counter_bank_size": 46,
+     "counter_search": {
+      "candidate_count": 1073,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 88104,
+      "anchor_counters": [
+       [
+        0,
+        1,
+        41,
+        56,
+        2
+       ],
+       [
+        0,
+        0,
+        41,
+        56,
+        3
+       ],
+       [
+        2,
+        0,
+        41,
+        56,
+        1
+       ],
+       [
+        1,
+        1,
+        41,
+        56,
+        1
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      5,
+      0,
+      40,
+      55,
+      0
+     ],
+     "counter_share": 0.4,
+     "base_score": 5.12917,
+     "stress_score": 2.043255,
+     "damage": 3.085915,
+     "damage_se": 0.010512460047292088,
+     "damage_ci95": [
+      3.0653105783073076,
+      3.1065194216926924
+     ],
+     "groups": 100000,
+     "validation_seed": 88204,
+     "counter_bank_size": 46,
+     "counter_search": {
+      "candidate_count": 1073,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 88104,
+      "anchor_counters": [
+       [
+        0,
+        1,
+        41,
+        56,
+        2
+       ],
+       [
+        0,
+        0,
+        41,
+        56,
+        3
+       ],
+       [
+        2,
+        0,
+        41,
+        56,
+        1
+       ],
+       [
+        1,
+        1,
+        41,
+        56,
+        1
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      7,
+      26,
+      0,
+      0,
+      67
+     ],
+     "counter_share": 0.2,
+     "base_score": 4.303315,
+     "stress_score": 2.673165,
+     "damage": 1.63015,
+     "damage_se": 0.009458623284101355,
+     "damage_ci95": [
+      1.6116110983631613,
+      1.6486889016368387
+     ],
+     "groups": 100000,
+     "validation_seed": 88205,
+     "counter_bank_size": 45,
+     "counter_search": {
+      "candidate_count": 1073,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 88105,
+      "anchor_counters": [
+       [
+        0,
+        27,
+        0,
+        1,
+        72
+       ],
+       [
+        0,
+        27,
+        0,
+        5,
+        68
+       ],
+       [
+        0,
+        27,
+        1,
+        1,
+        71
+       ],
+       [
+        3,
+        27,
+        1,
+        1,
+        68
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    },
+    {
+     "allocation": [
+      7,
+      26,
+      0,
+      0,
+      67
+     ],
+     "counter_share": 0.4,
+     "base_score": 4.303315,
+     "stress_score": 1.58712,
+     "damage": 2.716195,
+     "damage_se": 0.010810651734361774,
+     "damage_ci95": [
+      2.6950061226006508,
+      2.737383877399349
+     ],
+     "groups": 100000,
+     "validation_seed": 88205,
+     "counter_bank_size": 45,
+     "counter_search": {
+      "candidate_count": 1073,
+      "screen_groups": 3000,
+      "race_groups": 12000,
+      "search_seed": 88105,
+      "anchor_counters": [
+       [
+        0,
+        27,
+        0,
+        1,
+        72
+       ],
+       [
+        0,
+        27,
+        0,
+        5,
+        68
+       ],
+       [
+        0,
+        27,
+        1,
+        1,
+        71
+       ],
+       [
+        3,
+        27,
+        1,
+        1,
+        68
+       ]
+      ],
+      "objective": "minimize leader payout at 40% counter share"
+     }
+    }
+   ],
+   "seed": 88001,
+   "notes": "Conditional adversarial scenarios, not calibrated applicant forecasts; no holdout tuning."
+  }
+ },
+ "runtime_s": 11.3
+}
