@@ -1,0 +1,149 @@
+{
+  "id": "CX-052",
+  "agent": "codex",
+  "scorer_author": "claude-code",
+  "game": 1,
+  "commit_sha": "0d2b2cccd610024161d6b8b5e120548863d3bbc7",
+  "source_sha256": {
+    "benchmark": "23cde346b07a41bb2e84e3e5799b85b486b312263f17d4babaa45b57c55e1622",
+    "reference": "925d1f8e9dc04bf7ab68f624db786b14310f75b1bc66419dc5d73edac78543a0"
+  },
+  "scenarios": [
+    "holdout_sophisticated"
+  ],
+  "candidates": [
+    [
+      1,
+      11,
+      1,
+      36,
+      51
+    ],
+    [
+      6,
+      3,
+      2,
+      38,
+      51
+    ],
+    [
+      1,
+      16,
+      1,
+      36,
+      46
+    ],
+    [
+      6,
+      3,
+      3,
+      37,
+      51
+    ],
+    [
+      6,
+      4,
+      1,
+      38,
+      51
+    ]
+  ],
+  "sample_counts": {
+    "fresh_streams": 2,
+    "matchups_per_stream": 1000000
+  },
+  "exact_reference": [
+    8.769437499999993,
+    8.66631249999998,
+    8.282624999999987,
+    8.657999999999985,
+    8.653312500000022
+  ],
+  "theoretical_se_1m": [
+    0.0023549144747938852,
+    0.0024291323352884126,
+    0.0028068885103215264,
+    0.00238624411995085,
+    0.0024851989914982625
+  ],
+  "streams": [
+    {
+      "seed": [
+        780001,
+        0
+      ],
+      "matchups": 1000000,
+      "mean": [
+        8.771544,
+        8.6677255,
+        8.284039,
+        8.659784,
+        8.6541475
+      ],
+      "se": [
+        0.002354732872502766,
+        0.0024290045917461606,
+        0.002807092129996135,
+        0.00238531523348305,
+        0.0024854365764659376
+      ],
+      "z": [
+        0.8945813024507485,
+        0.5817197731203984,
+        0.503724115394407,
+        0.7479095320285523,
+        0.3359570740551103
+      ],
+      "pass_3se": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": [
+        780001,
+        1
+      ],
+      "matchups": 1000000,
+      "mean": [
+        8.7672985,
+        8.666654,
+        8.2812275,
+        8.657451,
+        8.653691
+      ],
+      "se": [
+        0.0023536820732023922,
+        0.0024273760187610285,
+        0.0028066069764538255,
+        0.002384827953965228,
+        0.0024827609108868448
+      ],
+      "z": [
+        -0.9087888395573601,
+        0.14068689703590934,
+        -0.4979322048692462,
+        -0.23020528548922756,
+        0.15245124825311612
+      ],
+      "pass_3se": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  ],
+  "frozen_archive_sha256": "d1f8827af9392b16af4ffd6231c19b08b5c304cce562ab8f8e6779a4f4f0a86f",
+  "runtime_seconds": 0.41581653699995513,
+  "notes": [
+    "Prespecified two fresh diagnostic streams, not rerolls until passing.",
+    "Original CX050 z=-3.301923 and its failed flag remain unchanged.",
+    "Codex executes the independently authored Claude Fraction reference via exact per-row lookup; no engine scorer used.",
+    "This does not substitute for a Claude-run independent replication."
+  ]
+}

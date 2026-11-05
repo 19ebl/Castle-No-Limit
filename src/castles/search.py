@@ -74,6 +74,13 @@ def concentration_candidates():
     return unique_allocations(bases, *(neighbors(x,(1,2,3)) for x in bases))
 
 
+def promote_local_history(current_candidates, accepted, rounds):
+    """Never drop a strong earlier local state when endpoints move elsewhere."""
+    history=[record[key] for record in accepted for key in ('old','new')]
+    history.extend(record[key] for record in rounds for key in ('leader','runner_up') if key in record)
+    return unique_allocations(current_candidates,history)
+
+
 def targeted_candidates():
     """Offset families requested by the independent population-model author."""
     out=[]
@@ -246,7 +253,8 @@ def g2_search(populations, named, prior, g1, output='results/experiments/CX-030.
     # Preserve specialized named-scenario responses, even if their prior mean
     # is low, to avoid understating regret against concentrated scenarios.
     named_leaders=np.array([candidates[np.argmax(screen[name]['mean'])] for name in named])
-    contenders=unique_allocations(raced[order[:200]],current_starts,[leader],named_leaders)
+    contenders=promote_local_history(
+        unique_allocations(raced[order[:200]],current_starts,[leader],named_leaders),accepted,round_stats)
     confirm_opps=prior_opponents(100000,prior,populations,seeds['confirmation'])
     rerace=g2_eval(contenders,confirm_opps)
     keep=np.argsort(rerace['mean'])[::-1][:30]
@@ -392,4 +400,43 @@ def validate_finalists(populations,named,prior,holdout,g1,g2,
     save_json(output,result)
     checkpoint=Path(output).with_suffix('.checkpoint.json')
     if checkpoint.exists():checkpoint.unlink()
+    return result
+
+
+def g2_promote_recorded_history(populations,named,prior,initial,
+        output='results/experiments/CX-031.json',seed=313000):
+    """Correct a promotion omission without repeating valid screening work."""
+    started=time.perf_counter()
+    candidates=promote_local_history(initial['candidates'],initial['local_accepted'],initial['local_rounds'])
+    full={}
+    for i,name in enumerate(named+prior):
+        opps=g2_sample_opponents(populations[name],100000,seed+i)
+        full[name]=g2_eval(candidates,opps)
+        full[name].update(seed=seed+i,groups=100000)
+    prior_scores=scenario_matrix(full,prior)
+    named_scores=scenario_matrix(full,named)
+    primary=prior_scores.mean(axis=1)
+    max_regret=(named_scores.max(axis=0)[None,:]-named_scores).max(axis=1)
+    order=np.lexsort((max_regret,-primary))
+    ranking=[]
+    for idx in order:
+        ranking.append(dict(allocation=candidates[idx],prior_mean=primary[idx],
+            prior_mc_se=np.sqrt(sum(full[n]['se'][idx]**2 for n in prior))/len(prior),
+            prior_p10=np.quantile(prior_scores[idx],.1),max_named_candidate_regret=max_regret[idx],
+            named_scores=dict(zip(named,named_scores[idx]))))
+    result=provenance('CX-031',2,seed=seed,scenarios=named+prior,
+        scenario_seeds={name:populations[name].seed for name in named+prior},
+        sample_counts=dict(corrected_candidate_groups_per_scenario=100000),
+        counts={**initial['counts'],'promotion_union_candidates':len(candidates)},
+        candidates=candidates,finalists=candidates[order[:5]],ranking=ranking,scenario_results=full,
+        initial_search_id=initial['id'],local_stop_reason=initial['local_stop_reason'],
+        local_rounds=initial['local_rounds'],local_accepted=initial['local_accepted'],
+        runtime_seconds=time.perf_counter()-started,
+        notes=['Corrects omission of historical accepted states during initial finalist promotion.',
+               'Uses all recorded accepted old/new states, global leaders/runners, and the initial full-scenario candidate pool.',
+               'Fresh100k groups per scenario, common across all corrected candidates.',
+               'No holdout populations were opened before this correction.',
+               'Named regret is against this finite corrected pool and is a lower bound on unrestricted regret.',
+               'These are selection estimates; headline numbers require fresh preregistered validation.'])
+    save_json(output,result)
     return result
